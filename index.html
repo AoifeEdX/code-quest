@@ -1,244 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quest</title>
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+      }
+    
+      .level {
+        background-color: #2e2e2e;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    
+      button {
+        background-color: cyan;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+        transition: background-color 0.3s;
+      }
+    
+      button:hover {
+        background-color: rgb(0, 174, 255);
+      }
+    
+      .hidden {
+        display: none;
+      }
+    
+      h2 {
+        color: cyan;
+        margin-bottom: 10px;
+      }
+    
+      p {
+        color: linen;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+    
+      .large-emoticon {
+        font-size: 40px;
+      }
+    
+      #gameContainer,
+      #finalScores,
+      #resultMessage {
+        max-width: 375px;
+        min-width: 330px;
+        min-height: 310px;
+      }
+    
+      .bar {
+        background-color: #444;
+        height: 40px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+    
+      .barFill {
+        height: 60%;
+        border-radius: 5px;
+        width: 0;
+        transition: width 0.5s ease;
+      }
+    
+      .skills .barFill {
+        background-color: green;
+      }
+    
+      .confidence .barFill {
+        background-color: red;
+      }
+    
+      .bar-label {
+        font-size: 14px;
+        margin-bottom: 10px;
+        color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="gameContainer">
+      <div id="startScreen" class="level">
+        <h2>Welcome to Coding Bootcamp Adventure!</h2>
+        <p><span class='large-emoticon'>🤗🖥️</span><br><br><br>Get ready to embark on a journey through the world of coding
+          bootcamps.</p>
+        <button onclick="startAdventure()">Start Adventure</button>
+      </div>
+    
+      <div id="challenge1" class="level hidden">
+        <h2>Challenge: Create a New GitHub Repo</h2>
+        <p><span class='large-emoticon'>🤔❓</span><br><br><br>You need to create a new GitHub repository for your project.
+          What
+          do you call it?</p>
+        <button onclick="createGitHubRepo('success')">Weather-Finances-Portfolio-Dashboard-Quiz</button>
+        <button onclick="createGitHubRepo('failure')">Potato</button>
+      </div>
+    
+      <div id="challenge2" class="level hidden">
+        <h2>Challenge: Choose a Coding Language</h2>
+        <p><span class='large-emoticon'>😐❓</span><br><br><br>You must choose a coding language for your project. What do
+          you
+          choose?</p>
+        <button onclick="chooseLanguage('success')">Vanilla JavaScript</button>
+        <button onclick="chooseLanguage('failure')">jQuery</button>
+      </div>
+    
+      <div id="challenge3" class="level hidden">
+        <h2>Challenge: Deploy to Netlify</h2>
+        <p><span class='large-emoticon'>😬❓</span><br><br><br>You need to deploy your project to Netlify. Are you ready?</p>
+        <button onclick="deployToNetlify('success')">Yes, let's deploy!</button>
+        <button onclick="deployToNetlify('failure')">No, I'll do it later.</button>
+      </div>
+    
+      <div id="resultMessage" class="level hidden">
+        <h2>Result<br><br></h2>
+        <p id="message"></p>
+        <button id="continueButton" onclick="continueAdventure()">Continue Adventure</button>
+      </div>
+    
+      <div id="finalScores" class="level hidden">
+        <h2>Final Scores<br><br></h2>
+        <p>Skills: <span id="finalSkills"></span></p>
+        <p>Confidence: <span id="finalConfidence"></span></p>
+        <button onclick="restartAdventure()">Play Again</button>
+      </div>
+    
+      <div class="bar skills level">
+        <div class="bar-label">Skills</div>
+        <div class="barFill"></div>
+      </div>
+    
+      <div class="bar confidence level">
+        <div class="bar-label">Confidence</div>
+        <div class="barFill"></div>
+      </div>
+    </div>
+    
+    
+    
+    <script>
+      let currentChallenge = 1;
+      let skills = 1;
+      let confidence = 100;
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Coding Bootcamp Adventure</title>
-	<style>
-		body {
-			font-family: 'Courier New', Courier, monospace;
-			background-color: #1e1e1e;
-			color: #d4d4d4;
-			padding: 20px;
-			margin: 0;
-			display: flex;
-			justify-content: center;
-			height: 100vh;
-		}
+      function startAdventure() {
+        document.getElementById('startScreen').classList.add('hidden');
+        document.getElementById(`challenge${currentChallenge}`).classList.remove('hidden');
+        updateSkillsBar()
+        updateConfidenceBar()
+      }
 
-		.level {
-			background-color: #2e2e2e;
-			padding: 20px;
-			border-radius: 5px;
-			margin-bottom: 20px;
-			text-align: center;
-		}
+      function createGitHubRepo(outcome) {
+        if (outcome === 'success') {
+          skills += 33;
+          document.getElementById('resultMessage').classList.remove('hidden');
+          document.getElementById('message').innerHTML = "<span class='large-emoticon'>😄💾</span><br><br><br> Success! You created a new GitHub repo.";
+          updateSkillsBar();
+        } else {
+          confidence -= 33;
+          document.getElementById('resultMessage').classList.remove('hidden');
+          document.getElementById('message').innerHTML = "<span class='large-emoticon'>😭🥔</span><br><br><br> Oh no! You were marked down by Central Grading because your repo name was not unique enough.";
+          updateConfidenceBar()
+        }
+        document.getElementById(`challenge${currentChallenge}`).classList.add('hidden');
+        document.getElementById('resultMessage').classList.remove('hidden');
+      }
 
-		button {
-			background-color: cyan;
-			padding: 10px 20px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			margin: 10px;
-			transition: background-color 0.3s;
-		}
+      function chooseLanguage(outcome) {
+        if (outcome === 'success') {
+          skills += 33;
+          document.getElementById('resultMessage').classList.remove('hidden');
+          document.getElementById('message').innerHTML = "<span class='large-emoticon'>😄🎉</span><br><br><br> Success! You chose JavaScript and don't have to read any new documentation.";
+          updateSkillsBar();
+        } else {
+          confidence -= 33;
+          document.getElementById('resultMessage').classList.remove('hidden');
+          document.getElementById('message').innerHTML = "<span class='large-emoticon'>😭📖</span><br><br><br> Oh no! They just released jQuery 4.0, and now you have to go and read all the new documentation.";
+          updateConfidenceBar()
+        }
+        document.getElementById(`challenge${currentChallenge}`).classList.add('hidden');
+        document.getElementById('resultMessage').classList.remove('hidden');
+      }
 
-		button:hover {
-			background-color: rgb(0, 174, 255);
-		}
+      function deployToNetlify(outcome) {
+        if (outcome === 'success') {
+          skills += 33;
+          document.getElementById('resultMessage').classList.remove('hidden');
+          document.getElementById('message').innerHTML = "<span class='large-emoticon'>😄🌟</span><br><br><br> Success! Your project has been deployed to Netlify.";
+          updateSkillsBar();
+        } else {
+          confidence -= 33;
+          document.getElementById('resultMessage').classList.remove('hidden');
+          document.getElementById('message').innerHTML = "<span class='large-emoticon'>😭💥</span><br><br><br> Oh no! You were marked down by Central Grading because your project didn't deploy correctly and has 1 million errors in the console.";
+          updateConfidenceBar()
+        }
+        document.getElementById(`challenge${currentChallenge}`).classList.add('hidden');
+        document.getElementById('resultMessage').classList.remove('hidden');
+      }
 
-		.hidden {
-			display: none;
-		}
+      function updateSkillsBar() {
+        const skillsPercentage = Math.max(Math.min(skills, 100), 0);
+        document.querySelector('.skills .barFill').style.width = `${skillsPercentage}%`;
+      }
+      function updateConfidenceBar() {
+        const confidencePercentage = Math.max(Math.min(confidence, 100), 0);
+        document.querySelector('.confidence .barFill').style.width = `${confidencePercentage}%`;
+      }
 
-		h2 {
-			color: cyan;
-			margin-bottom: 10px;
-		}
+      function restartAdventure() {
+        location.reload();
+      }
 
-		p {
-			color: linen;
-			font-size: 18px;
-			margin-bottom: 15px;
-		}
-
-		.large-emoticon {
-			font-size: 40px;
-		}
-
-		#gameContainer, #finalScores, #resultMessage {
-			max-width: 375px;
-			min-width: 330px;
-			min-height: 310px;
-		}
-
-		.bar {
-			background-color: #444;
-			height: 40px;
-			border-radius: 5px;
-			margin-bottom: 20px;
-		}
-
-		.barFill {
-			height: 60%;
-			border-radius: 5px;
-			width: 0;
-			transition: width 0.5s ease;
-		}
-
-		.skills .barFill {
-			background-color: green;
-		}
-
-		.confidence .barFill {
-			background-color: red;
-		}
-
-		.bar-label {
-			font-size: 14px;
-			margin-bottom: 10px;
-			color: cyan;
-		}
-	</style>
-</head>
-
-<body>
-
-	<div id="gameContainer">
-		<div id="startScreen" class="level">
-			<h2>Welcome to Coding Bootcamp Adventure!</h2>
-			<p><span class='large-emoticon'>🤗🖥️</span><br><br><br>Get ready to embark on a journey through the world of coding
-				bootcamps.</p>
-			<button onclick="startAdventure()">Start Adventure</button>
-		</div>
-
-		<div id="challenge1" class="level hidden">
-			<h2>Challenge: Create a New GitHub Repo</h2>
-			<p><span class='large-emoticon'>🤔❓</span><br><br><br>You need to create a new GitHub repository for your project. What
-				do you call it?</p>
-			<button onclick="createGitHubRepo('success')">Weather-Finances-Portfolio-Dashboard-Quiz</button>
-			<button onclick="createGitHubRepo('failure')">Potato</button>
-		</div>
-
-		<div id="challenge2" class="level hidden">
-			<h2>Challenge: Choose a Coding Language</h2>
-			<p><span class='large-emoticon'>😐❓</span><br><br><br>You must choose a coding language for your project. What do you
-				choose?</p>
-			<button onclick="chooseLanguage('success')">Vanilla JavaScript</button>
-			<button onclick="chooseLanguage('failure')">jQuery</button>
-		</div>
-
-		<div id="challenge3" class="level hidden">
-			<h2>Challenge: Deploy to Netlify</h2>
-			<p><span class='large-emoticon'>😬❓</span><br><br><br>You need to deploy your project to Netlify. Are you ready?</p>
-			<button onclick="deployToNetlify('success')">Yes, let's deploy!</button>
-			<button onclick="deployToNetlify('failure')">No, I'll do it later.</button>
-		</div>
-
-		<div id="resultMessage" class="level hidden">
-			<h2>Result<br><br></h2>
-			<p id="message"></p>
-			<button id="continueButton" onclick="continueAdventure()">Continue Adventure</button>
-		</div>
-
-		<div id="finalScores" class="level hidden">
-			<h2>Final Scores<br><br></h2>
-			<p>Skills: <span id="finalSkills"></span></p>
-			<p>Confidence: <span id="finalConfidence"></span></p>
-			<button onclick="restartAdventure()">Play Again</button>
-		</div>
-
-		<div class="bar skills level">
-			<div class="bar-label">Skills</div>
-			<div class="barFill"></div>
-		</div>
-
-		<div class="bar confidence level">
-			<div class="bar-label">Confidence</div>
-			<div class="barFill"></div>
-		</div>
-	</div>
-
-
-
-	<script>
-		let currentChallenge = 1;
-		let skills = 1;
-		let confidence = 100;
-
-		function startAdventure() {
-			document.getElementById('startScreen').classList.add('hidden');
-			document.getElementById(`challenge${currentChallenge}`).classList.remove('hidden');
-			updateSkillsBar()
-			updateConfidenceBar()
-		}
-
-		function createGitHubRepo(outcome) {
-			if (outcome === 'success') {
-				skills += 33;
-				document.getElementById('resultMessage').classList.remove('hidden');
-				document.getElementById('message').innerHTML = "<span class='large-emoticon'>😄💾</span><br><br><br> Success! You created a new GitHub repo.";
-				updateSkillsBar();
-			} else {
-				confidence -= 33;
-				document.getElementById('resultMessage').classList.remove('hidden');
-				document.getElementById('message').innerHTML = "<span class='large-emoticon'>😭🥔</span><br><br><br> Oh no! You were marked down by Central Grading because your repo name was not unique enough.";
-				updateConfidenceBar()
-			}
-			document.getElementById(`challenge${currentChallenge}`).classList.add('hidden');
-			document.getElementById('resultMessage').classList.remove('hidden');
-		}
-
-		function chooseLanguage(outcome) {
-			if (outcome === 'success') {
-				skills += 33;
-				document.getElementById('resultMessage').classList.remove('hidden');
-				document.getElementById('message').innerHTML = "<span class='large-emoticon'>😄🎉</span><br><br><br> Success! You chose JavaScript and don't have to read any new documentation.";
-				updateSkillsBar();
-			} else {
-				confidence -= 33;
-				document.getElementById('resultMessage').classList.remove('hidden');
-				document.getElementById('message').innerHTML = "<span class='large-emoticon'>😭📖</span><br><br><br> Oh no! They just released jQuery 4.0, and now you have to go and read all the new documentation.";
-				updateConfidenceBar()
-			}
-			document.getElementById(`challenge${currentChallenge}`).classList.add('hidden');
-			document.getElementById('resultMessage').classList.remove('hidden');
-		}
-
-		function deployToNetlify(outcome) {
-			if (outcome === 'success') {
-				skills += 33;
-				document.getElementById('resultMessage').classList.remove('hidden');
-				document.getElementById('message').innerHTML = "<span class='large-emoticon'>😄🌟</span><br><br><br> Success! Your project has been deployed to Netlify.";
-				updateSkillsBar();
-			} else {
-				confidence -= 33;
-				document.getElementById('resultMessage').classList.remove('hidden');
-				document.getElementById('message').innerHTML = "<span class='large-emoticon'>😭💥</span><br><br><br> Oh no! You were marked down by Central Grading because your project didn't deploy correctly and has 1 million errors in the console.";
-				updateConfidenceBar()
-			}
-			document.getElementById(`challenge${currentChallenge}`).classList.add('hidden');
-			document.getElementById('resultMessage').classList.remove('hidden');
-		}
-
-		function updateSkillsBar() {
-			const skillsPercentage = Math.max(Math.min(skills, 100), 0);
-			document.querySelector('.skills .barFill').style.width = `${skillsPercentage}%`;
-		}
-		function updateConfidenceBar() {
-			const confidencePercentage = Math.max(Math.min(confidence, 100), 0);
-			document.querySelector('.confidence .barFill').style.width = `${confidencePercentage}%`;
-		}
-
-		function restartAdventure() {
-			location.reload();
-		}
-
-		function continueAdventure() {
-			document.getElementById('resultMessage').classList.add('hidden');
-			currentChallenge++;
-			if (currentChallenge === 4) {
-				document.getElementById('finalSkills').innerText = skills;
-				document.getElementById('finalConfidence').innerText = confidence;
-				document.getElementById('finalScores').classList.remove('hidden');
-				document.getElementById('continueButton').classList.add('hidden');
-			} else {
-				document.getElementById(`challenge${currentChallenge}`).classList.remove('hidden');
-			}
-		}
-	</script>
-</body>
-
+      function continueAdventure() {
+        document.getElementById('resultMessage').classList.add('hidden');
+        currentChallenge++;
+        if (currentChallenge === 4) {
+          document.getElementById('finalSkills').innerText = skills;
+          document.getElementById('finalConfidence').innerText = confidence;
+          document.getElementById('finalScores').classList.remove('hidden');
+          document.getElementById('continueButton').classList.add('hidden');
+        } else {
+          document.getElementById(`challenge${currentChallenge}`).classList.remove('hidden');
+        }
+      }
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
