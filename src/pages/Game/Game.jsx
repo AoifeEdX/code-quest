@@ -65,15 +65,3 @@ export default function Game() {
         </section>
       );
     }
-  
-
-    return (
-      <section className='page-section' id='game'>
-        <div className="container">
-          <div>{lives}</div>
-          <div>{points}</div>
-        </div>
-        <Challenge count={count} handleAnswerButton= {handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton}/>
-      </section>
-    );
-  }
