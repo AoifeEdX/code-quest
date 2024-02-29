@@ -8,6 +8,15 @@ export default function Game() {
   const [lives, setLives] = useState(3);
   const [points, setPoints] = useState(0);
   const [count, setCount] = useState(0);
+  const [isGameRunning, setIsGameRunning] = useState(true);
+
+  const runGame = () => {
+    setIsGameRunning((prev) => !prev);
+  }
+
+  const stopGame = () => {
+    setIsGameRunning((prev) => !prev);
+  }
   
   const handleAnswerButton = (event) => {
     console.log(event.target.name);
@@ -18,27 +27,38 @@ export default function Game() {
     if (answer === correct_answer) {
       setPoints(prevPoints => prevPoints + 50);
       alert("Correct! You earned 50 points!");
-    }
-    else {
+    } else {
       alert(`Wrong answer!`);
-      if (lives > 0) {
+      if (lives > 1) {
         setLives(prevLives => prevLives - 1);
+      } else {
+        setLives(prevLives => prevLives - 1);
+        alert('You have no lives left. Game Over');
       }
     }
-    handleNetxQuestionButton();
-  }
 
-  const handleNetxQuestionButton = () => {
-      setCount(prevCount => prevCount + 1);
+    if (count === questions.length - 1) {
+        alert(`Congratulations!!! You reach the destination. Your score is ${points}`);
+        stopGame();
+      } else {
+        handleNetxQuestionButton();
+      }
     }
 
-    return (
-      <section className='page-section' id='game'>
-        <div className="container">
-          <div>{lives}</div>
-          <div>{points}</div>
-        </div>
-        <Challenge count={count} handleAnswerButton= {handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton}/>
-      </section>
-    );
-  }
+    const handleNetxQuestionButton = () => {
+      if (count < questions.length - 1) {
+        setCount(prevCount => prevCount + 1);
+      }
+    }
+
+      return (
+        <section className='page-section' id='game'>
+          <div className="container">
+            <div>{lives}</div>
+            <div>THech Skills {points}</div>
+          </div>
+          <Challenge count={count} handleAnswerButton={handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton} />
+        </section>
+      );
+    }
+  
