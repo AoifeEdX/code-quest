@@ -4,7 +4,7 @@ import Game from './pages/Game/Game';
 import CompassGame from './components/CompassGame/CompassGame';
 import LivesGame from './components/LivesGame/LivesGame';
 import Welcome from './components/Welcome';
-import LeaderBoard from './components/Leaderboard';
+import LeaderBoardButton from './components/LeaderBoardButton';
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
       <Game/>
 			<LivesGame />
 			<CompassGame />			
-      <LeaderBoard />
+      <LeaderBoardButton />
     </>
   )
 }
