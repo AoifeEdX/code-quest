@@ -2,7 +2,7 @@
 	{
 			"id": 1,
 			"name": "Bug Invasion",
-			"image": "./src/assets/bug.png",
+			"image": "/src/assets/livespointsgame/bug.png",
 			"description": "Your journey begins with the Bug Invasion! Navigate through different regions of CodeLand, each plagued by specific bugs. Use your coding skills to debug and restore order. In this region of CodeLand, HTML tags have been tangled up, causing chaos in the digital landscape. Your task is to correct the tags in the provided code snippet to restore order and ensure proper rendering of the content.",
 			"instruction": "Identify and correct the errors in the HTML tags. Make sure each tag is properly matched and closed. Get ready to use your HTML skills to debug and save CodeLand!",
 			"question": "What is 1 + 2?",
@@ -11,7 +11,7 @@
 	{
 			"id": 2,
 			"name": "The Framework Forge",
-			"image": "./src/assets/code.png",
+			"image": "/src/assets/livespointsgame/code.png",
 			"description": "Visit the mystical Framework Forge to unlock new tools and frameworks. ",
 			"instruction": "Learn and master React, Vue, Angular, or other powerful frameworks to enhance your abilities.",
 			"question": "What is 2 + 2?",
@@ -20,7 +20,7 @@
 	{
 			"id": 3,
 			"name": "The Browser Battleground",
-			"image": "./src/assets/browser.png",
+			"image": "/src/assets/livespointsgame/browser.png",
 			"description": "Confront browser-based challenges in the Chrome Citadel, Firefox Fortress, and Safari Sanctuary.",
 			"instruction": "Overcome compatibility issues and optimize your code for different browsers.",
 			"question": "What is 2 + 3?",
