@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "options": ["Paris", "Berlin", "London", "Madrid"],
+    "correct_answer": "Paris"
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Mars", "Venus", "Jupiter", "Saturn"],
+    "correct_answer": "Mars"
+  },
+   {
+    "question": "What is the capital of Germany?",
+    "options": ["Paris", "Berlin", "London", "Madrid"],
+    "correct_answer": "Berlin"
+  },
+  {
+    "question": "Which planet is known as the biggest Planet?",
+    "options": ["Mars", "Venus", "Jupiter", "Saturn"],
+    "correct_answer": "Saturn"
+  },
+   {
+    "question": "What is the capital of the UK?",
+    "options": ["Paris", "Berlin", "London", "Madrid"],
+    "correct_answer": "London"
+  },
+  {
+    "question": "Which planet is known as the hottest Planet?",
+    "options": ["Mars", "Venus", "Jupiter", "Saturn"],
+    "correct_answer": "Venus"
+  }
+]
