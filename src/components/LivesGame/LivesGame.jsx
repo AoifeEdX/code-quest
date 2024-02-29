@@ -3,6 +3,7 @@ import Challenge from './Challenge';
 import Lives from './Lives';
 import Points from './Points';
 import questions from './questions.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Game = () => {
   const [state, setState] = useState({
@@ -38,7 +39,8 @@ const Game = () => {
   const currentQuestionData = questions[state.currentQuestionIndex];
 
   return (
-    <div>
+		<div className="border rounded p-4 m-4"> 	
+			<h1 className="my-5 text-center">Game example</h1>
       <div>
         {state.currentQuestionIndex < questions.length ? (
           <Challenge
