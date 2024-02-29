@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Challenge from "../../components/Challenge/Challenge";
 import questions from './../../assets/questions.json';
+import Lives from '../../components/Lives/Lives';
+
 
 
 
@@ -54,7 +56,9 @@ export default function Game() {
       return (
         <section className='page-section' id='game'>
           <div className="container">
-            <div>{lives}</div>
+            <div>
+              <Lives lives={lives} />
+            </div>
             <div>THech Skills {points}</div>
           </div>
           <Challenge count={count} handleAnswerButton={handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton} />
