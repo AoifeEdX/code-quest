@@ -4,15 +4,18 @@
 import './App.css'
 import Game from './pages/Game/Game'
 import Welcome from './components/Welcome/index'
-import LeaderBoard from './components/Leaderboard'
+
+import LeaderBoardButton from './components/LeaderBoardButton'
+
 
 function App() {
 
   return (
     <>
       <Welcome />
+      <LeaderBoardButton />
       <Game/>
-      <LeaderBoard />
+
     </>
   )
 }
