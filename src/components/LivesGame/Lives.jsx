@@ -15,7 +15,7 @@ const Lives = ({ lives }) => {
         </Col>
       </Row>
       <Row>
-        <Col className="display-5 mb-5">
+        <Col className="display-5 mb-5 text-center">
           {hearts.map((heart, index) => (
             <span key={index}>{heart}</span>
           ))}

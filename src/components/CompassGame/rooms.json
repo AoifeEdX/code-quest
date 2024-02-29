@@ -1,13 +1,13 @@
 {
   "hall": {
-    "description": "You are in the Hall.",
+    "description": "You are in the hall.",
 		"thought": "Where did I leave my phone? Which room is it in?",
 		"direction": "North, South, East, West",
     "north": "kitchen",
     "east": "bedroom",
     "south": "bathroom",
     "west": "lounge",
-    "image": "./src/assets/compassgame/hall.png"
+    "image": "/src/assets/compassgame/hall.png"
   },
   "kitchen": {
     "description": "You are in the kitchen.",
@@ -17,7 +17,7 @@
     "east": null,
     "south": "hall",
     "west": null,
-    "image": "./src/assets/compassgame/kitchen.png"
+    "image": "/src/assets/compassgame/kitchen.png"
   },
   "bedroom": {
     "description": "You are in the bedroom.",
@@ -27,7 +27,7 @@
     "east": null,
     "south": null,
     "west": "hall",
-    "image": "./src/assets/compassgame/bedroom.png"
+    "image": "/src/assets/compassgame/bedroom.png"
   },
   "bathroom": {
     "description": "You are in the bathroom.",
@@ -37,7 +37,7 @@
     "east": null,
     "south": null,
     "west": null,
-    "image": "./src/assets/compassgame/bathroom.png"
+    "image": "/src/assets/compassgame/bathroom.png"
   },
   "lounge": {
     "description": "You are in the lounge.",
@@ -47,6 +47,6 @@
     "east": "hall",
     "south": null,
     "west": null,
-    "image": "./src/assets/compassgame/lounge.png"
+    "image": "/src/assets/compassgame/lounge.png"
   }
 }

@@ -26,8 +26,9 @@ function CompassGame() {
   const availableDirections = Object.keys(currentRoomInfo).filter(key => key !== 'description' && key !== 'image');
 
   return (
-    <Container fluid className="m-5 p-5">
-			<h1 className="my-5">Where's my phone?</h1>
+		<div className="border rounded p-4 m-4 text-center"> 
+		<Container fluid>
+			<h1 className="my-5">Game example</h1>
       <Row>
         <Col md={6} className="my-5">
           <img src={currentRoomInfo.image} alt={currentRoom} style={{ width: '100%', height: 'auto' }} />
@@ -43,6 +44,7 @@ function CompassGame() {
         </Col>
       </Row>
     </Container>
+		</div>
   );
 }
 
