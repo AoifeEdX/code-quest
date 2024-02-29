@@ -55,7 +55,7 @@ const Welcome = () => {
 
     return (
         <>
-         <div className='d-flex flex-column flex-md-column flex-lg-row mt-3'>
+         <div className='d-flex flex-column mt-3'>
                 <div className='hero-img'>
                     <img src='../../../public/background.jpeg' alt='coding kingdom'></img>
                     
