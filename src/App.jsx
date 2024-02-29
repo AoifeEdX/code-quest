@@ -1,21 +1,23 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
 import Game from './pages/Game/Game'
-import Welcome from './components/Welcome/index'
-
+import Header from './components/Header/Header';
+import Welcome from './components/Welcome';
 import LeaderBoardButton from './components/LeaderBoardButton'
+import Game from './pages/Game/Game';
+import CompassGame from './components/CompassGame/CompassGame';
+import LivesGame from './components/LivesGame/LivesGame';
 
 
 function App() {
 
   return (
     <>
-      <Welcome />
-      <LeaderBoardButton />
+		<Header />
+      <Welcome />      
       <Game/>
-
+			<LivesGame />
+			<CompassGame />			
+      <LeaderBoardButton />
     </>
   )
 }
