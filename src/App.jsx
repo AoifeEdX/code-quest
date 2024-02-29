@@ -11,6 +11,7 @@ function App() {
   return (
     <>
 		<Header />
+		<Header />
       <Welcome />
       <Game/>
 			<LivesGame />
