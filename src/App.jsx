@@ -14,8 +14,9 @@ function App() {
       <Welcome />
       <Game/>
 			<LivesGame />
+			<CompassGame />			
+      <LeaderBoardButton />
 			<CompassGame />				
-			<LeaderBoardButton />
     </>
   )
 }

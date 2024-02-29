@@ -15,5 +15,5 @@ const LeaderBoardButton = () => {
         </>
 
     )
-};
+}
 export default LeaderBoardButton;
