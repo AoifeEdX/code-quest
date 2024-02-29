@@ -16,6 +16,7 @@ function App() {
 			<LivesGame />
 			<CompassGame />			
       <LeaderBoardButton />
+			<CompassGame />				
     </>
   )
 }

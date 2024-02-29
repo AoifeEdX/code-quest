@@ -10,11 +10,10 @@ const LeaderBoardButton = () => {
         <button type="button" className="btn btn-warning" onClick={() => setActive('leaderboard element')}>Leaderboard</button>
         <div>
             {active === 'leaderboard element' && <LeaderBoard />}
-            
+
         </div>
         </>
 
     )
 }
-
 export default LeaderBoardButton;
