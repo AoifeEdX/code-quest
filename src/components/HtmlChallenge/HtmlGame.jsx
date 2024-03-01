@@ -5,6 +5,7 @@ import htmlQuestionList from "../../../htmlQuestionsList.json";
 // todo only one selected answer excepted???
 // todo add styling to selected answer
 // todo add link to next level button
+// todo fix disable button 
 const HtmlGame = () => {
 
     // let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -12,8 +13,8 @@ const HtmlGame = () => {
     let [selectedAnswer, setSelectedAnswer] = useState('');
     let [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
     let [result, setResult] = useState( {
-        lives: 5,
-        score: 100
+        lives: 3,
+        score: 0
     })
     const { question, options, correctAnswer } = htmlQuestionList[currentQuestion];
     console.log(question);
@@ -27,7 +28,7 @@ const HtmlGame = () => {
                                             score: prev.score + 50} : 
                                             {...prev,
                                             lives: prev.lives - 1,
-                                            score: prev.score - 50}) 
+                                            }) 
     }
 
     const onAnswerSelected = (answer, index) => {
@@ -36,7 +37,7 @@ const HtmlGame = () => {
         if (answer === correctAnswer) {
             setSelectedAnswer(true);
         } else {
-            selectedAnswer(false);
+            setSelectedAnswer(false);
         }
     }
 

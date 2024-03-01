@@ -19,8 +19,9 @@ function App() {
 
       <Route path='/' element={<Welcome />} />
         {/* <Welcome /> */}
-      {/* <Route path='/game' element={<Game />} /> */}
+      <Route path='/game' element={<Game />} />
       <Route path='/level2' element={<HtmlGame />} />
+      <Route path='/level3' element={<CompassGame />} />
 
     </Routes>
       {/* <Game/> */}
