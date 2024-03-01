@@ -6,6 +6,9 @@ import Game from './pages/Game/Game';
 import Welcome from './components/Welcome';
 // import LeaderBoardButton from './components/LeaderBoardButton';
 import { Routes, Route } from 'react-router-dom';
+import GameHtml from './pages/GameHtml';
+import HtmlChallenge from './components/HtmlChallenge/HtmlQuestionDisplay';
+import HtmlQuestionDisplay from './components/HtmlChallenge/HtmlQuestionDisplay';
 
 function App() {
 
@@ -16,7 +19,8 @@ function App() {
 
       <Route path='/' element={<Welcome />} />
         {/* <Welcome /> */}
-      <Route path='/game' element={<Game />} />
+      {/* <Route path='/game' element={<Game />} /> */}
+      <Route path='/level2' element={<HtmlQuestionDisplay />} />
 
     </Routes>
       {/* <Game/> */}
@@ -24,6 +28,7 @@ function App() {
 			{/* <CompassGame />			 */}
       {/* <LeaderBoardButton /> */}
 			{/* <CompassGame />				 */}
+      {/* <GameHtml /> */}
     </>
   )
 }

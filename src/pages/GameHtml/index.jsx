@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Challenge from "../../components/Challenge/Challenge";
-import questions from './../../assets/questions.json';
+import HtmlChallenge from "../../components/HtmlChallenge/HtmlQuestionDisplay";
+import htmlQuestionList from './../../../htmlQuestionsList.json';
 
 
 
@@ -12,9 +12,9 @@ export default function Game() {
   
   const handleAnswerButton = (event) => {
     console.log(event.target.name);
-    console.log(questions[count].correct_answer);
+    console.log(htmlQuestionList[count].correct_answer);
     const answer = event.target.name;
-    const correct_answer = questions[count].correct_answer;
+    const correct_answer = htmlQuestionList[count].correct_answer;
     
     if (answer === correct_answer) {
       setPoints(prevPoints => prevPoints + 50);
@@ -39,7 +39,7 @@ export default function Game() {
           <div>{lives}</div>
           <div>{points}</div>
         </div>
-        <Challenge count={count} handleAnswerButton= {handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton}/>
+        <HtmlChallenge count={count} handleAnswerButton= {handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton}/>
       </section>
     );
   }
