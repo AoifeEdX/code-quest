@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-// import HtmlQuestionCard from "./HtmlQuestionCard";
 import htmlQuestionList from "../../../htmlQuestionsList.json";
-// import HtmlChallenge from "./HtmlChallenge.jsx";
 
-
-
+// todo if scores or lives 0 modal that you lost
+// todo only one selected answer excepted???
+// todo add styling to selected answer
+// todo add link to next level button
 const HtmlGame = () => {
 
     // let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -45,7 +45,7 @@ const HtmlGame = () => {
         <>
             <div>
                 <h2>Congratulation, and welcome in HTML Forge</h2>
-                <img></img>
+                <img src="/htmlgame-background.jpeg" alt="coding man"></img>
                 <p>You are one step closer to save our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing chaos in the digital landscape. </p>
                 <p>Armed with your coding skills, each of your correct answer comes to life and helps to save our World. Embrace the true magic of HTML Forge! Learn and master Html, enhance your abilities.</p>
             </div>
