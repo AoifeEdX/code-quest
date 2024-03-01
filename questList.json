@@ -8,10 +8,10 @@
     },
     {
         "id": 2,
-        "name": "The Framework Forge",
+        "name": "Congratulation, and welcome in HTML Forge",
         "image": "./src/assets/buginvasion.jpg",
-        "description": "Visit the mystical Framework Forge to unlock new tools and frameworks. ",
-        "instruction": "Learn and master React, Vue, Angular, or other powerful frameworks to enhance your abilities."
+        "description": "You are one step closer to save our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing chaos in the digital landscape.  ",
+        "instruction": "Armed with your coding skills, each of your correct answer comes to life and helps to save our World. Embrace the true magic of HTML Forge! Learn and master Html, enhance your abilities."
     },
     {
         "id": 3,
