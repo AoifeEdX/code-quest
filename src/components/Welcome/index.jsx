@@ -1,5 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
+import Nav from 'react-bootstrap/Nav';
 
 const Welcome = ({startGame}) => {
     const [formData, setFormData] = useState({
@@ -70,6 +71,18 @@ const Welcome = ({startGame}) => {
                         <button className='btn btn-outline-success mb-5' type='submit' onClick={startGame}>Submit</button>               
                         <p className='mt-5 h4'>Meet {formData.text}, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p>
                     </Form>
+                    <Nav>
+                        <Nav.Link className="nav-element" href="/game">Start Game</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link className="nav-element" href="/">Level1</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link className="nav-element" href="/level2">Level2</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link className="nav-element" href="/">Level3</Nav.Link>
+                    </Nav>
                 </div>
 
             </div>    

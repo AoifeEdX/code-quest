@@ -8,6 +8,7 @@ import './Game.css'
 
 
 
+
 export default function Game() {
   const [lives, setLives] = useState(5);
   const [points, setPoints] = useState(0);

@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "question": "Type the tag, what an unordered list starts with!",
+        "answer": "<ul>"
+    },
+    {
+        "id": 2,
+        "question": "What is the tag for hyperlink?",
+        "answer": "<a></a>"
+    },
+    {
+        "id": 3,
+        "question": "What is the first line of an HTML file?",
+        "answer": "<!Doctype html>"
+    },
+    {
+        "id": 4,
+        "questions": "What does HTML stand for",
+        "answer": "Hyper Text Markup Language"
+    }
+
+
+]
