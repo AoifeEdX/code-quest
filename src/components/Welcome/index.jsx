@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 
-const Welcome = () => {
+const Welcome = ({startGame}) => {
     const [formData, setFormData] = useState({
         username: '',
         text: 'Player'
@@ -68,7 +68,7 @@ const Welcome = () => {
                         <Form.Group className='mb-3'>
                             <input className='form-label border-success rounded' type='text' name='username' placeholder='type your username' value={formData.username} onChange={handleInputChange}></input>{error && error.username ? <p className='text-danger fw-bolder'>{error.username}</p> : ''}
                         </Form.Group>
-                        <button className='btn btn-outline-success mb-5' type='submit'>Submit</button>               
+                        <button className='btn btn-outline-success mb-5' type='submit' onClick={startGame}>Submit</button>               
                         <p className='mt-5 h4'>Meet {formData.text}, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p>
                     </Form>
                     <Nav>
