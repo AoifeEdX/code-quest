@@ -1,18 +1,39 @@
 import questions from './../../assets/questions.json'
+import'./Challenge.css'
 
 export default function Challenge({ count, handleAnswerButton, handleNextQuestion }) {
   const question = questions[count].question || {};
-  const answer_options = questions[count].options || [];
+  const answerOptions = questions[count].options || [];
 
   return (
-    <section className='page-section' id='challenge'>
-      <h2>Challenge {count + 1}</h2>
-      <p className='question'>{question}</p>
+    <div className="container-fluid challenge1">
+    <div className="container">
+    <img src="./images/coding1.jpg" className="img-fluid" alt="coding"/>
+    </div>
+    <div className='container questionHeader' id='challenge'>
+      <h3 className='question'>{question}</h3>
       <div className='options'>
-        {answer_options.map((option) => (
-          <button key={option} name={option} onClick={handleAnswerButton}>{option}</button>
-        ))}
+      <form onSubmit={handleAnswerButton}>
+      {answerOptions.map((option, index) => (
+        <div key={index} className="form-check">
+          <input
+            type="radio"
+            className="form-check-input"
+            name="answer"
+            id={`option${index}`}
+            value={option}
+          />
+          <label className="form-check-label" htmlFor={`option${index}`}>
+            {option}
+          </label>
+        </div>
+      ))}
+      <button type="submit" className="btn btn-primary mt-3">
+        Submit
+      </button>
+    </form>
       </div>
-      </section>
+    </div>
+    </div>
   );
 }

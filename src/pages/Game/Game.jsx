@@ -2,18 +2,23 @@ import { useState } from 'react';
 import Challenge from "../../components/Challenge/Challenge";
 import questions from './../../assets/questions.json';
 import Lives from '../../components/Lives/Lives';
+import Welcome from '../../components/Welcome/index';
+import './Game.css'
 
 
 
 
 export default function Game() {
-  const [lives, setLives] = useState(3);
+  const [lives, setLives] = useState(5);
   const [points, setPoints] = useState(0);
   const [count, setCount] = useState(0);
-  const [isGameRunning, setIsGameRunning] = useState(true);
+  const [isGameRunning, setIsGameRunning] = useState(false);
 
-  const runGame = () => {
+  const startGame = () => {
     setIsGameRunning((prev) => !prev);
+    setLives(5);
+    setCount(0);
+    setPoints(0);
   }
 
   const stopGame = () => {
@@ -21,10 +26,10 @@ export default function Game() {
   }
   
   const handleAnswerButton = (event) => {
-    console.log(event.target.name);
-    console.log(questions[count].correct_answer);
-    const answer = event.target.name;
-    const correct_answer = questions[count].correct_answer;
+    event.preventDefault();
+    const form = event.currentTarget;
+    const answer = event.currentTarget.answer.value;
+    const correct_answer = questions[count].correctAnswer;
     
     if (answer === correct_answer) {
       setPoints(prevPoints => prevPoints + 50);
@@ -36,32 +41,40 @@ export default function Game() {
       } else {
         setLives(prevLives => prevLives - 1);
         alert('You have no lives left. Game Over');
+        stopGame();
       }
+      event.currentTarget = '';
     }
 
     if (count === questions.length - 1) {
-        alert(`Congratulations!!! You reach the destination. Your score is ${points}`);
-        stopGame();
-      } else {
-        handleNetxQuestionButton();
-      }
+      alert(`Congratulations!!! You reach the destination. Your score is ${points}`);
+      stopGame();
+    } else {
+      handleNetxQuestionButton();
     }
-
-    const handleNetxQuestionButton = () => {
-      if (count < questions.length - 1) {
-        setCount(prevCount => prevCount + 1);
-      }
+  form.reset();
+  }
+  
+  const handleNetxQuestionButton = () => {
+    if (count < questions.length - 1) {
+      setCount(prevCount => prevCount + 1);
     }
+  }
 
-      return (
-        <section className='page-section' id='game'>
-          <div className="container">
-            <div>
-              <Lives lives={lives} />
-            </div>
-            <div>THech Skills {points}</div>
+  return (
+    <>
+      {!isGameRunning && <Welcome startGame={startGame} />}
+
+      {isGameRunning && (<section className='page-section' id='game'>
+        <div className="container challengeHeader">
+          <div>
+            <Lives lives={lives} />
           </div>
-          <Challenge count={count} handleAnswerButton={handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton} />
-        </section>
+          <div>THech Skills {points}</div>
+        </div>
+        <Challenge count={count} handleAnswerButton={handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton} />
+      </section>)
+      }
+    </>
       );
     }

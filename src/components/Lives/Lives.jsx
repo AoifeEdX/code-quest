@@ -9,17 +9,18 @@ export default function Lives({ lives }) {
   
 const StyledRating = styled(Rating)({
   '& .MuiRating-iconFilled': {
-    color: '#ff6d75',
+    color: '#E63946' ,
+    fontSize: 35,
   },
   '& .MuiRating-iconHover': {
-    color: '#ff3d47',
+    color: '#E63946',
   },
 });
   
 return (
       <StyledRating name="read-only"
         value={lives}
-        max={3}
+        max={5}
         readOnly
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />} 

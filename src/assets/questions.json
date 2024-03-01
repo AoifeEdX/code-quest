@@ -1,32 +1,38 @@
 [
   {
-    "question": "What is the capital of France?",
-    "options": ["Paris", "Berlin", "London", "Madrid"],
-    "correct_answer": "Paris"
+    "id": 1,
+    "question": "Which method is used to add an element to the end of an array in JavaScript?",
+    "options": ["push", "append", "addToEnd", "addElement"],
+    "correctAnswer": "push"
   },
   {
-    "question": "Which planet is known as the Red Planet?",
-    "options": ["Mars", "Venus", "Jupiter", "Saturn"],
-    "correct_answer": "Mars"
-  },
-   {
-    "question": "What is the capital of Germany?",
-    "options": ["Paris", "Berlin", "London", "Madrid"],
-    "correct_answer": "Berlin"
+    "id": 2,
+    "question": "What is the purpose of the 'let' keyword in JavaScript?",
+    "options": ["Declares a constant variable", "Declares a block-scoped variable", "Declares a global variable", "Declares a variable with restricted scope"],
+    "correctAnswer": "Declares a block-scoped variable"
   },
   {
-    "question": "Which planet is known as the biggest Planet?",
-    "options": ["Mars", "Venus", "Jupiter", "Saturn"],
-    "correct_answer": "Saturn"
-  },
-   {
-    "question": "What is the capital of the UK?",
-    "options": ["Paris", "Berlin", "London", "Madrid"],
-    "correct_answer": "London"
+    "id": 3,
+    "question": "Which method is used to remove the last element from an array in JavaScript?",
+    "options": ["pop()", "remove()", "deleteLast()", "removeLast()"],
+    "correctAnswer": "pop()"
   },
   {
-    "question": "Which planet is known as the hottest Planet?",
-    "options": ["Mars", "Venus", "Jupiter", "Saturn"],
-    "correct_answer": "Venus"
+    "id": 4,
+    "question": "How does the 'map' method differ from 'forEach' in JavaScript?",
+    "options": ["They are the same", "map returns a new array, forEach does not", "forEach returns a new array, map does not", "map and forEach cannot be used on arrays"],
+    "correctAnswer": "map returns a new array, forEach does not"
+  },
+  {
+    "id": 5,
+    "question": "How do you declare a class in JavaScript?",
+    "options": ["class MyClass {}", "function MyClass() {}", "var MyClass = {};", "let MyClass = new Class();"],
+    "correctAnswer": "class MyClass {}"
+  },
+  {
+    "id": 6,
+    "question": "What is the 'super' keyword used for in a class?",
+    "options": ["Refers to the parent class", "Refers to the child class", "Refers to the current instance of the class", "Stops the execution of the class"],
+    "correctAnswer": "Refers to the parent class"
   }
 ]

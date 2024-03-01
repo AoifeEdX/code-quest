@@ -11,12 +11,8 @@ function App() {
   return (
     <>
 		<Header />
-      <Welcome />
       <Game/>
-			<LivesGame />
-			<CompassGame />			
-      <LeaderBoardButton />
-			<CompassGame />				
+			
     </>
   )
 }
