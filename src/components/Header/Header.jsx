@@ -2,6 +2,7 @@ import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import { useState } from 'react';
 // import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import LeaderBoard from '../Leaderboard';
 
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
@@ -36,12 +37,11 @@ const Header = () => {
         </Container>
       </Navbar>
     </header>
-    <div
-      // className="modal"
-      // style={{ display: 'block', position: 'initial' }}
-    >
+    { show ? <LeaderBoard /> : null }
+    {/* <div>
       {show ? (
         <Modal.Dialog show={Boolean(show)} onHide={handleClose}>
+          <LeaderBoard />
         <Modal.Header closeButton>
           <Modal.Title>Leaderboard </Modal.Title>
         </Modal.Header>
@@ -78,7 +78,7 @@ const Header = () => {
       ) : null }
       
 
-</div>
+</div> */}
 
 
     </>
