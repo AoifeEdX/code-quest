@@ -1,11 +1,13 @@
 import questions from './../../assets/questions.json'
-import'./Challenge.css'
+import './Challenge.css'
+import { Toaster} from 'react-hot-toast';
 
 export default function Challenge({ count, handleAnswerButton, handleNextQuestion }) {
   const question = questions[count].question || {};
   const answerOptions = questions[count].options || [];
 
   return (
+    
     <div className="container-fluid challenge1">
     <div className="container">
     <img src="./images/coding1.jpg" className="img-fluid" alt="coding"/>

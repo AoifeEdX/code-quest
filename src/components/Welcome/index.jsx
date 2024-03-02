@@ -75,7 +75,7 @@ const Welcome = ({startGame}) => {
                         <Nav.Link className="nav-element" href="/game">Start Game</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link className="nav-element" href="/">Level1</Nav.Link>
+                        <Nav.Link className="nav-element" href="/level1">Level1</Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Link className="nav-element" href="/level2">Level2</Nav.Link>

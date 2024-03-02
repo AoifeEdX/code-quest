@@ -9,19 +9,21 @@ import { Routes, Route } from 'react-router-dom';
 // import GameHtml from './pages/GameHtml';
 // import HtmlChallenge from './components/HtmlChallenge/HtmlChallenge';
 import HtmlGame from './components/HtmlChallenge/HtmlGame';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
   return (
     <>
-		<Header />
+      <Header />
+      <Toaster position="top-center" reverseOrder={false} />
     <Routes >
 
       <Route path='/' element={<Welcome />} />
         {/* <Welcome /> */}
       {/* <Route path='/game' element={<Game />} /> */}
       <Route path='/level2' element={<HtmlGame />} />
-
+      <Route path='/level1' element={<Game />} />
     </Routes>
       {/* <Game/> */}
 			{/* <LivesGame /> */}
