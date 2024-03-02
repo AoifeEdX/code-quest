@@ -56,14 +56,14 @@ const Welcome = ({startGame}) => {
 
     return (
         <>
-         <div className='d-flex flex-column mt-3'>
+         <div className='d-flex flex-column justify-content-center align-items-center mt-3'>
                 <div className='hero-img'>
                     <img src='../../../public/background.jpeg' alt='coding kingdom'></img>
                     
                 </div>
                 <div className='p-5 text-left text-content'>
                     <h1 className='mt-5 mb-3 text-left'>Welcome to CodeQuest: Front-end Chronicles!</h1>
-                    <h4 className='mb-3 fw-bold h3 text-left'>As you embark on your journey, you`&apos`ll be greeted with an immersive introduction to the digital realm of CodeQuest.</h4>
+                    <h4 className='mb-3 fw-bold h3 text-left'>As you embark on your journey, you'll be greeted with an immersive introduction to the digital realm of CodeQuest.</h4>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className='mb-3'>
                             <input className='form-label border-success rounded' type='text' name='username' placeholder='type your username' value={formData.username} onChange={handleInputChange}></input>{error && error.username ? <p className='text-danger fw-bolder'>{error.username}</p> : ''}
@@ -81,7 +81,10 @@ const Welcome = ({startGame}) => {
                         <Nav.Link className="nav-element" href="/level2">Level2</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link className="nav-element" href="/">Level3</Nav.Link>
+                        <Nav.Link className="nav-element" href="/level3">Level3</Nav.Link>
+                    </Nav>
+										<Nav>
+                        <Nav.Link className="nav-element" href="/final-scores">Final Scores</Nav.Link>
                     </Nav>
                 </div>
 
