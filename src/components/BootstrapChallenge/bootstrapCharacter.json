@@ -1,0 +1,18 @@
+[	
+	{
+		"id": "winCharacter",
+		"image": "/src/assets/BootstrapGame/winCharacter.png"
+	},
+	{
+		"id": "loseCharacter",
+		"image": "/src/assets/BootstrapGame/loseCharacter.png"
+	},
+	{
+		"id": "readyCharacter",
+		"image": "/src/assets/BootstrapGame/readyCharacter.png"
+	},
+	{		
+		"id": "gameOverCharacter",
+		"image": "/src/assets/BootstrapGame/gameOverCharacter.png"
+	}
+]
