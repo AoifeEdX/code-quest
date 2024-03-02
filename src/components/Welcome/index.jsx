@@ -58,7 +58,7 @@ const Welcome = ({startGame}) => {
         <>
          <div className='d-flex flex-column justify-content-center align-items-center mt-3'>
                 <div className='hero-img'>
-                    <img src='../../../public/background.jpeg' alt='coding kingdom'></img>
+                    <img src='/background.jpeg' alt='coding kingdom'></img>
                     
                 </div>
                 <div className='p-5 text-left text-content'>
