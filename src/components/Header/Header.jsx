@@ -5,7 +5,8 @@ import Modal from 'react-bootstrap/Modal';
 import LeaderBoard from '../Leaderboard';
 
 const Header = () => {
-  const [expanded, setExpanded] = useState(false);
+	const [expanded, setExpanded] = useState(false);
+
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -84,5 +85,6 @@ const Header = () => {
     </>
   );
 }
+
 
 export default Header;

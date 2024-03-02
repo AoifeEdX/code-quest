@@ -1,0 +1,33 @@
+[
+	{
+    "question": "You want to create a responsive navigation bar using Bootstrap. Which class should you add to a <nav> element to make it collapsible on smaller screens?",
+		"image": "/src/assets/BootstrapGame/devices.png",
+    "options": ["expand-navbar", "nav-toggle", "navbar-toggler", "responsive-navbar"],
+    "correct_answer": "navbar-toggler"
+  },
+  {
+    "question": "Which Bootstrap class should you use to create a responsive, fixed-width holder for the content that adapts its width based on the screen size?",
+		"image": "/src/assets/BootstrapGame/container.png",
+    "options": ["container", "box", "boxed-field", "row col-md"],
+    "correct_answer": "container"
+  }, 
+  {
+    "question": "You need to create a button with a large size in Bootstrap. Which class should you apply to achieve this effect?",		
+		"image": "/src/assets/BootstrapGame/buttons.png",
+    "options": ["btn-big", "btn-lg", "btn-x-l", "large-btn" ],
+    "correct_answer": "btn-lg"
+	}, 
+	{
+		"question": "Which class should you use in Bootstrap to create a badge with a rounded appearance?",
+		"image": "/src/assets/BootstrapGame/badges.png",
+		"options": ["badge-rounded", "badge-circle", "badge rounded-pill", "pill-badge"],
+		"correct_answer": "badge rounded-pill"
+	},
+	{
+		"question": "When using Bootstrap's utility classes, which class should you use to visually hide an element while keeping it accessible to screen readers?",
+				"image": "/src/assets/BootstrapGame/hidden.png",
+		"options": ["sr-only", "hidden-accessible", "screen-reader", "visually-hidden"],
+	"correct_answer": "visually-hidden"
+	}
+]
+		
