@@ -58,7 +58,7 @@ const Welcome = ({startGame}) => {
         <>
          <div className='d-flex flex-column justify-content-center align-items-center mt-3'>
                 <div className='hero-img'>
-                    <img src='../../../public/background.jpeg' alt='coding kingdom'></img>
+                    <img src='/background.jpeg' alt='coding kingdom'></img>
                     
                 </div>
                 <div className='p-5 text-left text-content'>
@@ -75,16 +75,15 @@ const Welcome = ({startGame}) => {
                         <Nav.Link className="nav-element" href="/game">Start Game</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link className="nav-element" href="/">Level1</Nav.Link>
-                    </Nav>
-                    <Nav>
                         <Nav.Link className="nav-element" href="/level2">Level2</Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Link className="nav-element" href="/level3">Level3</Nav.Link>
+
                     </Nav>
 										<Nav>
                         <Nav.Link className="nav-element" href="/final-scores">Final Scores</Nav.Link>
+
                     </Nav>
                 </div>
 

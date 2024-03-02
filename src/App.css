@@ -12,6 +12,7 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	
 }
 
 a {
@@ -30,6 +31,7 @@ body {
 	place-items: center;
 	min-width: 320px;
 	min-height: 100vh;
+	margin: 0 auto;
 }
 
 h1 {
@@ -71,4 +73,9 @@ button:focus-visible {
 	button {
 		background-color: #f9f9f9;
 	}
+}
+.quest-img-container {
+	max-width: 80vw;
+	height: 20em;
+
 }

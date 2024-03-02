@@ -20,6 +20,7 @@ function App() {
     <Routes >       
       <Route path='/' element={<Welcome />} />
         {/* <Welcome /> */}
+
       {/* <Route path='/game' element={<Game />} /> */}
       <Route path='/level2' element={<HtmlGame />} />			
       <Route path='/level3' element={<BootstrapGame />} />			
