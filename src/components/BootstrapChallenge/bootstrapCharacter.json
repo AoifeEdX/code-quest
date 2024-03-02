@@ -14,5 +14,9 @@
 	{		
 		"id": "gameOverCharacter",
 		"image": "/src/assets/BootstrapGame/gameOverCharacter.png"
+	},
+	{		
+		"id": "gameWonCharacter",
+		"image": "/src/assets/BootstrapGame/gameWonCharacter.png"
 	}
 ]
