@@ -9,6 +9,9 @@ const FinalScores = () => {
 		const [lives] = useState(3);
 		const [points] = useState(100);
     const [showLeaderboard, setShowLeaderboard] = useState(false);
+    const handleButtonClick = () => {
+      setShowLeaderboard(false)
+    }
 
     return (
         <div className="vh-100 text-center">
@@ -24,7 +27,7 @@ const FinalScores = () => {
             >
                 {showLeaderboard ? 'Hide Leaderboard' : 'View Leaderboard'}
             </Button>
-            {showLeaderboard && <Leaderboard />}
+            {showLeaderboard && <Leaderboard onClose={handleButtonClick}/>}
         </div>
     );
 };
