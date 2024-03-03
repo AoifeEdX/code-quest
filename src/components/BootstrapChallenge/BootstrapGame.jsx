@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import questions from './bootstrapChallenge.json';
 import Challenge from "./BootstrapChallenge";
 import Lives from "./Lives";
 import Points from "./Points";
-import ProgressModule from './ProgressModule';
+import Character from './Character';
 import LevelComplete from './LevelComplete';
 import GameOver from './GameOver';
 
@@ -16,6 +15,13 @@ export default function Game() {
 	const [message, setMessage] = useState('Ready');
 	const [gameOver, setGameOver] = useState(false);
 	const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
+	const [lastAnsweredQuestionIndex, setLastAnsweredQuestionIndex] = useState(-1);
+
+	useEffect(() => {
+		if (allQuestionsAnswered) {
+			localStorage.setItem('finalScores', JSON.stringify({ lives, points }));
+		}
+	}, [allQuestionsAnswered, lives, points]);
 
 	const handleAnswerButton = (event) => {
 		if (gameOver) return;
@@ -32,6 +38,7 @@ export default function Game() {
 				setMessage("Incorrect! - 1 ❤️");
 			} else {
 				setLives(0);
+				setLastAnsweredQuestionIndex(count);
 				setGameOver(true);
 				setMessage("No lives left!");
 				return;
@@ -49,6 +56,17 @@ export default function Game() {
 		setMessage('Ready');
 		setGameOver(false);
 		setAllQuestionsAnswered(false);
+		setLastAnsweredQuestionIndex(-1);
+	};
+
+	const handleBuyLife = () => {
+		if (points >= 10) {
+			setLives(prevLives => prevLives + 1);
+			setPoints(prevPoints => prevPoints - 10);
+			setMessage("Life bought! - 10 points");
+			setCount(lastAnsweredQuestionIndex);
+			setGameOver(false);
+		}
 	};
 
 	const checkAllQuestionsAnswered = () => {
@@ -61,7 +79,7 @@ export default function Game() {
 	const imageSrc = currentQuestion.image || '';
 
 	return (
-		<Container className="vh-100">
+		<Container>
 			<Row className="justify-content-md-center">
 				<Col md="4" className="order-md-2 d-flex flex-column justify-content-between mb-3">
 					<div className="border border-2 rounded p-4 mb-3">
@@ -73,7 +91,7 @@ export default function Game() {
 						/>
 					</div>
 					<div className="border border-2 rounded p-4 text-center">
-						<ProgressModule
+						<Character
 							lives={lives}
 							points={points}
 							message={message}
@@ -81,7 +99,6 @@ export default function Game() {
 							allQuestionsAnswered={allQuestionsAnswered}
 							handleRestartGame={handleRestartGame}
 						/>
-
 					</div>
 				</Col>
 				<Col md="8" className="order-md-1 d-flex flex-column mb-3">
@@ -96,8 +113,8 @@ export default function Game() {
 								gameOver={gameOver}
 							/>
 						)}
-						{allQuestionsAnswered && <LevelComplete />}
-						{gameOver && <GameOver handleRestartGame={handleRestartGame} />}
+						{allQuestionsAnswered && <LevelComplete totalQuestions={questions.length} pointsPerQuestion={10} />}
+						{gameOver && <GameOver handleRestartGame={handleRestartGame} points={points} handleBuyLife={handleBuyLife} />}
 					</div>
 				</Col>
 			</Row>
