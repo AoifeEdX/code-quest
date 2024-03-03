@@ -1,27 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Row, Col, Image, Form, Nav, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const Welcome = () => {
 	const [formData, setFormData] = useState({
-		username: '',
+		username: null,
 	});
+
+    // useEffect(() => {
+    //     const storedUserName = localStorage.getItem('username');
+    //     if (storedUserName) {
+    //         setFormData({username: storedUserName});
+    //     }
+    // }, []);
+
 	const [error, setError] = useState({
 		username: null
 	});
 	const [show, setShow] = useState(false);
+
 	const navigate = useNavigate();
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
-
 		setFormData({
 			...formData,
 			[name]: value,
 		});
-		
-
+        localStorage.setItem('username', value)
 	};
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const validationErrors = validateForm(formData);
@@ -30,6 +38,7 @@ const Welcome = () => {
 			return;
 		}
 	};
+
 	const validateForm = (data) => {
 		const error = {};
 		if (!data.username) {
@@ -38,7 +47,6 @@ const Welcome = () => {
 			setError((prev) => ({
 				...prev,
 				username: error.username,
-
 			}));
 		} else {
 			setShow(true)
@@ -70,12 +78,14 @@ const Welcome = () => {
 								<input className='form-label border border-2 rounded text-center' style={{ height: '3em' }} type='text' name='username' placeholder='type your username' value={formData.username} onChange={handleInputChange}></input>{error && error.username ? <p className='text-danger fw-bolder'>{error.username}</p> : ''}
 							</Form.Group>
 							<button className='btn btn-outline-success mb-5' type='submit' onClick={handleSubmit}>Submit</button>
+
 							{show && <p className='mt-2 h5'>Meet <span className="bg-secondary p-1">{formData.username}</span>, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p>}
+
 						</Form>
 					</div>
 				</Row>
 				{show && <Row className="m-5 vw-30">
-					<Button className="border border-2 rounded" variant="danger" type='submit' disabled={null} onClick={navigateToLevel1}>Start the Game</Button>
+					<Button className="border border-2 rounded" variant="danger" type='submit' onClick={navigateToLevel1}>Start the Game</Button>
 				</Row>}
 			</Container>
 
