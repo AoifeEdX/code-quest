@@ -18,7 +18,11 @@ function App() {
   return (
     <>
       <Header />
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster  reverseOrder={false}  containerStyle={{
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}/>
        <Routes >       
       <Route path='/' element={<Welcome />} />
         {/* <Welcome /> */}

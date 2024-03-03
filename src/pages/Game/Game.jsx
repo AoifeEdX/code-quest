@@ -39,7 +39,9 @@ export default function Game() {
       setPoints(prevPoints => prevPoints + 50);
       toast.success("Correct! You earned 50 points!");
     } else {
-      toast.error(`Wrong answer!`);
+      toast.error(`Wrong answer!`, {
+      duration: 1000,
+    });
       if (lives > 1) {
         setLives(prevLives => prevLives - 1);
       } else {
@@ -73,7 +75,7 @@ export default function Game() {
           <div>
             <Lives lives={lives} />
           </div>
-          <div>THech Skills {points}</div>
+          <div className='points'>Points: {points}</div>
         </div>
         <Challenge count={count} handleAnswerButton={handleAnswerButton} handleNetxQuestionButton={handleNetxQuestionButton} />
       </section>)
