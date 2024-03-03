@@ -22,7 +22,7 @@
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
     "react-flex-center": "^1.0.6",
-    "state-pool": "^0.10.1"
+    "state-pool": "^0.10.1",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.22.2",
     "react-toastify": "^10.0.4"
