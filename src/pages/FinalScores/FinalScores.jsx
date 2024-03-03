@@ -38,7 +38,7 @@ const FinalScores = () => {
             >
                 {showLeaderboard ? 'Hide Leaderboard' : 'View Leaderboard'}
             </Button>
-						{showLeaderboard && <Leaderboard onClose={handleButtonClick}/>}
+            {showLeaderboard && <Leaderboard onClose={handleButtonClick}/>}
         </div>
     );
 };
