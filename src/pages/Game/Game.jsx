@@ -13,7 +13,7 @@ export default function Game() {
   const [lives, setLives] = useState(5);
   const [points, setPoints] = useState(0);
   const [count, setCount] = useState(0);
-  const [isGameRunning, setIsGameRunning] = useState(false);
+  const [isGameRunning, setIsGameRunning] = useState(true);
 
   const startGame = () => {
     setIsGameRunning((prev) => !prev);
@@ -64,7 +64,7 @@ export default function Game() {
 
   return (
     <>
-      {!isGameRunning && <Welcome startGame={startGame} />}
+      {/* {!isGameRunning && <Welcome startGame={startGame} />} */}
 
       {isGameRunning && (<section className='page-section' id='game'>
         <div className="container challengeHeader">
