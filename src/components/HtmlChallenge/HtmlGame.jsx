@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 const HtmlGame = () => {
 
 
+
     const [show, setShow] = useState(false);
     // let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     let [currentQuestion, setCurrentQuestion] = useState(0);
@@ -77,7 +78,7 @@ const HtmlGame = () => {
             <div>
                 <h2>Congratulation, and welcome in HTML Forge</h2>
                 <div className="quest-img-container">
-                <img className="m-5 quest-img" src="/htmlgame-background.jpeg" alt="coding man"></img>
+                <img className="m-5 quest-img" src="/images/level 2.png" alt="coding man"></img>
                      </div>
                 <p>You are one step closer to save our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing chaos in the digital landscape. </p>
                 <p>Armed with your coding skills, each of your correct answer comes to life and helps to save our World. Embrace the true magic of HTML Forge! Learn and master Html, enhance your abilities.</p>
