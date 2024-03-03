@@ -12,7 +12,7 @@ export default function Challenge({ count, handleAnswerButton, handleNextQuestio
       {/*<div className="container">
     <img src="./images/coding1.jpg" className="img-fluid" alt="coding"/>
   </div>*/}
-    <div className='container challenge' id='challenge'>
+    <div className='container challenge' id='challengeLevel1'>
       <h3 className='question'>{question}</h3>
       <div className='options'>
       <form onSubmit={handleAnswerButton}>

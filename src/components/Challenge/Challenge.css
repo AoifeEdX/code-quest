@@ -1,5 +1,5 @@
 .challenge1 {
-  height: calc(100vh - 90px - 73px);
+  height: calc(100vh - 140px - 75px);
   display: flex;
   flex-direction: row;
   background: url('/images/coding1.jpg');
@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-#challenge {
+#challengeLevel1 {
   margin: 20px;
   height: fit-content;
   padding: 15px;
@@ -23,7 +23,7 @@
 }
 
 @media (min-width: 600px) {
-  #challenge {
+  #challengeLevel1 {
     width: 50%;
     margin: 50px;
     padding: 50px;
