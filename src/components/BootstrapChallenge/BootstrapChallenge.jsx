@@ -15,8 +15,8 @@ export default function Challenge({ count, handleAnswerButton, gameOver, questio
 
     return (
         <div id='challenge'>
-            <h2 className="mt-4">Bootstrap Battle</h2>
-            <h3 className="mb-4">Question {count + 1}:</h3>
+            {/* <h2 className="mt-4">Bootstrap Battle</h2> */}
+            <h3 className="my-4">Question {count + 1}:</h3>
             <p className='question fs-5'>{question}</p>
             <div className='options text-center'>
                 {answerOptions.map((option) => (

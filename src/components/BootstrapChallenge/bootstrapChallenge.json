@@ -25,9 +25,15 @@
 	},	
 	{
 		"question": "Which Bootstrap class should you use to visually hide an element while keeping it accessible to screen readers?",
-				"image": "/assets/BootstrapGame/hidden.png",
+		"image": "/assets/BootstrapGame/hidden.png",
 		"options": ["sr-only", "hidden-accessible", "screen-reader", "visually-hidden"],
-	"correct_answer": "visually-hidden"
-	}
+		"correct_answer": "visually-hidden"
+	},
+  {
+    "question": "What does CSS stand for?",
+		"image": "/assets/BootstrapGame/css.png",
+    "options": ["Cascading Style Sheets", "Computer Style Sheets", "Creative Style Sheets", "Coded Style Sheets"],		
+    "correct_answer": "Cascading Style Sheets"
+  }
 ]
 		
