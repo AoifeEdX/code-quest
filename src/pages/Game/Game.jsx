@@ -1,9 +1,11 @@
+import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 import Challenge from "../../components/Challenge/Challenge";
 import questions from './../../assets/questions.json';
 import Lives from '../../components/Lives/Lives';
 import Welcome from '../../components/Welcome/index';
-import './Game.css'
+import './Game.css';
+import { successfulNotification, failNotification } from '../../components/Notification/Notification';
 
 
 
@@ -23,9 +25,10 @@ export default function Game() {
   }
 
   const stopGame = () => {
-    setIsGameRunning((prev) => !prev);
+    {/*setIsGameRunning((prev) => !prev);*/ }
   }
   
+
   const handleAnswerButton = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -34,22 +37,22 @@ export default function Game() {
     
     if (answer === correct_answer) {
       setPoints(prevPoints => prevPoints + 50);
-      alert("Correct! You earned 50 points!");
+      toast.success("Correct! You earned 50 points!");
     } else {
-      alert(`Wrong answer!`);
+      toast.error(`Wrong answer!`);
       if (lives > 1) {
         setLives(prevLives => prevLives - 1);
       } else {
         setLives(prevLives => prevLives - 1);
-        alert('You have no lives left. Game Over');
-        stopGame();
+        failNotification();
+         stopGame();
       }
       event.currentTarget = '';
     }
 
     if (count === questions.length - 1) {
-      alert(`Congratulations!!! You reach the destination. Your score is ${points}`);
-      stopGame();
+      successfulNotification(points, 2);
+      {/*stopGame();*/}
     } else {
       handleNetxQuestionButton();
     }
@@ -61,10 +64,9 @@ export default function Game() {
       setCount(prevCount => prevCount + 1);
     }
   }
-
   return (
     <>
-      {/* {!isGameRunning && <Welcome startGame={startGame} />} */}
+      {/*!isGameRunning && <Welcome startGame={startGame} />*/}
 
       {isGameRunning && (<section className='page-section' id='game'>
         <div className="container challengeHeader">
