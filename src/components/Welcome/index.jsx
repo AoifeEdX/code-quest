@@ -82,7 +82,7 @@ const Welcome = () => {
             </Row> }
         </Container>
         
-
+{/* temporary elements */}
                     <Nav>
                         <Nav.Link className="nav-element" href="/level2">Level2</Nav.Link>
                     </Nav>
