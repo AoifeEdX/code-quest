@@ -8,11 +8,11 @@ export default function Challenge({ count, handleAnswerButton, handleNextQuestio
 
   return (
     
-    <div className="container-fluid challenge1">
-    <div className="container">
+    <div className="container challenge1">
+      {/*<div className="container">
     <img src="./images/coding1.jpg" className="img-fluid" alt="coding"/>
-    </div>
-    <div className='container questionHeader' id='challenge'>
+  </div>*/}
+    <div className='container challenge' id='challengeLevel1'>
       <h3 className='question'>{question}</h3>
       <div className='options'>
       <form onSubmit={handleAnswerButton}>
@@ -30,7 +30,7 @@ export default function Challenge({ count, handleAnswerButton, handleNextQuestio
           </label>
         </div>
       ))}
-      <button type="submit" className="btn btn-primary mt-3">
+      <button type="submit" className="btn btn-warning mt-3 answerBtn">
         Submit
       </button>
     </form>

@@ -1,0 +1,10 @@
+.buttons {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.gameOver {
+  justify-content: space-around;
+  padding: 15px;
+}
