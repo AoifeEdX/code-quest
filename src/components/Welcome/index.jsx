@@ -77,13 +77,8 @@ const Welcome = () => {
                         <Form.Group className='d-flex flex-column justify-content-center align-items-center mb-3'>
                             <input className='form-label border-success rounded text-center' style={{height: '3em'}} type='text' name='username' placeholder='type your username' value={formData.username} onChange={handleInputChange}></input>{error && error.username ? <p className='text-danger fw-bolder'>{error.username}</p> : ''}
                         </Form.Group>
-<<<<<<< HEAD
-                        <button className='btn btn-outline-success mb-5' type='submit' onSubmit={startGame}>Submit</button>               
-                        <p className='mt-5 h4'>Meet {formData.text}, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p>
-=======
                         <button className='btn btn-outline-success mb-5' type='submit' onClick={null}>Submit</button>               
                         <p disabled={null} className='mt-2 h5'>Meet {formData.username}, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p>
->>>>>>> e3ff27d6bba213305cdea0dad1552dbfcba5841c
                     </Form>
                 </div>
             </Row>
