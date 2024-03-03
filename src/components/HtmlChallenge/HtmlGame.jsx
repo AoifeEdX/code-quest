@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import htmlQuestionList from "../../../htmlQuestionsList.json";
 import Button from 'react-bootstrap/Button';
 
@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 // todo add link to next level button
 // // todo fix disable button 
 const HtmlGame = () => {
-
+    
 
 
     const [show, setShow] = useState(false);
@@ -74,6 +74,7 @@ const HtmlGame = () => {
 
     return (
         <>
+
         <div className="m-5">
             <div>
                 <h2>Congratulation, and welcome in HTML Forge</h2>

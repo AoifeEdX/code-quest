@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
 const LeaderBoard = ({ onClose }) => {
+    const [savedUser, setSavedUser] = useState(null);
+
+    useEffect(() => {
+        const storedUserName = localStorage.getItem('username');
+        if (storedUserName) {
+            setSavedUser(storedUserName);
+        }
+    }, []);
     return (
         <>
             <Modal.Dialog className="border border-success rounded m-5" style={{boxShadow: "2px 2px 5px red"}}>
@@ -21,7 +29,7 @@ const LeaderBoard = ({ onClose }) => {
                         <tbody>
                             <tr scope="row">
                                 <td>1</td>
-                                <td>Mark</td>
+                                <td>{savedUser}</td>
                                 <td>200</td>
                             </tr>
                             <tr scope="row">
