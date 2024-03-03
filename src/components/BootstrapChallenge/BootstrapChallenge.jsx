@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import questions from './bootstrapChallenge.json';
 
-export default function Challenge({ count, handleAnswerButton, gameOver, questionAnswered, setQuestionAnswered }) {
+export default function Challenge({ count, handleAnswerButton, gameOver, questionAnswered }) {
     const questionData = questions[count] || {};
     const question = questionData.question || '';
     const answerOptions = questionData.options || [];
@@ -10,14 +10,13 @@ export default function Challenge({ count, handleAnswerButton, gameOver, questio
     const handleAnswer = (event) => {
         if (!gameOver && !questionAnswered) {
             handleAnswerButton(event);
-            setQuestionAnswered(true); 
         }
     };
 
     return (
         <div id='challenge'>
-            <h2 className="text-center mt-4">Bootstrap Battle</h2>
-            <h3 className="text-center mb-4">Question {count + 1}:</h3>
+            <h2 className="mt-4">Bootstrap Battle</h2>
+            <h3 className="mb-4">Question {count + 1}:</h3>
             <p className='question fs-5'>{question}</p>
             <div className='options text-center'>
                 {answerOptions.map((option) => (
