@@ -22,7 +22,8 @@
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
     "react-flex-center": "^1.0.6",
-    "react-router-dom": "^6.22.2"
+    "react-router-dom": "^6.22.2",
+    "state-pool": "^0.10.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

@@ -1,23 +1,30 @@
 import { useState } from 'react';
 import { Container, Row, Col, Image, Form, Nav, Button }  from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+// import {store, useGlobalState} from 'state-pool';
 
+// store.setState("username", '')
 
 const Welcome = () => {
+
     const [formData, setFormData] = useState({
         username: '',
     });
     const [error, setError] = useState({
         username: null
     });
+    const [show, setShow] = useState(false);
+
     const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         const {name, value} = e.target;
+
         setFormData( {
             ...formData,
             [name]: value,
-        });
+        }); 
+
     };
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,42 +35,30 @@ const Welcome = () => {
         }
     };
     const validateForm = (data) => {
-        console.log(data);
         const error = {};
         if (!data.username) {
             error.username = 'Please create your user name!';
+            setShow(false)
             setError((prev) => ({
                 ...prev,
                 username: error.username,
-                text: 'Player'
+
             }));
         } else {
-
+            setShow(true)
             return error;
         }
     }
     const navigateToLevel1 = () => {
         navigate('/Game')
     }
-    // let text = 'Player';
-    // const handleTextChange = (data) => {
-    //     console.log(text)
-    //     let text = 'Player';
-    //     if (data.username) {
-    //         text = data.username; 
-    //         console.log(text);
-    //     } else {
-    //         return text;
-    //     }
-    // }
-    
 
     return (
         <>
         <Container className="vh-100">
-            <Row className="justify-content-md-center">
+            <Row className="justify-content-md-center border border-2 rounded p-3">
                 <Col md="4">
-                    <Image src="/images/welcome-img.jpeg" alt="CodeQuest background" fluid></Image>
+                    <Image className="border border-2 rounded" src="/images/welcome-img.jpeg" alt="CodeQuest background" fluid></Image>
                 </Col>
                 <Col md="8" >
                     <h1>Welcome to CodeQuest: Front-end Chronicles!</h1>
@@ -75,16 +70,16 @@ const Welcome = () => {
 
                     <Form className="d-flex flex-column justify-content-center align-items-center" onSubmit={handleSubmit}>
                         <Form.Group className='d-flex flex-column justify-content-center align-items-center mb-3'>
-                            <input className='form-label border-success rounded text-center' style={{height: '3em'}} type='text' name='username' placeholder='type your username' value={formData.username} onChange={handleInputChange}></input>{error && error.username ? <p className='text-danger fw-bolder'>{error.username}</p> : ''}
+                            <input className='form-label border border-2 rounded text-center' style={{height: '3em'}} type='text' name='username' placeholder='type your username' value={formData.username} onChange={handleInputChange}></input>{error && error.username ? <p className='text-danger fw-bolder'>{error.username}</p> : ''}
                         </Form.Group>
-                        <button className='btn btn-outline-success mb-5' type='submit' onClick={null}>Submit</button>               
-                        <p disabled={null} className='mt-2 h5'>Meet {formData.username}, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p>
+                        <button className='btn btn-outline-success mb-5' type='submit' onClick={handleSubmit}>Submit</button>               
+                        { show && <p className='mt-2 h5'>Meet <span className="bg-secondary p-1">{formData.username}</span>, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p> }
                     </Form>
                 </div>
             </Row>
-            <Row className="m-5 vw-30">
-                <Button variant="danger" type='submit' disabled={null} onClick={navigateToLevel1}>Start the Game</Button>
-            </Row>
+           { show && <Row className="m-5 vw-30">
+                <Button className="border border-2 rounded" variant="danger" type='submit' disabled={null} onClick={navigateToLevel1}>Start the Game</Button>
+            </Row> }
         </Container>
         
 
