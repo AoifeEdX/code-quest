@@ -5,7 +5,7 @@ import Challenge from "../../components/Challenge/Challenge";
 import questions from './../../assets/questions.json';
 import Lives from '../../components/Lives/Lives';
 import './Game.css';
-import { successfulNotification, failNotification } from '../../components/Notification/Notification';
+import { successfulNotification, failNotification, correctAnswerNotifivation, wrongtAnswerNotifivation } from '../../components/Notification/Notification';
 
 export default function Game() {
   const [lives, setLives] = useState(5);
@@ -13,6 +13,7 @@ export default function Game() {
   const [count, setCount] = useState(0);
   const [isGameRunning, setIsGameRunning] = useState(true);
   const { username, saveFinalPoints, savePlayer, finalPoints } = useUser();
+
 
   const startGame = () => {
     setIsGameRunning((prev) => !prev);
@@ -34,11 +35,9 @@ export default function Game() {
     
     if (answer === correct_answer) {
       setPoints(prevPoints => prevPoints + 50);
-      toast.success("Correct! You earned 50 points!");
+      correctAnswerNotifivation();
     } else {
-      toast.error(`Wrong answer!`, {
-      duration: 1000,
-    });
+      wrongtAnswerNotifivation();
       if (lives > 1) {
         setLives(prevLives => prevLives - 1);
       } else {
@@ -51,7 +50,8 @@ export default function Game() {
 
     if (count === questions.length - 1) {
       successfulNotification(points + 50, 2);
-      saveFinalPoints(points + 50);
+      saveFinalPoints({ points: 42 });
+      
       {/*stopGame();*/ }
     } else {
       handleNetxQuestionButton();
