@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from "./../../context/userContext.jsx";
+import { useNavigate } from 'react-router-dom';
 import htmlQuestionList from "../../../htmlQuestionsList.json";
 import Button from 'react-bootstrap/Button';
 
@@ -26,6 +27,10 @@ console.log(finalPoints);
     const handleShow = () => setShow(true)
     // console.log(question);
     // console.log(options);
+    const navigate = useNavigate();
+    const navigateToLevel3 = () => {
+        navigate('/level3welcome')
+    }
 
     const onClickNext = () => {
         console.log(selectedAnswer)
@@ -78,16 +83,15 @@ console.log(finalPoints);
 
         <div className="m-5">
             <div>
-                <h2>Congratulation, and welcome in HTML Forge</h2>
+                <h2>Welcome in HTML Forge</h2>
+
                 <div className="quest-img-container">
-                <img className="m-5 quest-img" src="/images/level 2.png" alt="coding man"></img>
+                <img className="quest-img m-5 d-block justify-content-center col-10 col-sm-8 p-5" src="/images/level 2.png" style={{maxWidth: '700', height: '500', margin: 'auto'}} alt="coding man"></img>
                      </div>
-                <p>You are one step closer to save our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing chaos in the digital landscape. </p>
-                <p>Armed with your coding skills, each of your correct answer comes to life and helps to save our World. Embrace the true magic of HTML Forge! Learn and master Html, enhance your abilities.</p>
             </div>
             <div>
                 <h2>{currentQuestion+1}.  {question} </h2>
-                <div className="m-2">
+                <div className="m-2 d-flex flex-column col-10 col-sm-8 col-lg-6">
                     {options.map((answer, index) => (
                         <Button variant="primary" onClick={() => onAnswerSelected(answer, index)} key={answer} id={selectedAnswerIndex === index ? 'selected-answer' : null } className="m-3">{answer}</Button>
                     ))}
@@ -99,7 +103,7 @@ console.log(finalPoints);
                     <div>Scores: {result.score}</div>
                 </div>
                 {/* <button className="m-2 bg-warning"onClick={onClickNext} disabled={selectedAnswerIndex === null || currentQuestion === 3}>{currentQuestion === 3 ? 'Finish' : 'Next'}</button> */}
-                { show ? <button show={Boolean(show)} className="m-2 bg-warning"onClick={onClickNext}>Got to next level</button> : null}
+                { show ? <button show={Boolean(show)} className="m-2 bg-warning"onClick={navigateToLevel3}>Got to next level</button> : null}
             </div>
             </div>      
         </>
