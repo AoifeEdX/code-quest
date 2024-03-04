@@ -1,3 +1,11 @@
-#selected-answer {
-    border: 2px solid red;
+/* @keyframes mymove {
+    from {left: 0px;}
+    to {left: end;}
 }
+.animated-container {
+    position: relative;
+    animation: mymove 5s;
+    animation-fill-mode: forward;
+    animation-timing-function: ease-in;
+
+} */

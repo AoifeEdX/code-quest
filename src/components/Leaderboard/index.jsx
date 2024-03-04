@@ -12,7 +12,9 @@ const LeaderBoard = ({ onClose }) => {
     }, []);
     return (
         <>
-            <Modal.Dialog className="border border-success rounded m-5" style={{boxShadow: "2px 2px 5px red"}}>
+        <div className="d-flex justify-content-center" >
+
+            <Modal.Dialog scrollable className="border border-danger border-3 rounded m-5 " style={{maxWidth: '50em'}}>
                 <Modal.Header className='text-center'>
                 <h2 className='modal-title w-100'>Leaderboard</h2>
                 <button type="button" className="btn-close btn-close-white m-1" data-bs-dismiss="modal" aria-label="Close" onClick={() => onClose()}></button>
@@ -44,6 +46,7 @@ const LeaderBoard = ({ onClose }) => {
                 <Button className="m-2" variant="outline-success"  onClick={() => onClose()}>Close</Button>
                 </Modal.Footer> 
             </Modal.Dialog>
+        </div>
         </>
     )
 

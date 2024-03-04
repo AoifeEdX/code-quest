@@ -6,20 +6,13 @@ const Welcome = () => {
 	const [formData, setFormData] = useState({
 		username: null,
 	});
-
-    // useEffect(() => {
-    //     const storedUserName = localStorage.getItem('username');
-    //     if (storedUserName) {
-    //         setFormData({username: storedUserName});
-    //     }
-    // }, []);
-
 	const [error, setError] = useState({
 		username: null
 	});
 	const [show, setShow] = useState(false);
 
 	const navigate = useNavigate();
+
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
@@ -93,7 +86,7 @@ const Welcome = () => {
 				<Nav.Link className="nav-element" href="/level1">Level1</Nav.Link>
 			</Nav>
 			<Nav>
-				<Nav.Link className="nav-element" href="/level2">Level2</Nav.Link>
+				<Nav.Link className="nav-element" href="/level2welcome">Level2</Nav.Link>
 			</Nav>
 			<Nav>
 				<Nav.Link className="nav-element" href="/level3">Level3</Nav.Link>
