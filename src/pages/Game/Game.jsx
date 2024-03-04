@@ -1,21 +1,18 @@
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
+import { useUser } from "./../../context/userContext.jsx";
 import Challenge from "../../components/Challenge/Challenge";
 import questions from './../../assets/questions.json';
 import Lives from '../../components/Lives/Lives';
-import Welcome from '../../components/Welcome/index';
 import './Game.css';
 import { successfulNotification, failNotification } from '../../components/Notification/Notification';
-
-
-
-
 
 export default function Game() {
   const [lives, setLives] = useState(5);
   const [points, setPoints] = useState(0);
   const [count, setCount] = useState(0);
   const [isGameRunning, setIsGameRunning] = useState(true);
+  const { username, saveFinalPoints, savePlayer, finalPoints } = useUser();
 
   const startGame = () => {
     setIsGameRunning((prev) => !prev);
@@ -47,14 +44,15 @@ export default function Game() {
       } else {
         setLives(prevLives => prevLives - 1);
         failNotification();
-         stopGame();
+        {/*stopGame();*/ }
       }
       event.currentTarget = '';
     }
 
     if (count === questions.length - 1) {
-      successfulNotification(points, 2);
-      {/*stopGame();*/}
+      successfulNotification(points + 50, 2);
+      saveFinalPoints(points + 50);
+      {/*stopGame();*/ }
     } else {
       handleNetxQuestionButton();
     }
