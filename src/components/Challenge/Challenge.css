@@ -1,7 +1,33 @@
 .challenge1 {
+  height: calc(100vh - 140px - 75px);
   display: flex;
   flex-direction: row;
+  background: url('/images/coding1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
 }
 
+#challengeLevel1 {
+  margin: 20px;
+  height: fit-content;
+  padding: 15px;
+  border: 10px solid orange;
+  border-radius: 8px;
+  background-color: rgb(36, 36, 36, 0.7);
+}
+
+.answerBtn {
+  background-color: orange !important;
+}
+
+@media (min-width: 600px) {
+  #challengeLevel1 {
+    width: 50%;
+    margin: 50px;
+    padding: 50px;
+  }
+}
 
 
