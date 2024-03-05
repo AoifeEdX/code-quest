@@ -6,6 +6,7 @@ import { Button, Container } from 'react-bootstrap';
 import HtmlLives from './HtlmLives';
 import HtmlAnswerCharacter from './HtmlAnswerCharacter';
 import './HtmlGame.css';
+import { savePointsToStorage } from '../../utils/localStorage';
 
 const HtmlGame = () => {
     // const { finalPoints } = useUser();  
@@ -33,12 +34,12 @@ const HtmlGame = () => {
     }, []);
 
 
-    // useEffect(() => {
-	// 	if (allQuestionsAnswered) {
-	// 		savePointsToStorage(points);
-	// 		updateLeaderBordStorage();
-	// 	}
-	// }, [allQuestionsAnswered, points]);
+    useEffect(() => {
+		if (allQuestionAnswered) {
+			savePointsToStorage(result.score);
+			// updateLeaderBordStorage();
+		}
+	}, [allQuestionAnswered, result.score]);
 
     const { question, options, correctAnswer } = htmlQuestionList[currentQuestion];
 
@@ -80,7 +81,7 @@ const HtmlGame = () => {
             setSelectedAnswer(true);
             setAlertMessage("Correct!")
             // alert('correct')
-            setResult((prev) => ({...prev, score: prev.score + 50}))
+            setResult((prev) => ({...prev, score: prev.score + 10}))
             console.log('score ' + result.score)
         } else if (result.lives > 1) {
             setSelectedAnswer(false);
