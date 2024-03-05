@@ -1,5 +1,10 @@
 
 import './App.css';
+import '@fontsource/source-code-pro'; 
+import "@fontsource/source-code-pro/700.css";
+import Footer from './components/Footer/Footer';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 import Header from './components/Header/Header';
 import Game from './pages/Game/Game';
 import Welcome from './components/Welcome';
@@ -27,9 +32,11 @@ function App() {
       <Route path='/level2' element={<HtmlGame />} />			
       <Route path='/level3' element={<BootstrapGame />} />			
 			<Route path="/final-scores" element={<FinalScores />} /> 
+			<Route path="/about" element={<About />} /> 						
+			<Route path="/contact" element={<Contact />} /> 
 			<Route path="*" element={<Navigate to="/" />} />
     </Routes>
-    
+		<Footer />
     </>
   )
 }

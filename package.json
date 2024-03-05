@@ -12,10 +12,12 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/source-code-pro": "^5.0.17",
     "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.15.11",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "font-squirrel": "^0.0.1",
     "i": "^0.3.7",
     "npm": "^10.5.0",
     "react": "^18.2.0",
@@ -25,7 +27,8 @@
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.22.2",
     "react-toastify": "^10.0.4",
-    "state-pool": "^0.10.1"
+    "state-pool": "^0.10.1",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
