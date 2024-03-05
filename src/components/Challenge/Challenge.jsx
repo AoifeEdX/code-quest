@@ -6,7 +6,6 @@ import './Challenge.css'
 export default function Challenge({ count, handleAnswerButton }) {
   const question = questions[count].question || {};
   const answerOptions = questions[count].options || [];
-  const { username, finalPoints } = useUser();
   return (
     
     <div className="container challenge1">

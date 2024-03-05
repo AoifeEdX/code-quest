@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col, Image, Form, Nav, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { saveCurrentUser } from '../../utils/localStorage';
 
 const Welcome = () => {
 	const [formData, setFormData] = useState({
-		username: null,
+		username: '',
 	});
 	const [error, setError] = useState({
-		username: null
+		username: ''
 	});
 	const [show, setShow] = useState(false);
 
@@ -20,10 +21,12 @@ const Welcome = () => {
 			...formData,
 			[name]: value,
 		});
-        localStorage.setItem('username', value)
 	};
+	useEffect(() => {
+		console.log(formData.username);
+	}, [formData]);
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		const validationErrors = validateForm(formData);
 		if (validationErrors) {
@@ -47,7 +50,8 @@ const Welcome = () => {
 		}
 	}
 	const navigateToLevel1 = () => {
-		navigate('/level1')
+		saveCurrentUser(formData.username, 0);
+		navigate('/level1');
 	}
 
 	return (
@@ -64,13 +68,11 @@ const Welcome = () => {
 				</Row>
 				<Row md="12" className="mt-5 mb-2">
 					<div className="margin">
-
 						<Form className="d-flex flex-column justify-content-center align-items-center" onSubmit={handleSubmit}>
 							<Form.Group className='d-flex flex-column justify-content-center align-items-center mb-3'>
-
 								<input className='form-label border border-2 rounded text-center' style={{ height: '3em' }} type='text' name='username' placeholder='type your username' value={formData.username} onChange={handleInputChange}></input>{error && error.username ? <p className='text-danger fw-bolder'>{error.username}</p> : ''}
 							</Form.Group>
-							<button className='btn btn-outline-success mb-5' type='submit' onClick={handleSubmit}>Submit</button>
+							<button className='btn btn-outline-success mb-5' type='submit'>Submit</button>
 
 							{show && <p className='mt-2 h5'>Meet <span className="bg-secondary p-1">{formData.username}</span>, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p>}
 
