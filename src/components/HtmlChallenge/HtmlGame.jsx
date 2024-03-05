@@ -10,9 +10,7 @@ import { savePointsToStorage} from '../../utils/localStorage';
 
 
 const HtmlGame = () => {
-    // const { finalPoints } = useUser();  
-    // console.log(finalPoints);
-
+  
     const [show, setShow] = useState(false);
     const [showRestart, setShowRestart] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -36,11 +34,10 @@ const HtmlGame = () => {
 
 
     useEffect(() => {
-		if (allQuestionsAnswered) {
-			savePointsToStorage(points);
-			updateLeaderBordStorage();
+		if (allQuestionAnswered) {
+			savePointsToStorage(result.score);
 		}
-	}, [allQuestionAnswered, result]); */}
+	}, [allQuestionAnswered, result]);
 
     const { question, options, correctAnswer } = htmlQuestionList[currentQuestion];
 
@@ -73,6 +70,7 @@ const HtmlGame = () => {
             setAllQuestionAnswered(true)
             handleShow()
         }
+        {/*savePointsToStorage(result.score);*/ }
     }
 
     const onAnswerSelected = (answer, index) => {
