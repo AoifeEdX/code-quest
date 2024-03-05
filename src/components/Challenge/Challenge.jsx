@@ -1,4 +1,4 @@
-import { useUser } from "./../../context/userContext.jsx";
+import { v4 as uuidv4 } from 'uuid';
 import questions from './../../assets/questions.json'
 import './Challenge.css'
 
@@ -17,7 +17,7 @@ export default function Challenge({ count, handleAnswerButton }) {
       <div className='options'>
       <form onSubmit={handleAnswerButton}>
       {answerOptions.map((option, index) => (
-        <div key={index} className="form-check">
+        <div key={uuidv4()} className="form-check">
           <input
             type="radio"
             className="form-check-input"

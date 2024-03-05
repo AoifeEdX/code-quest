@@ -13,9 +13,9 @@ export const savePointsToStorage = (newPoints) => {
 export const updateLeaderBordStorage = () => {
   const storedUserData = localStorage.getItem('currentUser');
   const storedLeaderboard = localStorage.getItem('leaderboard');
-  const leaderboardData = storedLeaderboard ? JSON.parse(storedLeaderboard) : {};
+  const leaderboardData = storedLeaderboard ? JSON.parse(storedLeaderboard) : [];
   const currentUser = storedUserData ? JSON.parse(storedUserData) : { name: '', points: 0 };
-  leaderboardData[currentUser.name] = currentUser.points;
-  localStorage.setItem('leaderboard', JSON.stringify(leaderboardData));
+  const updatedLeaderboardData = [...leaderboardData, currentUser];
+  localStorage.setItem('leaderboard', JSON.stringify(updatedLeaderboardData));
 };
 

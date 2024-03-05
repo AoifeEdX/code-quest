@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { v4 as uuidv4 } from 'uuid';
 
 const LeaderBoard = ({ onClose }) => {
-    const [savedUser, setSavedUser] = useState(null);
+    const [playersData, setPlayersData] = useState([]);
 
     useEffect(() => {
-        const storedUserName = localStorage.getItem('username');
-        if (storedUserName) {
-            setSavedUser(storedUserName);
-        }
+        const storedLeaderboard = localStorage.getItem('leaderboard');
+        const leaderboardData = storedLeaderboard ? JSON.parse(storedLeaderboard) : [];
+        setPlayersData(leaderboardData);
     }, []);
     return (
         <>
@@ -28,17 +28,14 @@ const LeaderBoard = ({ onClose }) => {
                                 <th className="text-success" scope="col">Score</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr scope="row">
-                                <td>1</td>
-                                <td>{savedUser}</td>
-                                <td>200</td>
-                            </tr>
-                            <tr scope="row">
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>150</td>
-                            </tr>
+                            <tbody>
+                                {playersData.map(({ name, points }) => (
+                                  <tr key={uuidv4()} scope="row">
+                                   <td>1</td>
+                                   <td>{name}</td>
+                                   <td>{points}</td>
+                                  </tr>)
+                                )}
                         </tbody>
                     </table>
                 </Modal.Body>
