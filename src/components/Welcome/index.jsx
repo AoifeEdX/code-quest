@@ -1,104 +1,105 @@
-import { useState, useEffect } from 'react';
-import { Container, Row, Col, Image, Form, Nav, Button } from 'react-bootstrap';
+import { useState } from 'react';
+import { Container, Row, Col, Image, Form, Button, InputGroup } from 'react-bootstrap';
+import Typewriter from 'typewriter-effect';
 import { useNavigate } from 'react-router-dom';
 import { saveCurrentUser } from '../../utils/localStorage';
+import fightGif from '/images/fightGif.gif';
+import arrow from '/images/arrow.png';
 
 const Welcome = () => {
-	const [formData, setFormData] = useState({
-		username: '',
-	});
-	const [error, setError] = useState({
-		username: ''
-	});
+	const [formData, setFormData] = useState({ username: '' });
+	const [error, setError] = useState('');
 	const [show, setShow] = useState(false);
-
 	const navigate = useNavigate();
-
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
-		setFormData({
-			...formData,
-			[name]: value,
-		});
+		setFormData({ ...formData, [name]: value });
 	};
-	useEffect(() => {
-		console.log(formData.username);
-	}, [formData]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const validationErrors = validateForm(formData);
-		if (validationErrors) {
-			setError(validationErrors);
-			return;
+    saveCurrentUser(formData.username, 0);
+		if (!formData.username.trim()) {
+			setError('Please enter your username!');
+			setShow(false);
+		} else {
+			setShow(true);
+			setError('');
 		}
 	};
 
-	const validateForm = (data) => {
-		const error = {};
-		if (!data.username) {
-			error.username = 'Please create your user name!';
-			setShow(false)
-			setError((prev) => ({
-				...prev,
-				username: error.username,
-			}));
-		} else {
-			setShow(true)
-			return error;
-		}
-	}
 	const navigateToLevel1 = () => {
-		saveCurrentUser(formData.username, 0);
 		navigate('/level1');
 	}
 
 	return (
-		<>
-			<Container>
-				<Row className="justify-content-md-center border border-2 rounded p-3">
-					<Col md="4">
-						<Image className="border border-2 rounded" src="/images/welcome-img.jpeg" alt="CodeQuest background" fluid></Image>
-					</Col>
-					<Col md="8" >
-						<h1>Welcome to CodeQuest: Front-end Chronicles!</h1>
-						<p className="mt-5 h4">As you embark on your journey, you&apos;ll be greeted with an immersive introduction to the digital realm of CodeQuest</p>
-					</Col>
-				</Row>
-				<Row md="12" className="mt-5 mb-2">
-					<div className="margin">
-						<Form className="d-flex flex-column justify-content-center align-items-center" onSubmit={handleSubmit}>
-							<Form.Group className='d-flex flex-column justify-content-center align-items-center mb-3'>
-								<input className='form-label border border-2 rounded text-center' style={{ height: '3em' }} type='text' name='username' placeholder='type your username' value={formData.username} onChange={handleInputChange}></input>{error && error.username ? <p className='text-danger fw-bolder'>{error.username}</p> : ''}
-							</Form.Group>
-							<button className='btn btn-outline-success mb-5' type='submit'>Submit</button>
-
-							{show && <p className='mt-2 h5'>Meet <span className="bg-secondary p-1">{formData.username}</span>, the skilled front-end developer, and learn about the challanges plaguing the digital kingdom.</p>}
-
-						</Form>
-					</div>
-				</Row>
-				{show && <Row className="m-5 vw-30">
-					<Button className="border border-2 rounded" variant="danger" type='submit' onClick={navigateToLevel1}>Start the Game</Button>
-				</Row>}
-			</Container>
-
-			<Nav>
-				<Nav.Link className="nav-element" href="/level1">Level1</Nav.Link>
-			</Nav>
-			<Nav>
-				<Nav.Link className="nav-element" href="/level2welcome">Level2</Nav.Link>
-			</Nav>
-			<Nav>
-				<Nav.Link className="nav-element" href="/level3">Level3</Nav.Link>
-			</Nav>
-			<Nav>
-				<Nav.Link className="nav-element" href="/final-scores">Final Scores</Nav.Link>
-			</Nav>
-
-		</>
-	)
-}
+		<Container>
+			<Row className="justify-content-center align-items-center">
+				<Col md="6" className="order-md-2">
+					<Image className="ps-md-5" src={fightGif} alt="CodeQuest background" fluid rounded />
+				</Col>
+				<Col md="6" className="order-md-1 my-5 ">
+					<h1 className="mt-4" style={{ height: '200px', overflow: 'hidden' }}>
+						Welcome to <span className="text-warning">{' '}
+							<Typewriter
+								options={{
+									strings: ['CodeQuest, <br> Front-end Chronicles!'],
+									autoStart: true,
+									loop: true,
+									delay: 100,
+									deleteSpeed: 30,
+								}}
+							/></span>
+					</h1>
+					<p className="fs-4">
+						Your coding skills will be put to the test as you venture forth into the digital realm of CodeQuest.
+					</p>
+				</Col>
+			</Row>
+			<Row className="mt-5">
+				<Col md="5" className="px-5">
+					<Image className="pe-md-5 d-none d-sm-block" src={arrow} alt="arrow" fluid rounded />
+				</Col>
+				<Col md="6" className="py-md-5 mt-md-5">
+					<h2 className="mt-5">Enter your name to begin:</h2>
+					<Form onSubmit={handleSubmit}>
+						<InputGroup className="my-5">
+							<Form.Control
+								type="text"
+								name="username"
+								className="rounded-pill me-3 w-75"
+								placeholder="Player Name"
+								value={formData.username}
+								onChange={handleInputChange}
+							/>
+							<Button type="submit" className="rounded-pill gradient-bg-blue">
+								Submit
+							</Button>
+						</InputGroup>
+						{error && <Form.Text className="text-danger">{error}</Form.Text>}
+						{show && (
+							<div>
+								<p className="fs-4">
+									Hello, <span className="text-danger bold-text">{formData.username}</span>!
+								</p>
+								<p className="fs-5">
+									You are embarking on a journey to become a skilled <span className="bold-text text-warning">front-end developer</span>, and face the challenges plaguing the digital kingdom.
+								</p>
+							</div>
+						)}
+					</Form>
+					{show && (
+						<div className="d-flex flex-column">
+							<Button className="my-4 gradient-bg-orange rounded-pill btn-lg" href="/level1">
+								Start the Game
+							</Button>
+						</div>
+					)}
+				</Col>
+			</Row>
+		</Container>
+	);
+};
 
 export default Welcome;

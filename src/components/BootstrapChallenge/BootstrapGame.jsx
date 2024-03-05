@@ -9,7 +9,7 @@ import LevelComplete from './LevelComplete';
 import GameOver from './GameOver';
 
 export default function Game() {
-	const [lives, setLives] = useState(3);
+	const [lives, setLives] = useState(5);
 	const [points, setPoints] = useState(0);
 	const [count, setCount] = useState(0);
 	const [message, setMessage] = useState('Ready');
@@ -50,7 +50,7 @@ export default function Game() {
 	};
 
 	const handleRestartGame = () => {
-		setLives(3);
+		setLives(5);
 		setPoints(0);
 		setCount(0);
 		setMessage('Ready');
@@ -82,7 +82,7 @@ export default function Game() {
 		<Container>
 			<Row className="justify-content-md-center">
 				<Col md="4" className="order-md-2 d-flex flex-column justify-content-between mb-3">
-					<div className="border border-2 rounded p-4 mb-3">
+					<div className="border border-2 border-warning rounded p-4 mb-3 bg-primary bg-opacity-25 bg-gradient">
 						<Lives lives={lives} />
 						<Points
 							points={points}
@@ -90,7 +90,7 @@ export default function Game() {
 							pointsPerQuestion={10}
 						/>
 					</div>
-					<div className="border border-2 rounded p-4 text-center">
+					<div className="border border-2 border-warning rounded p-4 text-center bg-primary bg-opacity-25 bg-gradient d-none d-sm-block">
 						<Character
 							lives={lives}
 							points={points}
@@ -102,7 +102,7 @@ export default function Game() {
 					</div>
 				</Col>
 				<Col md="8" className="order-md-1 d-flex flex-column mb-3">
-					<div className="border border-2 rounded p-4 flex-grow-1 text-center">
+					<div className="border border-2 border-warning rounded p-4 flex-grow-1 text-center bg-primary bg-opacity-25 bg-gradient">
 						{imageSrc && !gameOver && (
 							<Image src={imageSrc} alt="Question Image" fluid />
 						)}

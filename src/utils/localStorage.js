@@ -1,4 +1,5 @@
 export const saveCurrentUser = (name, points) => {
+  console.log(`Saving current user: ${name} with ${points} points`);
   const currentUser = { name , points }
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
 }
