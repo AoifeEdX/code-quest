@@ -35,7 +35,7 @@ const HtmlGame = () => {
     useEffect(() => {
 		if (allQuestionAnswered) {
 			savePointsToStorage(result.score);
-			// updateLeaderBordStorage();
+			// updateLeaderBoardStorage();
 		}
 	}, [allQuestionAnswered, result.score]);
 
