@@ -14,7 +14,7 @@ const LeaderBoard = ({ onClose }) => {
         <>
         <div className="d-flex justify-content-center" >
 
-            <Modal.Dialog scrollable className="border border-danger border-3 rounded m-5 " style={{maxWidth: '50em'}}>
+            <Modal.Dialog scrollable className="border border-danger border-3 rounded m-5 p-5" style={{maxWidth: '50em'}}>
                 <Modal.Header className='text-center'>
                 <h2 className='modal-title w-100'>Leaderboard</h2>
                 <button type="button" className="btn-close btn-close-white m-1" data-bs-dismiss="modal" aria-label="Close" onClick={() => onClose()}></button>
