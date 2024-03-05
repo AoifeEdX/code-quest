@@ -23,14 +23,14 @@ function Contact() {
       <Container>
         <Row className="mt-3 pt-3">
           <Col md={12} className="mt-3 pt-3">
-            <h2>Contact CodeQuest</h2>
+            <h2>Contact <span className="bold-text text-danger">CodeQuest</span></h2>
             <hr />
           </Col>
         </Row>
         <Row>
           <Col md={7}>
             <p className="my-5 fs-5">
-              If you have any inquiries or feedback for CodeQuest, please feel free to reach out to us. We're here to help and provide assistance with any questions you may have.
+              If you have any inquiries or feedback for <span className="bold-text text-warning">CodeQuest</span>, please feel free to reach out to us. We're here to help and provide assistance with any questions you may have.
             </p>
             <div className="fs-5">
               <p className="mt-5 text-warning ">
