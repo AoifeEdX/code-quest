@@ -1,0 +1,22 @@
+[	
+	{
+		"id": "sessionWinCharacter",
+		"image": "/assets/HtmlGame/thumbup.jpeg"
+	},
+	{
+		"id": "sessionLoseCharacter",
+		"image": "/assets/HtmlGame/thumbdown.jpeg"
+	},
+	{
+		"id": "readyCharacter",
+		"image": "/assets/HtmlGame/ready.jpeg"
+	},
+	{		
+		"id": "gameOverCharacter",
+		"image": "/assets/HtmlGame/gameover.jpeg"
+	},
+	{		
+		"id": "gameWonCharacter",
+		"image": "/assets/HtmlGame/celebrate.jpeg"
+	}
+]

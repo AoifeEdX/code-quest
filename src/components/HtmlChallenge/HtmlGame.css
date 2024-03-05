@@ -9,3 +9,6 @@
     animation-timing-function: ease-in;
 
 } */
+.result-panel {
+    background-image: url("/assets/HtmlGame/resultbgpanel.jpeg");
+}
