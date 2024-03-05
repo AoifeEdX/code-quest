@@ -18,7 +18,9 @@
   .bangers-text {
     font-family: 'Bangers';
   }
-
+.my-description {
+	letter-spacing: 2.5px;
+}
 .result-panel {
     background-image: url("/assets/HtmlGame/resultbgpanel.jpeg");
     background-size: cover;
