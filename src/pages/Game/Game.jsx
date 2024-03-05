@@ -1,19 +1,16 @@
-import toast, { Toaster } from 'react-hot-toast';
-import { useState } from 'react';
-import { useUser } from "./../../context/userContext.jsx";
+import { useState, useEffect } from 'react';
 import Challenge from "../../components/Challenge/Challenge";
 import questions from './../../assets/questions.json';
 import Lives from '../../components/Lives/Lives';
 import './Game.css';
 import { successfulNotification, failNotification, correctAnswerNotifivation, wrongtAnswerNotifivation } from '../../components/Notification/Notification';
+import { savePointsToStorage } from '../../utils/localStorage';
 
 export default function Game() {
   const [lives, setLives] = useState(5);
   const [points, setPoints] = useState(0);
   const [count, setCount] = useState(0);
   const [isGameRunning, setIsGameRunning] = useState(true);
-  const { username, saveFinalPoints, savePlayer, finalPoints } = useUser();
-
 
   const startGame = () => {
     setIsGameRunning((prev) => !prev);
@@ -34,7 +31,7 @@ export default function Game() {
     const correct_answer = questions[count].correctAnswer;
     
     if (answer === correct_answer) {
-      setPoints(prevPoints => prevPoints + 50);
+      setPoints(prevPoints => prevPoints + 10);
       correctAnswerNotifivation();
     } else {
       wrongtAnswerNotifivation();
@@ -49,13 +46,14 @@ export default function Game() {
     }
 
     if (count === questions.length - 1) {
-      successfulNotification(points + 50, 2);
-      saveFinalPoints({ points: 42 });
-      
-      {/*stopGame();*/ }
+      const currentPoints = (answer === correct_answer) ? points + 10 : points;
+      successfulNotification(currentPoints, 2);
+      savePointsToStorage(currentPoints);
     } else {
       handleNetxQuestionButton();
     }
+
+
   form.reset();
   }
   

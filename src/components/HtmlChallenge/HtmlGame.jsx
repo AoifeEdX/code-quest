@@ -8,11 +8,8 @@ import HtmlAnswerCharacter from './HtmlAnswerCharacter';
 import './HtmlGame.css';
 
 const HtmlGame = () => {
-
-
    const { finalPoints } = useUser();  
     console.log(finalPoints);
-
 
     const [show, setShow] = useState(false);
     // let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -23,11 +20,22 @@ const HtmlGame = () => {
     const [gameOver, setGameOver]=useState(false);
     const [alertMessage, setAlertMessage] = useState('Start!')
     // const [buy, setBuy] = useState(null)
+    
 
     let [result, setResult] = useState( {
         lives: 3,
         score: 0
     });
+
+    useEffect(() => {
+    const storedUserData = localStorage.getItem('currentUser');
+    const parsedData = storedUserData ? JSON.parse(storedUserData) : { name: '', points: 0 };
+    setResult({
+    ...result,
+    score: parsedData.points
+    });
+    }, []);
+
     const { question, options, correctAnswer } = htmlQuestionList[currentQuestion];
     const handleShow = () => setShow(true)
     // console.log(question);

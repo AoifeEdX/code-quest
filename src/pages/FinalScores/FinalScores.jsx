@@ -10,12 +10,11 @@ const FinalScores = () => {
 		const handleButtonClick = () => {
       setShowLeaderboard(false)
     }
-
+    
     useEffect(() => {
-        const savedScores = localStorage.getItem('finalScores');
-        if (savedScores) {
-            setFinalScores(JSON.parse(savedScores));
-        }
+    const storedUserData = localStorage.getItem('currentUser');
+    const parsedData = storedUserData ? JSON.parse(storedUserData) : { name: '', points: 0 };
+	setFinalScores(parsedData.points);
     }, []);
 
     if (!finalScores) {

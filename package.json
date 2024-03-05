@@ -29,7 +29,8 @@
     "react-router-dom": "^6.22.2",
     "react-toastify": "^10.0.4",
     "state-pool": "^0.10.1",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
