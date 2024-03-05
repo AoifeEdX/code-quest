@@ -5,6 +5,7 @@ import htmlQuestionList from "../../../htmlQuestionsList.json";
 import { Button, Container } from 'react-bootstrap';
 import HtmlLives from './HtlmLives';
 import HtmlAnswerCharacter from './HtmlAnswerCharacter';
+import './HtmlGame.css';
 
 const HtmlGame = () => {
    const { finalPoints } = useUser();  
@@ -17,7 +18,7 @@ const HtmlGame = () => {
     const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
     const [allQuestionAnswered, setAllQuestionAnswered] = useState(false);
     const [gameOver, setGameOver]=useState(false);
-    const [alertMessage, setAlertMessage] = useState('start!')
+    const [alertMessage, setAlertMessage] = useState('Start!')
     // const [buy, setBuy] = useState(null)
 
     let [result, setResult] = useState( {
@@ -45,6 +46,7 @@ const HtmlGame = () => {
         } else {
             
             console.log('quest ended')
+            setAlertMessage('Hurray!')
             setAllQuestionAnswered(true)
             handleShow()
             // setShowNextButton(true);
@@ -64,17 +66,17 @@ const HtmlGame = () => {
         if (answer === correctAnswer) {
 
             setSelectedAnswer(true);
-            setAlertMessage("Correct")
-            alert('correct')
+            setAlertMessage("Correct!")
+            // alert('correct')
             setResult((prev) => ({...prev, score: prev.score + 50}))
             console.log('score ' + result.score)
         } else if (result.lives > 0) {
             setSelectedAnswer(false);
-            setAlertMessage("Incorrect");
-            alert('wrong');
+            setAlertMessage("Wrong!");
+            // alert('wrong');
             setResult((prev) => ({...prev, lives: prev.lives - 1}));
             } else {
-                setAlertMessage("Game Over")
+                setAlertMessage("Game Over!")
                 console.log(alertMessage)
                 // alert('no more lives')
                 setGameOver(true)
@@ -83,71 +85,66 @@ const HtmlGame = () => {
          
         onClickNext();
     }
-
-
-
     return (
         <>
-        
+        <div className="game-wrapper vw-80 d-flex justify-content-center align-items-center flex-column" >
 
-        <h2 className="h2 ms-5">Welcome in HTML Forge</h2>
-        <Container className="m-5 col-xxl-8 px-4 py-5 d-flex justify-content-center align-items-center">
-            <div className='border border-warning'>
-                <div className="m-2 border border-info">
+
+
+
+        <h2 className="welcome-text bangers-text h1 text-uppercase">Welcome to HTML Forge 💥</h2>
+        <Container className="col-xxl-10 m-5 px-4 py-5 d-flex justify-content-center align-items-center">
+            <div className='d-flex justify-content-center flex-lg-row flex-md-column '>
+                <div className="m-2">
                     <div className="d-block mx-lg-auto img-fluid">
-                        <img className="quest-img m-5 d-block justify-content-center col-10 col-sm-8 p-5" src="/assets/HtmlGame/htmlstart.jpeg" style={{maxWidth: '700', height: '500', margin: 'auto'}} alt="coding man"></img>
+                        <img className="quest-img object-fit-contain d-block justify-content-center col-6 col-sm-10" src="/assets/HtmlGame/htmlstart.jpeg" alt="coding man"></img>
                     </div>
 
+                    <div className="d-flex justify-content-center align-items-center  mt-5">
+                        <div className='answer-character mt-5'> 
+
+                            <HtmlAnswerCharacter 
+                            lives={result.lives}
+                            points={result.points}
+                            alertMassage={alertMessage}
+                            gameOver={gameOver}
+                            allQuestionsAnswered={allQuestionAnswered}/>
+                        </div>
+                        <div className="ms-5 mt-5 h2 bangers-text">
+                            {alertMessage}
+                        </div>
+                    </div>
                 </div>
-
-
-                <div className="border border-success">
-                    <div className="result-panel col border border-2 border-success" >
-                        <h3>Your scores</h3>
-                        <div className="" style={{maxWidth: "15em"}}>
+                <div className="m-1">
+                    <div className="result-panel col border border-5 rounded" style={{width: '30em', height: '20em'}} >
+                        <h3 className="h2"><mark className="fw-bold bangers-text">Your scores:</mark></h3>
+                        <div className="results" style={{maxWidth: "15em"}}>
                             <HtmlLives displayedLives={result.lives}/>
-                            <div>Scores: {result.score}</div>
+                            <div className="d-flex justify-content-between text-danger fs-4 fw-bold bangers-text" ><p> Scores:  </p> <p className="text-end"> {result.score}</p></div>
                         </div>
                     </div>
 
-                    <h2>{currentQuestion+1}.  {question} </h2>
-                    <div className="m-2 d-flex flex-column col-10 col-sm-8 col-lg-6">
+                    <h2 className="h3 mt-5 text-warning bangers-text tracking-wide">💥 {currentQuestion+1}.  {question} </h2>
+                    <div className="m-2 d-flex flex-column mt-5">
                         {options.map((answer, index) => (
-                            <Button variant="primary" onClick={() => onAnswerSelected(answer, index)} key={answer} id={selectedAnswerIndex === index ? 'selected-answer' : null } className="m-3">{answer}</Button>
+                            <Button style={{height: '4em'}} onClick={() => onAnswerSelected(answer, index)} key={answer} id={selectedAnswerIndex === index ? 'selected-answer' : null } className="m-3 answer-button border border-5"><p className="fw-bold pt-1 h4 button-text">{answer}</p></Button>
                         ))}
                     </div>
 
 
-                <div>
-                    <HtmlAnswerCharacter 
-                    lives={result.lives}
-                    points={result.points}
-                    alertMassage={alertMessage}
-                    gameOver={gameOver}
-                    allQuestionsAnswered={allQuestionAnswered}/>
+               
                 </div>
-                </div>
-
 
             </div>
 
-            
-             
-
-
-        
-        
-
-
-            <div>
-          
-
-    
-                {/* <button className="m-2 bg-warning"onClick={onClickNext} disabled={selectedAnswerIndex === null || currentQuestion === 3}>{currentQuestion === 3 ? 'Finish' : 'Next'}</button> */}
-                { show ? <button show={Boolean(show)} className="m-2 bg-warning"onClick={navigateToLevel3}>Got to next level</button> : null}
-            </div>
         
             </Container>      
+                <div>
+                    {/* <button className="m-2 bg-warning"onClick={onClickNext} disabled={selectedAnswerIndex === null || currentQuestion === 3}>{currentQuestion === 3 ? 'Finish' : 'Next'}</button> */}
+                    { show ? <button show={Boolean(show)} className="shaking-button bangers-text m-2 bg-warning"onClick={navigateToLevel3}>GO TO NEXT LEVEL</button> : null}
+                </div>
+
+        </div>
         </>
     )
 
