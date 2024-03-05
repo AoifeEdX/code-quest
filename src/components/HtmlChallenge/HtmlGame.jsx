@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useUser } from "./../../context/userContext.jsx";
 import { useNavigate } from 'react-router-dom';
 import htmlQuestionList from "../../../htmlQuestionsList.json";
 import Button from 'react-bootstrap/Button';
@@ -9,8 +10,8 @@ import Button from 'react-bootstrap/Button';
 // todo add link to next level button
 // // todo fix disable button 
 const HtmlGame = () => {
-    
-
+   const { finalPoints } = useUser();  
+console.log(finalPoints);
 
     const [show, setShow] = useState(false);
     // let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
