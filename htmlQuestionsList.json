@@ -20,7 +20,7 @@
     {
         "id": 4,
         "question": "What does HTML stand for",
-        "options": ["<Hyper Text Made Language", "Hyper Text Mixed Language", "Higher Text Markup Language", "Hyper Text Markup Language"],
+        "options": ["Hyper Text Made Language", "Hyper Text Mixed Language", "Higher Text Markup Language", "Hyper Text Markup Language"],
         "correctAnswer": "Hyper Text Markup Language"
     }
 
