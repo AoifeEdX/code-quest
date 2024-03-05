@@ -3,15 +3,13 @@ import questions from './../../assets/questions.json'
 import './Challenge.css'
 
 
-export default function Challenge({ count, handleAnswerButton }) {
+export default function Challenge({ count, handleAnswerButton, isFormDisabled, handleRadioChange, selectedOption }) {
   const question = questions[count].question || {};
   const answerOptions = questions[count].options || [];
+  
   return (
     
     <div className="container challenge1">
-      {/*<div className="container">
-    <img src="./images/coding1.jpg" className="img-fluid" alt="coding"/>
-  </div>*/}
     <div className='container challenge' id='challengeLevel1'>
         <h3 className='question'>{question}</h3>
       <div className='options'>
@@ -22,15 +20,17 @@ export default function Challenge({ count, handleAnswerButton }) {
             type="radio"
             className="form-check-input"
             name="answer"
-            id={`option${index}`}
+            id={uuidv4()}
+            checked={selectedOption === option}
             value={option}
+            onChange={handleRadioChange}
           />
           <label className="form-check-label" htmlFor={`option${index}`}>
             {option}
           </label>
         </div>
       ))}
-      <button type="submit" className="btn btn-warning mt-3 answerBtn">
+      <button type="submit" className="btn btn-warning mt-3 answerBtn" disabled={isFormDisabled}>
         Submit
       </button>
     </form>
