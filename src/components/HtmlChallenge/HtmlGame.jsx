@@ -8,8 +8,11 @@ import HtmlAnswerCharacter from './HtmlAnswerCharacter';
 import './HtmlGame.css';
 
 const HtmlGame = () => {
+
+
    const { finalPoints } = useUser();  
     console.log(finalPoints);
+
 
     const [show, setShow] = useState(false);
     // let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
