@@ -6,6 +6,8 @@ import { Button, Container } from 'react-bootstrap';
 import HtmlLives from './HtlmLives';
 import HtmlAnswerCharacter from './HtmlAnswerCharacter';
 import './HtmlGame.css';
+import { savePointsToStorage} from '../../utils/localStorage';
+
 
 const HtmlGame = () => {
        
@@ -34,12 +36,11 @@ const HtmlGame = () => {
     });
     }, []);
 
-    useEffect(() => {
-		if (allQuestionsAnswered) {
-			savePointsToStorage(points);
-			updateLeaderBordStorage();
+    {/*useEffect(() => {
+		if (allQuestionAnswered) {
+			savePointsToStorage(result.score);
 		}
-	}, [allQuestionsAnswered, points]);
+	}, [allQuestionAnswered, result]); */}
 
     const { question, options, correctAnswer } = htmlQuestionList[currentQuestion];
     const handleShow = () => setShow(true)
@@ -47,7 +48,8 @@ const HtmlGame = () => {
     // console.log(options);
     const navigate = useNavigate();
     const navigateToLevel3 = () => {
-        navigate('/level3welcome')
+        navigate('/level3welcome');
+        savePointsToStorage(result.score);
     }
 
     const onClickNext = () => {
