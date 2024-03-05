@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useUser } from "./../../context/userContext.jsx";
 import { useNavigate } from 'react-router-dom';
 import htmlQuestionList from "../../../htmlQuestionsList.json";
 import { Button, Container } from 'react-bootstrap';
@@ -6,6 +7,9 @@ import HtmlLives from './HtlmLives';
 import HtmlAnswerCharacter from './HtmlAnswerCharacter';
 
 const HtmlGame = () => {
+   const { finalPoints } = useUser();  
+    console.log(finalPoints);
+
     const [show, setShow] = useState(false);
     // let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(0);

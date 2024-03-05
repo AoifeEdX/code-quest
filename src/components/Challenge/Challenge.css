@@ -1,5 +1,5 @@
 .challenge1 {
-  height: calc(100vh - 140px - 75px);
+  min-height: calc(100vh - 140px - 75px);
   display: flex;
   flex-direction: row;
   background: url('/images/coding1.jpg');
