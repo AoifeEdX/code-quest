@@ -7,6 +7,7 @@ import Points from "./Points";
 import Character from './Character';
 import LevelComplete from './LevelComplete';
 import GameOver from './GameOver';
+import { savePointsToStorage, updateLeaderBordStorage } from '../../utils/localStorage';
 
 export default function Game() {
 	const [lives, setLives] = useState(5);
@@ -19,9 +20,16 @@ export default function Game() {
 
 	useEffect(() => {
 		if (allQuestionsAnswered) {
-			localStorage.setItem('finalScores', JSON.stringify({ lives, points }));
+			savePointsToStorage(points);
+			updateLeaderBordStorage();
 		}
-	}, [allQuestionsAnswered, lives, points]);
+	}, [allQuestionsAnswered, points]);
+
+	useEffect(() => {
+    const storedUserData = localStorage.getItem('currentUser');
+    const parsedData = storedUserData ? JSON.parse(storedUserData) : { name: '', points: 0 };
+		setPoints(parsedData.points);
+    }, []);
 
 	const handleAnswerButton = (event) => {
 		if (gameOver) return;

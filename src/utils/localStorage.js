@@ -1,5 +1,4 @@
 export const saveCurrentUser = (name, points) => {
-  console.log(`Saving current user: ${name} with ${points} points`);
   const currentUser = { name , points }
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
 }
@@ -10,3 +9,13 @@ export const savePointsToStorage = (newPoints) => {
   currentUser.points = newPoints;
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
 };
+
+export const updateLeaderBordStorage = () => {
+  const storedUserData = localStorage.getItem('currentUser');
+  const storedLeaderboard = localStorage.getItem('leaderboard');
+  const leaderboardData = storedLeaderboard ? JSON.parse(storedLeaderboard) : {};
+  const currentUser = storedUserData ? JSON.parse(storedUserData) : { name: '', points: 0 };
+  leaderboardData[currentUser.name] = currentUser.points;
+  localStorage.setItem('leaderboard', JSON.stringify(leaderboardData));
+};
+

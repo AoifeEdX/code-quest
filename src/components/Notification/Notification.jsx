@@ -70,7 +70,7 @@ export const correctAnswerNotifivation = () => {
         <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title">Correct Answer</h5>
-            <p className="card-text">You earned 50 points!</p>
+            <p className="card-text">You earned 10 points!</p>
           </div>
         </div>
       </div>
