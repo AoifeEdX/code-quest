@@ -2,23 +2,27 @@ import React from 'react';
 // import { Image } from 'react-bootstrap';
 import htmlAnswerChar from "./htmlAnswerChar.json";
 
-const HtmlAnswerCharacter = ({ alertMessage = '', gameOver, allQuestionsAnswered }) => {
+const HtmlAnswerCharacter = ({ alertMessage="Start!" }) => {
     const getImageId = () => {
-        if (gameOver) return "gameOverCharacter";
-        if (allQuestionsAnswered) return "gameWonCharacter";
-            return alertMessage && alertMessage.startsWith("Correct") ? "sessionWinCharacter" :
-                    alertMessage && alertMessage.startsWith("Incorrect") ? "sessionLoseCharacter" :
-                    "readyCharacter";
-        };
-
+        switch (alertMessage) {
+            case 'Correct!': return "sessionWinCharacter";
+            case 'Wrong!': return "sessionLoseCharacter";
+            case 'Start!': return "readyCharacter";
+            case 'Game Over!': return "gameOverCharacter";
+            case 'Hurray!': return "gameWonCharacter";
+            default: return null;
+        }
+    }
+    console.log(alertMessage)
         const character = htmlAnswerChar.find(char => char.id === getImageId());
-        console.log(character.image)
+        console.log(character)
     return (
         <div>
             {character && <img className="d-block border-2 rounded img-fluid" style={{maxWidth: "10em"}} src={character.image} alt={character.id} />}
            
         </div>
     );
+
 };
 
 export default HtmlAnswerCharacter;
