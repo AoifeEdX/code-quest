@@ -19,7 +19,7 @@ const HtmlAnswerCharacter = ({ alertMessage }) => {
         console.log(character)
     return (
         <div>
-            hello character image
+
             {character && <img className="d-block border-2 rounded img-fluid" style={{maxWidth: "10em"}} src={character.image} alt={character.id} />}
            
         </div>
