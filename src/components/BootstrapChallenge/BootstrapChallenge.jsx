@@ -25,7 +25,6 @@ export default function Challenge({ count, handleAnswerButton, gameOver, questio
                         name={option}
                         onClick={handleAnswer}
 												className="m-2 gradient-bg-blue p-2 rounded-pill"
-                        className="m-2"
                         disabled={gameOver || questionAnswered}
                     >
                         {option}
