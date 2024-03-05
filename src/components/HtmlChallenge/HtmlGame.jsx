@@ -32,7 +32,15 @@ const HtmlGame = () => {
         }));
     }, []);
 
-    const { question, options, correctAnswer } = htmlQuestionList[currentQuestion]; 
+
+    useEffect(() => {
+		if (allQuestionsAnswered) {
+			savePointsToStorage(points);
+			updateLeaderBordStorage();
+		}
+	}, [allQuestionsAnswered, points]);
+
+    const { question, options, correctAnswer } = htmlQuestionList[currentQuestion];
 
     const handleShow = () => setShow(true)
 
