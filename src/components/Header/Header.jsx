@@ -1,49 +1,47 @@
-import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+import { RestartAlt, EmojiEvents } from '@mui/icons-material';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LeaderBoard from '../Leaderboard/index';
 
-
 const Header = () => {
-  const [expanded, setExpanded] = useState(false);
-
-  // handle leaderboard modal
   const [openModal, setOpenModal] = useState(false);
+  const navigate = useNavigate();
+
   const handleButtonClick = () => {
-    console.log('close button clicked')
-    setOpenModal(false)
+    setOpenModal(false);
   }
-
-
-  const restartPage = () => {
-    window.location.reload();
-  };
 
   return (
     <>
-    
-    {/* <header> */}
-      <Navbar expand="md" variant="dark" expanded={expanded} className="bg-dark p-3 full-width-navbar mb-5">
-        <Container fluid>
-          <Navbar.Brand href="/" className="fs-2">CodeQuest</Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar-nav" onClick={() => setExpanded(!expanded)} />
-          <Navbar.Collapse id="navbar-nav">
-            <Nav className="me-auto"></Nav>
+      <Container className="py-4 mb-5">
+        <Navbar variant="dark" expand="lg">
+          <Navbar.Brand href="/" className="fs-2 me-auto">CodeQuest</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbar-nav" />
+          <Navbar.Collapse id="navbar-nav" className="justify-content-end text-end fs-5">
             <Nav>
-              <Button className="m-2" variant="outline-success" onClick={restartPage} >
-                Restart
+              <Nav.Link href="/about" className="me-3">About</Nav.Link>
+              <Nav.Link href="/contact" className="mx-3">Contact</Nav.Link>
+            </Nav>
+            <Nav>
+              <Button
+                className="m-2 rounded-pill gradient-bg-blue"
+                href="/"
+              >
+                <RestartAlt /> Restart
               </Button>
-              <Button className="m-2" variant="outline-success" onClick={()=> setOpenModal(true)} >
-                Leaderboard
+              <Button
+                className="btn m-2 rounded-pill gradient-bg-blue"
+                onClick={() => setOpenModal(true)}
+              >
+                <EmojiEvents /> Leaderboard
               </Button>
             </Nav>
           </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    {/* </header> */}
+        </Navbar>
+      </Container>
 
-
-    { openModal && (<LeaderBoard onClose={handleButtonClick}/>)}
- 
+      {openModal && (<LeaderBoard onClose={handleButtonClick}/>)}
     </>
   );
 }

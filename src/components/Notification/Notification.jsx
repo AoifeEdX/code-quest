@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import './Notification.css'
 
 export const successfulNotification = (points, level) => {
+  setTimeout(() => {
   toast((t) => (
      <div className="card mb-3" style={{ maxWidth: '540px' }}>
        <div className="row g-0">
@@ -11,8 +12,8 @@ export const successfulNotification = (points, level) => {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">Congratulations!!! You earn {points} points and go to next level</p>
+            <h5 className="card-title">Congratulations!!!</h5>
+            <p className="card-text">You earn {points} points and go to next level</p>
           </div>
           <div className='buttons'>
           <button> <Nav.Link className="nav-element" href={`/`}>Exit Game</Nav.Link>
@@ -29,12 +30,14 @@ export const successfulNotification = (points, level) => {
     },
     {
       style: {
-        width: '500px', // Set the desired width
+        width: '500px',
       }
     },);
+    }, 1500); 
 }
 
 export const failNotification = () => {
+  setTimeout(() => {
   toast((t) => (
      <div className="card mb-3" style={{ maxWidth: '540px' }}>
        <div className="row g-0 gameOver">
@@ -53,5 +56,58 @@ export const failNotification = () => {
   {
     duration: Infinity,
     }
-  );
+    );
+    }, 1600); 
 }
+
+export const correctAnswerNotifivation = () => {
+  toast((t) => (
+     <div className="card mb-3" style={{ maxWidth: '540px' }}>
+       <div className="row g-0">
+        <div className="col-md-4">
+          <img src="./images/smile.jpg" className="img-fluid rounded-start" alt="win image"/>
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title">Correct Answer</h5>
+            <p className="card-text">You earned 50 points!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  {
+    duration: 1500,
+    },
+    {
+      style: {
+        width: '500px',
+      }
+    },);
+}
+
+export const wrongtAnswerNotifivation = () => {
+  toast((t) => (
+     <div className="card mb-3" style={{ maxWidth: '540px' }}>
+       <div className="row g-0">
+        <div className="col-md-4">
+          <img src="./images/unhappy.jpg" className="img-fluid rounded-start" alt="wrong answer"/>
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title">Wrong Answer!</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  {
+    duration: 1500,
+    },
+    {
+      style: {
+        width: '500px',
+      }
+    },);
+}
+
