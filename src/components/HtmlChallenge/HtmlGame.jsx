@@ -10,7 +10,7 @@ import { savePointsToStorage} from '../../utils/localStorage';
 
 
 const HtmlGame = () => {
-  
+
     const [show, setShow] = useState(false);
     const [showRestart, setShowRestart] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -36,8 +36,9 @@ const HtmlGame = () => {
     useEffect(() => {
 		if (allQuestionAnswered) {
 			savePointsToStorage(result.score);
+			// updateLeaderBoardStorage();
 		}
-	}, [allQuestionAnswered, result]);
+	}, [allQuestionAnswered, result.score]);
 
     const { question, options, correctAnswer } = htmlQuestionList[currentQuestion];
 
@@ -60,8 +61,6 @@ const HtmlGame = () => {
 
     const onClickNext = () => {
         setSelectedAnswerIndex(null);      
-        // setResult((prev) => selectedAnswer ? 
-        //     {...prev, score: prev.score + 50, } : {...prev, lives: prev.lives - 1,});
         if (currentQuestion !== htmlQuestionList.length - 1 && result.lives > 0) {
             setCurrentQuestion((prev) => prev + 1)
         } else {
@@ -79,27 +78,26 @@ const HtmlGame = () => {
         if (answer === correctAnswer) {
             setSelectedAnswer(true);
             setAlertMessage("Correct!")
-            // alert('correct')
-            setResult((prev) => ({...prev, score: prev.score + 50}))
-            console.log('score ' + result.score)
+            setResult((prev) => ({...prev, score: prev.score + 10}))
         } else if (result.lives > 1) {
             setSelectedAnswer(false);
             setAlertMessage("Wrong!");
-            // alert('wrong');
             setResult((prev) => ({...prev, lives: prev.lives - 1}));
             } else {
                 setResult((prev) => ({...prev, lives: prev.lives - 1}));
                 setAlertMessage("Game Over!")
-                console.log(alertMessage)
-                // alert('no more lives')
                 setGameOver(true)
-                setShowRestart(true)
-                
+                setAllQuestionAnswered(true)
+                setShowRestart(true)               
                 return;
             }
-         
+            if (currentQuestion === htmlQuestionList.length - 1) {
+                setAllQuestionAnswered(true)
+                setGameOver(true)
+            }        
         onClickNext();
     }
+
     return (
         <>
         <div className="game-wrapper vw-80 d-flex justify-content-center align-items-center flex-column" >
@@ -115,7 +113,7 @@ const HtmlGame = () => {
                                 <HtmlAnswerCharacter 
                                 lives={result.lives}
                                 points={result.points}
-                                alertMassage={alertMessage}
+                                alertMessage={alertMessage}
                                 gameOver={gameOver}
                                 allQuestionsAnswered={allQuestionAnswered}/>
                             </div>
@@ -142,15 +140,11 @@ const HtmlGame = () => {
                 </div>       
             </Container>      
                 <div>
-                    {/* <button className="m-2 bg-warning"onClick={onClickNext} disabled={selectedAnswerIndex === null || currentQuestion === 3}>{currentQuestion === 3 ? 'Finish' : 'Next'}</button> */}
                     { show ? <button  className="shaking-button bangers-text m-2 bg-warning"onClick={navigateToLevel3}>GO TO NEXT LEVEL</button> : null}
                     { showRestart ? <button  className="shaking-button bangers-text m-2 bg-warning"onClick={handleRestart}>TRY AGAIN!</button> : null}
                 </div>
         </div>
         </>
     )
-
-
-
 }
 export default HtmlGame;

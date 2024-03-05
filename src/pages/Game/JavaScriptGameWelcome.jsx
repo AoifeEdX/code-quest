@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import LevelWelcomeContent from "../LevelWelcomeContent/LevelWelcomeContent";
+import LevelWelcomeContent from "../../components/LevelWelcomeContent/LevelWelcomeContent";
 import questList from '../../../questList.json';
-import '../HtmlChallenge/HtmlGame.css'
+import '../../components/HtmlChallenge/HtmlGame.css'
 
-const LivesGameWelcome = () => {
+const JavaScriptGameWelcome = () => {
     const navigate = useNavigate();
     const navigateToLevel1 = () => {
         navigate('/level1')
@@ -35,4 +35,4 @@ const LivesGameWelcome = () => {
     )
 }
 
-export default LivesGameWelcome;
+export default JavaScriptGameWelcome;

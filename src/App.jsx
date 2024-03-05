@@ -15,7 +15,7 @@ import FinalScores from './pages/FinalScores/FinalScores';
 import { Toaster } from 'react-hot-toast';
 import HtmlGameWelcome from './components/HtmlChallenge/HtmlGameWelcome';
 import BootstrapGameWelcome from './components/BootstrapChallenge/BootstrapGameWelcome';
-import LivesGameWelcome from './components/LivesGame/LivesGameWelcome'
+import JavaScriptGameWelcome from './pages/Game/JavaScriptGameWelcome'
 
 function App() {
 
@@ -26,12 +26,11 @@ function App() {
               }}/>
        <Routes >       
       <Route path='/' element={<Welcome />} />
-      <Route path='/level1welcome' element={<LivesGameWelcome />} />
+      <Route path='/level1welcome' element={<JavaScriptGameWelcome />} />
       <Route path='/level1' element={<Game />} />
       <Route path='/level2welcome' element={<HtmlGameWelcome />} />			
       <Route path='/level2' element={<HtmlGame />} />		
       <Route path='/level3welcome' element={<BootstrapGameWelcome />} />		
-
       <Route path='/level3' element={<BootstrapGame />} />			
 			<Route path="/final-scores" element={<FinalScores />} /> 
 			<Route path="/about" element={<About />} /> 						
