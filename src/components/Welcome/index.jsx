@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Row, Col, Image, Form, Button, InputGroup } from 'react-bootstrap';
+import { Container, Row, Col, Image, Form, Button, InputGroup, Nav } from 'react-bootstrap';
 import Typewriter from 'typewriter-effect';
 import { useNavigate } from 'react-router-dom';
 import { saveCurrentUser } from '../../utils/localStorage';
@@ -98,7 +98,22 @@ const Welcome = () => {
 					)}
 				</Col>
 			</Row>
+
+			<Nav>
+<Nav.Link className="nav-element" href="/level1">Level1</Nav.Link>
+</Nav>
+<Nav>
+<Nav.Link className="nav-element" href="/level2welcome">Level2</Nav.Link>
+</Nav>
+<Nav>
+<Nav.Link className="nav-element" href="/level3">Level3</Nav.Link>
+</Nav>
+<Nav>
+<Nav.Link className="nav-element" href="/final-scores">Final Scores</Nav.Link>
+</Nav>
 		</Container>
+
+
 	);
 };
 
