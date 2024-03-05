@@ -9,7 +9,7 @@ const HtmlAnswerCharacter = ({ alertMessage="Start!" }) => {
             case 'Wrong!': return "sessionLoseCharacter";
             case 'Start!': return "readyCharacter";
             case 'Game Over!': return "gameOverCharacter";
-            case 'Hurray!': return "gameWonCharacter";
+            case 'Well done! Hurray!': return "gameWonCharacter";
             default: return null;
         }
     }

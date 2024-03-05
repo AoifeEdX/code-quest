@@ -29,8 +29,8 @@ const Welcome = () => {
 		}
 	};
 
-	const navigateToLevel1 = () => {
-		navigate('/level1');
+	const navigateToLevel1Welcome = () => {
+		navigate('/level1welcome');
 	}
 
 	return (
@@ -91,7 +91,7 @@ const Welcome = () => {
 					</Form>
 					{show && (
 						<div className="d-flex flex-column">
-							<Button className="my-4 gradient-bg-orange rounded-pill btn-lg" href="/level1">
+							<Button className="my-4 gradient-bg-orange rounded-pill btn-lg" href="/level1welcome" onClick={navigateToLevel1Welcome}>
 								Start the Game
 							</Button>
 						</div>
