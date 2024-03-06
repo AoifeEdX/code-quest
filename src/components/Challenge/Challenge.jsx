@@ -13,17 +13,17 @@ export default function Challenge({ count, handleAnswerButton, isFormDisabled, h
     <div className='container challenge' id='challengeLevel1'>
         <h3 className='question'>{question}</h3>
       <div className='options'>
-      <form onSubmit={handleAnswerButton}>
+      <form onSubmit={handleAnswerButton} disabled={isFormDisabled}>
       {answerOptions.map((option, index) => (
         <div key={uuidv4()} className="form-check">
           <input
             type="radio"
             className="form-check-input"
             name="answer"
-            id={uuidv4()}
-            checked={selectedOption === option}
+            id={`option${index}`}
+            
             value={option}
-            onChange={handleRadioChange}
+           
           />
           <label className="form-check-label" htmlFor={`option${index}`}>
             {option}

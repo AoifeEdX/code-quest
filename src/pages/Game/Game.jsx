@@ -3,62 +3,78 @@ import Challenge from "../../components/Challenge/Challenge";
 import questions from './../../assets/questions.json';
 import Lives from '../../components/Lives/Lives';
 import './Game.css';
-import { successfulNotification, failNotification, correctAnswerNotifivation, wrongtAnswerNotifivation, rememberNotifivation } from '../../components/Notification/Notification';
+import { successfulNotification, failNotification, correctAnswerNotification, wrongtAnswerNotification, rememberNotification } from '../../components/Notification/Notification';
 import { savePointsToStorage } from '../../utils/localStorage';
+import { sendData } from '../../utils/supabase/Supabasa';
+
+sendData();
 
 export default function Game() {
   const [lives, setLives] = useState(3);
   const [points, setPoints] = useState(0);
   const [count, setCount] = useState(0);
-  const [isFormDisabled, setFormDisabled] = useState(true);
+  const [isFormDisabled, setFormDisabled] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
 
-  useEffect(() => {
-	if ((count === questions.length - 1) && (lives === 0)) {
-    failNotification();
-    setFormDisabled(true);
-    }
-    
-  if ((count === questions.length - 1) && (lives > 0)) {
-        successfulNotification(points, 2);
-        savePointsToStorage(points);
-        setFormDisabled(true);
-      }
-	}, [count, points, lives]);
-  
   const handleRadioChange = (event) => {
-    setFormDisabled(false);
     setSelectedOption(event.target.value);
   }
+
+ const pauseGame = () => {
+  setFormDisabled(true);
+  setTimeout(() => setFormDisabled(false), 2000);
+  };
 
   const handleAnswerButton = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     const answer = event.currentTarget.answer.value;
-    if (!answer) {
-      rememberNotifivation();
-      setFormDisabled(true);
-    } else {
-      const correct_answer = questions[count].correctAnswer;
+    const correct_answer = questions[count].correctAnswer;
     
-      if (answer === correct_answer) {
+    if (answer) {
+    if (answer === correct_answer) {
         setPoints(prevPoints => prevPoints + 10);
-        correctAnswerNotifivation();
-        setFormDisabled(true);
+        correctAnswerNotification();
+        pauseGame();
       } else {
-        wrongtAnswerNotifivation();
-        setFormDisabled(true);
-        if (lives > 0) {
+        wrongtAnswerNotification();
+        pauseGame();
+        if (lives > 1) {
           setLives(prevLives => prevLives - 1);
+        } else {
+          setLives(prevLives => prevLives - 1);
+          setTimeout(() => {
+            failNotification();
+            setFormDisabled(true)
+          }, 2000)
         }
         event.currentTarget = '';
       }
 
-      if (count < questions.length - 1) setCount(prevCount => prevCount + 1);
-  }
+    if ((count === questions.length - 1) && (lives > 0)) {
+      const currentPoints = (answer === correct_answer) ? points + 10 : points;
+      setTimeout(() => {
+        successfulNotification(currentPoints);
+        setFormDisabled(true)
+      }, 2000)
+      savePointsToStorage(currentPoints);
+    }
 
-  form.reset();
-  } 
+    handleNetxQuestionButton();
+    } else {
+      rememberNotification();
+      pauseGame();
+  }
+     form.reset();
+    } 
+    
+  const handleNetxQuestionButton = () => {
+    console.log(count);
+  if ((count < questions.length - 1) && (lives > 0)) {
+    setCount(prevCount => prevCount + 1);
+  }
+}
+
 
   return (
     <>
@@ -69,7 +85,7 @@ export default function Game() {
           </div>
           <div className='points'>Points: {points}</div>
         </div>
-        <Challenge count={count} handleAnswerButton={handleAnswerButton} isFormDisabled={isFormDisabled} handleRadioChange={handleRadioChange} selectedOption={selectedOption} />
+        <Challenge count={count} handleAnswerButton={handleAnswerButton} isFormDisabled={isFormDisabled} />
       </section>
     </>
       );

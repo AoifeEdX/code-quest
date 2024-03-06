@@ -2,8 +2,7 @@ import toast from 'react-hot-toast';
 import Nav from 'react-bootstrap/Nav';
 import './Notification.css'
 
-export const successfulNotification = (points, level) => {
-  setTimeout(() => {
+export const successfulNotification = (points) => {
   toast((t) => (
      <div className="card mb-3 notification" style={{ maxWidth: '540px' }}>
        <div className="row g-0">
@@ -18,7 +17,7 @@ export const successfulNotification = (points, level) => {
           <div className='buttons'>
           <button> <Nav.Link className="nav-element" href={`/`}>Exit Game</Nav.Link>
           </button>
-          <button> <Nav.Link className="nav-element" href={`/level${level}`}>Next Level</Nav.Link>
+          <button> <Nav.Link className="nav-element" href={`/level2welcome`}>Next Level</Nav.Link>
           </button>
           </div>
         </div>
@@ -33,11 +32,9 @@ export const successfulNotification = (points, level) => {
         width: '500px',
       }
     },);
-    }, 1700); 
-}
+    }; 
 
 export const failNotification = () => {
-  setTimeout(() => {
   toast((t) => (
      <div className="card mb-3" style={{ maxWidth: '540px' }}>
        <div className="row g-0 gameOver">
@@ -56,11 +53,10 @@ export const failNotification = () => {
   {
     duration: Infinity,
     }
-    );
-    }, 1600); 
+    ); 
 }
 
-export const correctAnswerNotifivation = () => {
+export const correctAnswerNotification = () => {
   toast((t) => (
      <div className="card mb-3 notification" style={{ maxWidth: '540px' }}>
        <div className="row g-0">
@@ -86,7 +82,7 @@ export const correctAnswerNotifivation = () => {
     },);
 }
 
-export const wrongtAnswerNotifivation = () => {
+export const wrongtAnswerNotification = () => {
   toast((t) => (
      <div className="card mb-3 notification" style={{ maxWidth: '540px' }}>
        <div className="row g-0">
@@ -111,7 +107,7 @@ export const wrongtAnswerNotifivation = () => {
     },);
 }
 
-export const rememberNotifivation = () => {
+export const rememberNotification = () => {
   toast((t) => (
      <div className="card mb-3" style={{ maxWidth: '540px' }}>
        <div className="row g-0">
