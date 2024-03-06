@@ -32,19 +32,19 @@ Whether you're a beginner just starting your coding journey or an experienced de
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 ### Libraries
-bootstrap[https://www.npmjs.com/package/bootstrap]
-react bootstrap[https://www.npmjs.com/package/react-bootstrap]
-react-router-dome[https://www.npmjs.com/package/Router]
-react-hot-toast[https://www.npmjs.com/package/react-hot-toast]
-react-toastify[https://www.npmjs.com/package/react-toastify]
-supabase[https://supabase.com/toas]
-uuid[https://www.npmjs.com/package/uuid]
-@popperjs[https://www.npmjs.com/package/@popperjs/core]
-@mui[https://www.npmjs.com/package/@mui/icons-material]
-@fontsource
-@emotion[https://www.npmjs.com/package/@emotion/react]
-typewriter-effect[https://www.npmjs.com/package/typewriter-effect]
-state-pool[https://www.npmjs.com/package/state-pool]
+bootstrap[https://www.npmjs.com/package/bootstrap]<br>
+react bootstrap[https://www.npmjs.com/package/react-bootstrap]<br>
+react-router-dome[https://www.npmjs.com/package/Router]<br>
+react-hot-toast[https://www.npmjs.com/package/react-hot-toast]<br>
+react-toastify[https://www.npmjs.com/package/react-toastify]<br>
+supabase[https://supabase.com/toas]<br>
+uuid[https://www.npmjs.com/package/uuid]<br>
+@popperjs[https://www.npmjs.com/package/@popperjs/core]<br>
+@mui[https://www.npmjs.com/package/@mui/icons-material]<br>
+@fontsource<br>
+@emotion[https://www.npmjs.com/package/@emotion/react]<br>
+typewriter-effect[https://www.npmjs.com/package/typewriter-effect]<br>
+state-pool[https://www.npmjs.com/package/state-pool]<br>
 
 ## Authors
 John Alzate<br>
