@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
+import { getAllDataFromSupabase } from '../../utils/supabase/Supabase';
 
 const LeaderBoard = ({ onClose }) => {
     const [playersData, setPlayersData] = useState([]);
 
+    async function getPlayersData() {
+        try {
+             const data = await getAllDataFromSupabase();
+             setPlayersData(data);
+        } catch (error) {
+        TransformStream.error(error.message);
+    }
+    }
+
     useEffect(() => {
-        const storedLeaderboard = localStorage.getItem('leaderboard');
-        const leaderboardData = storedLeaderboard ? JSON.parse(storedLeaderboard) : [];
-        setPlayersData(leaderboardData);
+        getPlayersData();
     }, []);
+
+    // useEffect(() => {
+    //     const storedLeaderboard = localStorage.getItem('leaderboard');
+    //     const leaderboardData = storedLeaderboard ? JSON.parse(storedLeaderboard) : [];
+    //     setPlayersData(leaderboardData);
+    // }, []);
+
     return (
         <>
         <div className="d-flex justify-content-center" >
@@ -29,11 +44,12 @@ const LeaderBoard = ({ onClose }) => {
                             </tr>
                         </thead>
                             <tbody>
-                                {playersData.map(({ name, points }) => (
-                                  <tr key={uuidv4()} scope="row">
-                                   {/* <td></td> */}
+                                {playersData.map(({ name, score, id }) => (
+                                  <tr key={id} scope="row">
+                                   <td>{id}</td>
+
                                    <td>{name}</td>
-                                   <td>{points}</td>
+                                   <td>{score}</td>
                                   </tr>)
                                 )}
                         </tbody>
