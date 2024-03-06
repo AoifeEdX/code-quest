@@ -15,9 +15,9 @@
     },
     {
         "id": 3,
-        "name": "The Browser Battleground",
-        "image": "./src/assets/buginvasion.jpg",
-        "description": "Confront browser-based challenges in the Chrome Citadel, Firefox Fortress, and Safari Sanctuary.",
-        "instruction": "Overcome compatibility issues and optimize your code for different browsers."
+        "name": "Bootstrap Battle",
+        "image": "/images/BootstrapBattle.png",
+        "description": "Confront Bootstrap-based challenges to make it through to the end of the game!",
+        "instruction": "Answer the Bootstrap class questions to succeed."
     }
 ]
