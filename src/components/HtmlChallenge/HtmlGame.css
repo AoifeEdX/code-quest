@@ -1,15 +1,3 @@
-/* @keyframes mymove {
-    from {left: 0px;}
-    to {left: end;}
-}
-.animated-container {
-    position: relative;
-    animation: mymove 5s;
-    animation-fill-mode: forward;
-    animation-timing-function: ease-in;
-
-} */
-
 .bangers-regular {
     font-family: "Bangers", system-ui;
     font-weight: 400;
@@ -37,18 +25,18 @@
 }
 
 @-webkit-keyframes "pulse" {
-0% {
- -webkit-transform: scale(1.05);
- transform: scale(1.05);
-}
-50% {
--webkit-transform: scale(0.8);
-transform: scale(0.9);
-}
-100% {
- -webkit-transform: scale(1);
-transform: scale(1);
-}
+	0% {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+	}
+	50% {
+	-webkit-transform: scale(0.8);
+	transform: scale(0.9);
+	}
+	100% {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	}
 }
 .shaking-button {
     border: 6px solid rgb(235, 75, 187);
