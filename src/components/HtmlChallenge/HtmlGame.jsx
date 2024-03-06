@@ -6,7 +6,8 @@ import { Button, Container } from 'react-bootstrap';
 import HtmlLives from './HtlmLives';
 import HtmlAnswerCharacter from './HtmlAnswerCharacter';
 import './HtmlGame.css';
-import { savePointsToStorage } from '../../utils/localStorage';
+import { savePointsToStorage} from '../../utils/localStorage';
+
 
 const HtmlGame = () => {
 
@@ -68,6 +69,7 @@ const HtmlGame = () => {
             setAllQuestionAnswered(true)
             handleShow()
         }
+        {/*savePointsToStorage(result.score);*/ }
     }
 
     const onAnswerSelected = (answer, index) => {
