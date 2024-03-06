@@ -82,9 +82,6 @@ function Footer() {
 
 
 
-const Component = () => {
-  ExternalScript("https://www.scriptdomain.com/script")
-}
 
 
 export default Footer;
