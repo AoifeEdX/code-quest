@@ -18,7 +18,7 @@ const Welcome = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-    saveCurrentUser(formData.username, 0);
+		saveCurrentUser(formData.username, 0);
 		if (!formData.username.trim()) {
 			setError('Please enter your username!');
 			setShow(false);
@@ -90,10 +90,7 @@ const Welcome = () => {
 					)}
 				</Col>
 			</Row>
-		
 		</Container>
-
-
 	);
 };
 
