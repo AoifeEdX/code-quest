@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Image } from 'react-bootstrap';
 import htmlAnswerChar from "./htmlAnswerChar.json";
 
 const HtmlAnswerCharacter = ({ alertMessage }) => {
