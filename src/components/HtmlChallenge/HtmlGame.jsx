@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useUser } from "./../../context/userContext.jsx";
+// import { useUser } from "./../../context/userContext.jsx";
 import { useNavigate } from 'react-router-dom';
-import htmlQuestionList from "../../../htmlQuestionsList.json";
+import htmlQuestionList from "./htmlQuestionsList.json";
 import { Button, Container } from 'react-bootstrap';
 import HtmlLives from './HtlmLives';
 import HtmlAnswerCharacter from './HtmlAnswerCharacter';
