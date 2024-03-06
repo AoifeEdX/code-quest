@@ -12,7 +12,7 @@ function Footer() {
           <h5 className="mb-3">Newsletter</h5>
           <p className="fw-light">Get weekly updates on our game releases</p>
           <div className="d-flex">
-            <input type="email" className="form-control me-2 rounded-pill" placeholder="Your email address" />
+            <input type="email" className="form-control me-2 rounded-pill" placeholder="Your email address" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required />
             <Button className="btn rounded-pill gradient-bg-blue text-white ms-1">Subscribe</Button>
           </div>
         </Col>
