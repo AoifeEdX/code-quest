@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-      <Container className="py-4 mb-5">
+      <Container className="py-4 mb-5 sticky-top" style={{backgroundColor: '#022047'}}>
         <Navbar variant="dark" expand="lg">
           <Navbar.Brand href="/" className="fs-2 me-auto">CodeQuest</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" />

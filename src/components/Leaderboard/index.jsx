@@ -29,24 +29,24 @@ const LeaderBoard = ({ onClose }) => {
         <>
         <div className="d-flex justify-content-center" >
 
-            <Modal.Dialog scrollable className="border border-danger border-3 rounded m-5 p-5" style={{maxWidth: '50em'}}>
+            <Modal.Dialog scrollable className="border border-info border-3 rounded m-5 p-5" style={{maxWidth: '50em'}}>
                 <Modal.Header className='text-center'>
-                <h2 className='modal-title w-100'>Leaderboard</h2>
+                <h2 className='modal-title w-100 h3 me-5 text-warning' >Leaderboard</h2>
                 <button type="button" className="btn-close btn-close-white m-1" data-bs-dismiss="modal" aria-label="Close" onClick={() => onClose()}></button>
                 </Modal.Header>
                 <Modal.Body className="m-1 ">
-                    <table className="table mt-2 border-0  table-dark p-2">
-                        <thead>
+                    <table className="table mt-2 border-0  table-dark bg-secondary">
+                        <thead className='p-2'>
                             <tr className="table-dark border-danger">
-                                <th className="text-info" scope="col">#</th>
-                                <th className="text-danger" scope="col">Player</th>
-                                <th className="text-success" scope="col">Score</th>
+                                {/* <th className="text-info" scope="col">#</th> */}
+                                <th className="text-danger p-3" scope="col">Player</th>
+                                <th className="text-success p-3" scope="col">Score</th>
                             </tr>
                         </thead>
                             <tbody>
                                 {playersData.map(({ name, score, id }) => (
                                   <tr key={id} scope="row">
-                                   <td>{id}</td>
+                                   {/*<td>{id}</td>*/}
                                    <td>{name}</td>
                                    <td>{score}</td>
                                   </tr>)
@@ -55,7 +55,7 @@ const LeaderBoard = ({ onClose }) => {
                     </table>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button className="m-2" variant="outline-success"  onClick={() => onClose()}>Close</Button>
+                <Button className="m-2" variant="outline-warning"  onClick={() => onClose()}>Close</Button>
                 </Modal.Footer> 
             </Modal.Dialog>
         </div>
