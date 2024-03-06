@@ -48,7 +48,7 @@ function Contact() {
                 </a>
               </p>
               <p className="mt-4">
-                <a href="https://github.com/CodeQuest" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <a href="https://github.com/CodeQuest" target="_blank" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   <IconButton className="text-warning me-4">
                     <GitHub />
                   </IconButton>
@@ -56,7 +56,7 @@ function Contact() {
                 </a>
               </p>
               <p className="mt-4">
-                <a href="https://www.linkedin.com/company/codequest" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <a href="https://www.linkedin.com/company/codequest" target="_blank" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   <IconButton className="text-warning me-4">
                     <LinkedIn />
                   </IconButton>

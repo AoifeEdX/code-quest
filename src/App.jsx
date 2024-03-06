@@ -23,11 +23,8 @@ function App() {
     <>
       <Header />
       <Toaster  reverseOrder={false}  containerStyle={{
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-        }}/>
-      <Routes >       
+              }}/>
+       <Routes >       
       <Route path='/' element={<Welcome />} />
       <Route path='/level1welcome' element={<JavaScriptGameWelcome />} />
       <Route path='/level1' element={<Game />} />

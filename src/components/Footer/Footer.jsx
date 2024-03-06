@@ -30,13 +30,13 @@ function Footer() {
 				<Col xs={12} md={3} className="text-center mb-5">
           <h5 className="mb-3">Follow Us</h5>
           <div>
-            <IconButton color="inherit" href="https://github.com/AoifeEdX/code-quest" aria-label="GitHub" className="text-white me-2">
+            <IconButton color="inherit" href="https://github.com/AoifeEdX/code-quest" target="_blank" aria-label="GitHub" className="text-white me-2">
               <GitHub />
             </IconButton>
-            <IconButton color="inherit" href="https://instagram.com" aria-label="Instagram" className="text-white me-2">
+            <IconButton color="inherit" href="https://instagram.com" target="_blank" aria-label="Instagram" className="text-white me-2">
               <Instagram />
             </IconButton>
-            <IconButton color="inherit" href="https://www.linkedin.com" aria-label="LinkedIn" className="text-white">
+            <IconButton color="inherit" href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" className="text-white">
               <LinkedIn />
             </IconButton>
           </div>
