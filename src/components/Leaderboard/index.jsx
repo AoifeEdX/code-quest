@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { v4 as uuidv4 } from 'uuid';
 import { getAllDataFromSupabase } from '../../utils/supabase/Supabase';
+import toast from 'react-hot-toast';
 
 const LeaderBoard = ({ onClose }) => {
     const [playersData, setPlayersData] = useState([]);
 
-    async function getPlayersData() {
-        try {
-             const data = await getAllDataFromSupabase();
-             setPlayersData(data);
-        } catch (error) {
-        TransformStream.error(error.message);
+   async function getPlayersData() {
+     try {
+       const data = await getAllDataFromSupabase();
+       setPlayersData(data);
+     } catch (error) {
+       toast.error(error.message);
     }
-    }
+   }
 
     useEffect(() => {
         getPlayersData();
@@ -38,7 +38,7 @@ const LeaderBoard = ({ onClose }) => {
                     <table className="table mt-2 border-0  table-dark bg-secondary">
                         <thead className='p-2'>
                             <tr className="table-dark border-danger">
-                                <th className="text-info" scope="col">#</th>
+                                {/* <th className="text-info" scope="col">#</th> */}
                                 <th className="text-danger p-3" scope="col">Player</th>
                                 <th className="text-success p-3" scope="col">Score</th>
                             </tr>
@@ -46,8 +46,7 @@ const LeaderBoard = ({ onClose }) => {
                             <tbody>
                                 {playersData.map(({ name, score, id }) => (
                                   <tr key={id} scope="row">
-                                   <td>{id}</td>
-
+                                   {/*<td>{id}</td>*/}
                                    <td>{name}</td>
                                    <td>{score}</td>
                                   </tr>)

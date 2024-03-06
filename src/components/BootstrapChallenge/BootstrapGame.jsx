@@ -7,7 +7,7 @@ import Points from "./Points";
 import Character from './Character';
 import LevelComplete from './LevelComplete';
 import GameOver from './GameOver';
-import { savePointsToStorage, updateLeaderBordStorage } from '../../utils/localStorage';
+import { savePointsToStorage } from '../../utils/localStorage';
 
 export default function Game() {
 	const [lives, setLives] = useState(5);
@@ -21,7 +21,7 @@ export default function Game() {
 	useEffect(() => {
 		if (allQuestionsAnswered) {
 			savePointsToStorage(points);
-			updateLeaderBordStorage();
+			//updateLeaderBordStorage();
 		}
 	}, [allQuestionsAnswered, points]);
 
