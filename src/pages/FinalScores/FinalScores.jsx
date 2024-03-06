@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Button, Row, Col, Image } from 'react-bootstrap';
 import Points from '../../components/BootstrapChallenge/Points';
 import Leaderboard from '../../components/Leaderboard';
-import fireGif from '/images/fireGif.gif'; 
+import cheeringCharacter from '/images/cheeringCharacter.png'; 
 
 const FinalScores = () => {
     const [finalScores, setFinalScores] = useState(null);
@@ -27,7 +27,7 @@ const FinalScores = () => {
         <Container>
             <Row className="justify-content-center align-items-center">
                 <Col md="6">
-                    <Image className="pe-md-5" src={fireGif} alt="CodeQuest background" fluid rounded />
+                    <Image className="pe-md-5" src={cheeringCharacter} alt="CodeQuest background" fluid rounded />
                 </Col>
                 <Col md="6" className="my-5 px-5">
                     <h1>Final Scores</h1>
