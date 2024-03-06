@@ -12,7 +12,7 @@ const HtmlGameWelcome = () => {
     return (
         <>
         <section className="animated-container d-flex flex-column justify-content-center align-items-center ms-5 me-5" >
-        <div className="row d-flex justify-content-center align-items-center bangers-text tracking-widest">
+        <div className="my-description row d-flex justify-content-center align-items-center bangers-text tracking-widest">
             {questList.map((game) => {
                 if (game.id === 2) {
                     return (                      
