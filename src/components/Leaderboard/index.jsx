@@ -38,7 +38,7 @@ const LeaderBoard = ({ onClose }) => {
                     <table className="table mt-2 border-0  table-dark bg-secondary">
                         <thead className='p-2'>
                             <tr className="table-dark border-danger">
-                                {/* <th className="text-info" scope="col">#</th> */}
+                                <th className="text-info" scope="col">#</th>
                                 <th className="text-danger p-3" scope="col">Player</th>
                                 <th className="text-success p-3" scope="col">Score</th>
                             </tr>
