@@ -4,7 +4,6 @@ import Typewriter from 'typewriter-effect';
 import { useNavigate } from 'react-router-dom';
 import { saveCurrentUser } from '../../utils/localStorage';
 import fightGif from '/images/fightGif.gif';
-import arrow from '/images/arrow.png';
 
 const Welcome = () => {
 	const [formData, setFormData] = useState({ username: '' });
