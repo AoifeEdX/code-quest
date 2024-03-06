@@ -1,13 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Challenge from "../../components/Challenge/Challenge";
 import questions from './../../assets/questions.json';
 import Lives from '../../components/Lives/Lives';
 import './Game.css';
-import { successfulNotification, failNotification, correctAnswerNotification, wrongtAnswerNotification, rememberNotification } from '../../components/Notification/Notification';
+import {
+  successfulNotification,
+  failNotification,
+  correctAnswerNotification,
+  wrongtAnswerNotification,
+  rememberNotification
+} from '../../components/Notification/Notification';
 import { savePointsToStorage } from '../../utils/localStorage';
-import { sendData } from '../../utils/supabase/Supabasa';
+//import { sendData, insertDataIntoTable, getAllDataFromTable } from '../../utils/supabase/Supabase';
 
-sendData();
+//createDatabase();
+//sendData();
+//insertDataIntoTable();
+//getAllDataFromTable();
 
 export default function Game() {
   const [lives, setLives] = useState(3);
