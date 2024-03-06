@@ -3,20 +3,63 @@ import { Button, Container, Row, Col } from 'react-bootstrap';
 import IconButton from '@mui/material/IconButton';
 import { Email, GitHub, LinkedIn, Phone } from "@mui/icons-material";
 
-function Contact() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
+const Contact = () => {
+const [formData, setFormData] = useState({
+  name: '',
+  email: '',
+  message: ''
+});
 
-  const handleSubmit = (e) => {
+const [errors, setErrors] = useState({
+  name: null,
+  email: null,
+  message: null
+});
+
+const handleInputChange = (e) => {
+  const { name, value } = e.target;
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+  setErrors((prev) => ({
+    ...prev,
+    [name]: '',
+  }));
+};
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-    setName("");
-    setEmail("");
-    setMessage("");
+    const validationErrors = validateForm(formData);
+    if (validationErrors) {
+      setErrors(validationErrors);
+    } 
+    // else {
+    //   console.log("Form submitted:");
+    // }
   };
+  
+  const validateForm = (data) => {
+    const newErrors = {};
+    if (!data.name.trim()) {
+      newErrors.name = 'Please enter your name';
+    }
+    if (!data.email.trim() || !isValidEmail(data.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    if (!data.message.trim()) {
+      newErrors.message = 'Please enter your message';
+    }
+    return Object.keys(newErrors).length > 0 ? newErrors : null;
+    // setErrors((prev) => ({...prev, name: newError.name}))
+};
+
+const isValidEmail = (email) => {
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  console.log(emailRegex.test(email))
+  return emailRegex.test(email);
+}
+
 
   return (
     <div>
@@ -48,7 +91,7 @@ function Contact() {
                 </a>
               </p>
               <p className="mt-4">
-                <a href="https://github.com/CodeQuest" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <a href="https://github.com/CodeQuest" target="_blank" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   <IconButton className="text-warning me-4">
                     <GitHub />
                   </IconButton>
@@ -56,7 +99,7 @@ function Contact() {
                 </a>
               </p>
               <p className="mt-4">
-                <a href="https://www.linkedin.com/company/codequest" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <a href="https://www.linkedin.com/company/codequest" target="_blank" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   <IconButton className="text-warning me-4">
                     <LinkedIn />
                   </IconButton>
@@ -72,30 +115,34 @@ function Contact() {
                 <input
                   type="text"
                   className="form-control"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
+                  name="name"
+                  placeholder="John Doe"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />{errors && errors.name ? <p className="text-danger fw-bolder">{errors.name}</p> : ''}
               </div>
               <div className="form-group my-3">
                 <label htmlFor="email">Email</label>
                 <input
-                  type="email"
+                  type="text"
+                  name="email"
                   className="form-control"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+                  // id="email"
+                  placeholder="john@example.com"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />{errors && errors.email ? <p className="text-danger fw-bolder">{errors.email}</p> : ''}
               </div>
               <div className="form-group my-3">
                 <label htmlFor="message">Message</label>
                 <textarea
                   className="form-control"
-                  id="message"
+                  type="text"
+                  name="message"
                   rows="5"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                ></textarea>
+                  value={formData.message}
+                  onChange={handleInputChange}
+                ></textarea>{errors && errors.message ? <p className="text-danger fw-bolder">{errors.message}</p> : ''}
               </div>
               <Button type="submit" className="my-3 btn rounded-pill gradient-bg-blue" style={{ width: "100%" }}>Submit</Button>
             </form>

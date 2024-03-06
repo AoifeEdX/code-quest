@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import IconButton from '@mui/material/IconButton';
-import { GitHub, Instagram, LinkedIn } from '@mui/icons-material';
+import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 
-function Footer() {
+
+
+  function Footer() {
+  const [feedback,setFeedback] = useState(false)
+  const [email,setEmail] = useState({Email:""})
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBpRhdUIk8hhbE6PK9idYs9c6vU8KEF-awsYR-7yFCcOzim4MSA9cuB9WJBjPKHTJ/exec'
+  
+   const handleChange = (e) => {
+    const {name, value} = e.target
+    setEmail ({[name]:value})
+   }
+  const handleSubmit = (e) =>{
+    e.preventDefault ();
+    console.log(e)
+    fetch(scriptURL, {method:'POST',contentType: 'application/json', body: JSON.stringify(email) })
+
+          .then(response=> {return response.json()}
+            
+          ).then(data=>{console.log(data)
+            setFeedback(true)
+            setTimeout(function(){setFeedback(false)},10000)
+            setEmail({Email:""})
+          })
+          .catch(error => console.error('Error!', error.message))
+
+  }
+ 
+
   return (
     <Container className="py-5">
 			<hr className="my-5"></hr>
@@ -30,13 +57,13 @@ function Footer() {
 				<Col xs={12} md={3} className="text-center mb-5">
           <h5 className="mb-3">Follow Us</h5>
           <div>
-            <IconButton color="inherit" href="https://github.com/AoifeEdX/code-quest" aria-label="GitHub" className="text-white me-2">
+            <IconButton color="inherit" href="https://github.com/AoifeEdX/code-quest" target="_blank" aria-label="GitHub" className="text-white me-2">
               <GitHub />
             </IconButton>
-            <IconButton color="inherit" href="https://instagram.com" aria-label="Instagram" className="text-white me-2">
+            <IconButton color="inherit" href="https://instagram.com" target="_blank" aria-label="Instagram" className="text-white me-2">
               <Instagram />
             </IconButton>
-            <IconButton color="inherit" href="https://www.linkedin.com" aria-label="LinkedIn" className="text-white">
+            <IconButton color="inherit" href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" className="text-white">
               <LinkedIn />
             </IconButton>
           </div>
@@ -49,5 +76,9 @@ function Footer() {
     </Container>
   );
 }
+
+
+
+
 
 export default Footer;

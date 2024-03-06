@@ -1,23 +1,23 @@
 [
     {
         "id": 1,
-        "name": "Bug Invasion",
-        "image": "./src/assets/buginvasion.jpg",
-        "description": "journey begins with the Bug Invasion! Navigate through different regions of CodeLand, each plagued by specific bugs. Use your coding skills to debug and restore order. In this region of CodeLand, HTML tags have been tangled up, causing chaos in the digital landscape. Your task is to correct the tags in the provided code snippet to restore order and ensure proper rendering of the content.",
-        "instruction": "Identify and correct the errors in the HTML tags. Make sure each tag is properly matched and closed. Get ready to use your HTML skills to debug and save CodeLand!"
+        "name": "Cryptic Code Expedition: Journey into JavaScript",
+        "image": "./images/Designer(28).jpeg",
+        "description": " Your mission is to explore the mysterious realm of JavaScript and unravel coding puzzles.",
+        "instruction": "Answer the Questions: Respond to 4 JavaScript-related questions, each unlocking a new path in your expedition. Earn Points: Each correct answer awards you 10 points. Beware of Mistakes: You have only 3 lives. Incorrect answers may cost you a life. Get ready for an exciting dive into the world of JavaScript!"
     },
     {
         "id": 2,
-        "name": "🗡️ Congratulations, and welcome in HTML Forge",
+        "name": "🗡️ Congratulations, and welcome to HTML Forge",
         "image": "/public/assets/HtmlGame/welcometohtmllevel.jpeg",
-        "description": "You are one step closer to save our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing chaos in the digital landscape.  ",
+        "description": "You are one step closer to saving our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing havoc in the digital landscape.  ",
         "instruction": "Armed with your coding skills, each of your correct answer comes to life and helps to save our World. Embrace the true magic of HTML Forge! Learn and master Html, enhance your abilities. ⚔️"
     },
     {
         "id": 3,
-        "name": "The Browser Battleground",
-        "image": "./src/assets/buginvasion.jpg",
-        "description": "Confront browser-based challenges in the Chrome Citadel, Firefox Fortress, and Safari Sanctuary.",
-        "instruction": "Overcome compatibility issues and optimize your code for different browsers."
+        "name": "Bootstrap Battle",
+        "image": "/images/BootstrapBattle.png",
+        "description": "Confront Bootstrap-based challenges to make it through to the end of the game!",
+        "instruction": "Answer the Bootstrap class questions to succeed."
     }
 ]

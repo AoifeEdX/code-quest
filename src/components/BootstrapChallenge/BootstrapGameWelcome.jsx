@@ -9,7 +9,7 @@ const BootstrapGameWelcome = () => {
         navigate('/level3')
     }
     return (
-        <>
+        <>				
         <section className="animated-container d-flex flex-column justify-content-center align-items-center ms-5 me-5" >
         <div className="row d-flex justify-content-center align-items-center">
             {questList.map((game) => {
@@ -28,7 +28,7 @@ const BootstrapGameWelcome = () => {
             })}           
         </div>
         <div className="row" style={{width: '20em'}}>
-            <button className="btn btn-info btn-lg" style={{fontWeight: 'bold', color: 'grey'}}onClick={navigateToLevel3}>⚔️  Start  ⚔️</button>
+            <button className="m-2 gradient-bg-blue p-2 rounded-pill btn-lg bold-text" onClick={navigateToLevel3}>⚔️  Start  ⚔️</button>
         </div>
         </section>
         </>

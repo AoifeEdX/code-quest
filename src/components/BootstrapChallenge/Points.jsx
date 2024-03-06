@@ -1,14 +1,12 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 
-const Points = ({ points, totalQuestions, pointsPerQuestion }) => {
-    const maxPoints = totalQuestions * pointsPerQuestion;
-		const progress = (points / 60) * 100;
-    // const progress = (points / maxPoints) * 100; – will reinstate this once I figure out how to get the question code to the Final Scores page
+const Points = ({ points }) => {
+		const progress = (points / 120) * 100;
 
     return (
         <div className="d-flex justify-content-between text-success fw-bold fs-4">
-            <p>Points:</p>
+            <p>Points: {points}</p>
             <ProgressBar
                 animated
                 now={progress}
