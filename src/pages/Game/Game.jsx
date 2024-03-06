@@ -11,12 +11,6 @@ import {
   rememberNotification
 } from '../../components/Notification/Notification';
 import { savePointsToStorage } from '../../utils/localStorage';
-//import { sendData, insertDataIntoTable, getAllDataFromTable } from '../../utils/supabase/Supabase';
-
-//createDatabase();
-//sendData();
-//insertDataIntoTable();
-//getAllDataFromTable();
 
 export default function Game() {
   const [lives, setLives] = useState(3);

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { v4 as uuidv4 } from 'uuid';
 import { getAllDataFromSupabase } from '../../utils/supabase/Supabase';
+import toast from 'react-hot-toast';
 
 const LeaderBoard = ({ onClose }) => {
     const [playersData, setPlayersData] = useState([]);
 
-    async function getPlayersData() {
-        try {
-             const data = await getAllDataFromSupabase();
-             setPlayersData(data);
-        } catch (error) {
-        TransformStream.error(error.message);
+   async function getPlayersData() {
+     try {
+       const data = await getAllDataFromSupabase();
+       setPlayersData(data);
+     } catch (error) {
+       toast.error(error.message);
     }
-    }
+   }
 
     useEffect(() => {
         getPlayersData();

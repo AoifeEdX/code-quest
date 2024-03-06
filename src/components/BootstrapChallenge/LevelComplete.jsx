@@ -1,11 +1,13 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { insertDataIntoTable } from '../../utils/supabase/Supabase';
 
 const LevelComplete = () => {
     const navigate = useNavigate();
 
     const navigateToFinalScores = () => {
+        insertDataIntoTable();
         navigate('/final-scores');
     };
 
