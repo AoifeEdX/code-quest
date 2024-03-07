@@ -11,7 +11,6 @@ const HtmlLives = ({ displayedLives }) => {
 			<p>Lives:</p>
 			<p className="text-end">{fires}</p>
 		</div>
-
 	);
 };
 
