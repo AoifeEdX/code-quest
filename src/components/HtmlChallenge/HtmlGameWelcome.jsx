@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {  Container, Row, Button  } from 'react-bootstrap';
 import LevelWelcomeContent from "../LevelWelcomeContent/LevelWelcomeContent";
@@ -30,8 +29,7 @@ const HtmlGameWelcome = () => {
 			</Row>
 			<Row style={{ width: '20em' }}>
 				<Button
-					className="btn btn-info btn-lg bangers-text"
-					style={{ fontWeight: 'bold', color: 'grey' }}
+					className="btn gradient-bg-orange rounded-pill btn-lg bold-text text-white mt-5"
 					onClick={navigateToLevel2}
 				>
 					💥 <span className="bangers-text">Start</span> 💥

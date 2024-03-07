@@ -29,7 +29,7 @@ const BootstrapGameWelcome = () => {
             </Row>
             <Row style={{ width: '20em' }}>
                 <Button
-                    className="m-2 gradient-bg-blue p-2 rounded-pill btn-lg bold-text"
+                    className="btn gradient-bg-orange rounded-pill btn-lg bold-text text-white mt-5"
                     onClick={navigateToLevel3}
                 >
                     ⚔️ Start ⚔️
