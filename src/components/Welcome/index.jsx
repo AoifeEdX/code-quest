@@ -34,7 +34,7 @@ const Welcome = () => {
 
 	return (
 		<Container>
-			<Row className="justify-content-center align-items-center">
+			<Row>
 				<Col md="6" className="order-md-2">
 					<Image className="ps-md-5" src={fightGif} alt="CodeQuest background" fluid rounded />
 				</Col>
