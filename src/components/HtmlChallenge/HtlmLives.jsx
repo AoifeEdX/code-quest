@@ -1,14 +1,15 @@
 import React from 'react';
 
 const HtmlLives = ({ displayedLives }) => {
-	const hearts = Array.from({ length: displayedLives }, (index) => (
+	const fires = new Array(displayedLives).fill(null).map((_, index) => (
 		<span key={index}>🔥</span>
 	));
+	console.log(fires)
 
 	return (
 		<div className="d-flex justify-content-between text-danger fs-4 fw-bold bangers-text">
 			<p>Lives:</p>
-			<p className="text-end">{hearts}</p>
+			<p className="text-end">{fires}</p>
 		</div>
 
 	);
