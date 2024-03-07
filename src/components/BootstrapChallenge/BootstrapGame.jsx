@@ -87,7 +87,7 @@ export default function Game() {
 	const imageSrc = currentQuestion.image || '';
 
 	return (
-		<Container>
+		<Container className="mt-5">
 			<Row className="justify-content-md-center text-center">
 				<Col md="4" className="order-md-2 d-flex flex-column justify-content-between mb-3">
 					<div className="border border-2 border-warning rounded p-4 mb-3 bg-primary bg-opacity-25 bg-gradient">
