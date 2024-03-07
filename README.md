@@ -2,80 +2,88 @@
 
 ## Module 14 Final Project
 
-## Table of Content
+## Table of Contents
 
--   [Overview](#Overview)
--   [Screenshots](#Screenshots)
--   [Links](#Links)
--   [Our_process](#Our_process)
--   [Built_with](#Built_with)
--   [Authors](#Author)
--   [Credits](#Credits)
+- [Overview](#overview)
+- [Screenshots](#screenshots)
+- [Links](#links)
+- [Our Process](#our-process)
+- [Built With](#built-with)
+- [Authors](#authors)
+- [Credits](#credits)
 
 ## Overview
-UserStory: CodeQuest is designed to help players learn to code through fun and engaging games. Our mission is to make coding education accessible and enjoyable for everyone, regardless of their experience level.
-Whether you're a beginner just starting your coding journey or an experienced developer looking to enhance your skills, CodeQuest offers a wide range of interactive challenges and tutorials to suit your needs. Join us on this exciting quest to master the art of coding!
+
+User Story: CodeQuest is designed to help players learn to code through fun and engaging games. Our mission is to make coding education accessible and enjoyable for everyone, regardless of their experience level. Whether you're a beginner just starting your coding journey or an experienced developer looking to enhance your skills, CodeQuest offers a wide range of interactive challenges and tutorials to suit your needs. Join us on this exciting quest to master the art of coding!
 
 ### Screenshots
 
+![Screenshot](public/images/screenshot.gif)
+
 ### Links
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)(https://github.com/AoifeEdX/code-quest) <br>
-[Live link]()
 
-## Our_process
+- ![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=GitHub&logoColor=white)
 
-### Built_with
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- [GitHub Repo](https://github.com/AoifeEdX/code-quest)
+- [Live Link]()
+
+## Our Process
+
+### Built With
+
+![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=React&logoColor=%2361DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=Node.js&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-%238511FA.svg?style=for-the-badge&logo=Bootstrap&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=JavaScript&logoColor=%23F7DF1E)
 
 ### Libraries
-bootstrap[https://www.npmjs.com/package/bootstrap]<br>
-react bootstrap[https://www.npmjs.com/package/react-bootstrap]<br>
-react-router-dome[https://www.npmjs.com/package/Router]<br>
-react-hot-toast[https://www.npmjs.com/package/react-hot-toast]<br>
-react-toastify[https://www.npmjs.com/package/react-toastify]<br>
-supabase[https://supabase.com/toas]<br>
-uuid[https://www.npmjs.com/package/uuid]<br>
-@popperjs[https://www.npmjs.com/package/@popperjs/core]<br>
-@mui[https://www.npmjs.com/package/@mui/icons-material]<br>
-@fontsource<br>
-@emotion[https://www.npmjs.com/package/@emotion/react]<br>
-typewriter-effect[https://www.npmjs.com/package/typewriter-effect]<br>
-state-pool[https://www.npmjs.com/package/state-pool]<br>
+
+- Bootstrap [npm package](https://www.npmjs.com/package/bootstrap)
+- Emotion [npm package](https://www.npmjs.com/package/@emotion/react)
+- Fontsource
+- Material UI Icons [npm package](https://www.npmjs.com/package/@mui/icons-material)
+- Popper.js [npm package](https://www.npmjs.com/package/@popperjs/core)
+- React Bootstrap [npm package](https://www.npmjs.com/package/react-bootstrap)
+- React Hot Toast [npm package](https://www.npmjs.com/package/react-hot-toast)
+- React Router Dom [npm package](https://www.npmjs.com/package/react-router-dom)
+- React Toastify [npm package](https://www.npmjs.com/package/react-toastify)
+- State Pool [npm package](https://www.npmjs.com/package/state-pool)
+- Supabase [supabase.com](https://supabase.com/toas)
+- Typewriter Effect [npm package](https://www.npmjs.com/package/typewriter-effect)
+- UUID [npm package](https://www.npmjs.com/package/uuid)
 
 ## Authors
-John Alzate<br>
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)[]<br>
-![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)[]<br>
 
-Joe Collar<br>
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)[https://github.com/faithhopeandvanity]<br>
-![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)[https://www.linkedin.com/in/joefhv/]<br>
+- John Alzate
+  - [GitHub](https://github.com/JohnAlzate)
+  - [LinkedIn](https://www.linkedin.com/in/johnalzate/)
 
-Adebayo Dada <br>
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)[https://github.com/AOD4141]<br>
-![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)[https://www.linkedin.com/in/adebayodada/]<br>
+- Joe Collar
+  - [GitHub](https://github.com/faithhopeandvanity)
+  - [LinkedIn](https://www.linkedin.com/in/joefhv/)
 
-Aofie Dunphy<br>
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)[https://github.com/AoifeEdX]<br>
-![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)[https://www.linkedin.com/in/aoifenidhonnacha/]<br>
+- Adebayo Dada
+  - [GitHub](https://github.com/AOD4141)
+  - [LinkedIn](https://www.linkedin.com/in/adebayodada/)
 
-Szilvia Horvath<br>
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)[https://github.com/hszilvi]<br>
-![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)[https://www.linkedin.com/in/horvathszilvi/]
+- Aoife Dunphy
+  - [GitHub](https://github.com/AoifeEdX)
+  - [LinkedIn](https://www.linkedin.com/in/aoifenidhonnacha/)
 
-Olha Pobedynska<br>
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)[https://github.com/23birola]<br>
-![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)[https://www.linkedin.com/in/olga-pobedynska-a79492220/]<br>
+- Szilvia Horvath
+  - [GitHub](https://github.com/hszilvi)
+  - [LinkedIn](https://www.linkedin.com/in/horvathszilvi/)
+
+- Olha Pobedynska
+  - [GitHub](https://github.com/23birola)
+  - [LinkedIn](https://www.linkedin.com/in/olga-pobedynska-a79492220/)
 
 ### Credits
 
 <details>
 <summary><b>Resources</b></summary>
 
-badges [https://github.com/Ileriayo/markdown-badges]
+- Badges [github.com/Ileriayo/markdown-badges]
 
 </details>

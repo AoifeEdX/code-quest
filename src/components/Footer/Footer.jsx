@@ -5,7 +5,7 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 
 
 
-function Footer() {
+  function Footer() {
   const [feedback,setFeedback] = useState(false)
   const [email,setEmail] = useState({Email:""})
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBpRhdUIk8hhbE6PK9idYs9c6vU8KEF-awsYR-7yFCcOzim4MSA9cuB9WJBjPKHTJ/exec'
@@ -40,8 +40,8 @@ function Footer() {
           <p className="fw-light">Get weekly updates on our game releases</p>
           <div className="d-flex">
             <form onSubmit= {handleSubmit}>
-            <input id="email" name="Email" value={email.Email} onChange= {handleChange} type="email" className="form-control me-2 rounded-pill" placeholder="Your email address" />
-            <Button type="submit" className="btn rounded-pill gradient-bg-blue text-white ms-1">Subscribe</Button>
+            <input id="email" name="Email" value={email.Email} onChange= {handleChange} type="email" className="form-control me-2 rounded-pill" placeholder="Your email address"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required/>
+            <Button type="submit" className="btn rounded-pill gradient-bg-blue text-white ms-1"> Subscribe </Button>
             </form>
             <span > {feedback? "Thank you for subscribing":""}</span>
           </div>
@@ -82,9 +82,6 @@ function Footer() {
 
 
 
-const Component = () => {
-  ExternalScript("https://www.scriptdomain.com/script")
-}
 
 
 export default Footer;
