@@ -9,15 +9,15 @@
     {
         "id": 2,
         "name": "🗡️ Congratulations, and welcome to HTML Forge",
-        "image": "/public/assets/HtmlGame/welcometohtmllevel.jpeg",
+        "image": "/assets/HtmlGame/welcometohtmllevel.jpeg",
         "description": "You are one step closer to saving our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing havoc in the digital landscape.  ",
         "instruction": "Armed with your coding skills, each of your correct answer comes to life and helps to save our World. Embrace the true magic of HTML Forge! Learn and master Html, enhance your abilities. ⚔️"
     },
     {
         "id": 3,
-        "name": "The Browser Battleground",
-        "image": "./src/assets/buginvasion.jpg",
-        "description": "Confront browser-based challenges in the Chrome Citadel, Firefox Fortress, and Safari Sanctuary.",
-        "instruction": "Overcome compatibility issues and optimize your code for different browsers."
+        "name": "Bootstrap Battle",
+        "image": "/images/BootstrapBattle.png",
+        "description": "Confront Bootstrap-based challenges to make it through to the end of the game!",
+        "instruction": "Answer the Bootstrap class questions to succeed."
     }
 ]

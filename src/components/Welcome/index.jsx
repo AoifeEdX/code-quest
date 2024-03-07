@@ -4,7 +4,6 @@ import Typewriter from 'typewriter-effect';
 import { useNavigate } from 'react-router-dom';
 import { saveCurrentUser } from '../../utils/localStorage';
 import fightGif from '/images/fightGif.gif';
-import arrow from '/images/arrow.png';
 
 const Welcome = () => {
 	const [formData, setFormData] = useState({ username: '' });
@@ -19,7 +18,7 @@ const Welcome = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-    saveCurrentUser(formData.username, 0);
+		saveCurrentUser(formData.username, 0);
 		if (!formData.username.trim()) {
 			setError('Please enter your username!');
 			setShow(false);
@@ -55,13 +54,6 @@ const Welcome = () => {
 					<p className="fs-4">
 						Your coding skills will be put to the test as you venture forth into the digital realm of CodeQuest.
 					</p>
-				</Col>
-			</Row>
-			<Row className="mt-5">
-				<Col md="5" className="px-5">
-					<Image className="pe-md-5 d-none d-sm-block" src={arrow} alt="arrow" fluid rounded />
-				</Col>
-				<Col md="6" className="py-md-5 mt-md-5">
 					<h2 className="mt-5">Enter your name to begin:</h2>
 					<Form onSubmit={handleSubmit}>
 						<InputGroup className="my-5">
@@ -98,22 +90,7 @@ const Welcome = () => {
 					)}
 				</Col>
 			</Row>
-
-			<Nav>
-<Nav.Link className="nav-element" href="/level1welcome">Level1</Nav.Link>
-</Nav>
-<Nav>
-<Nav.Link className="nav-element" href="/level2welcome">Level2</Nav.Link>
-</Nav>
-<Nav>
-<Nav.Link className="nav-element" href="/level3welcome">Level3</Nav.Link>
-</Nav>
-<Nav>
-<Nav.Link className="nav-element" href="/final-scores">Final Scores</Nav.Link>
-</Nav>
 		</Container>
-
-
 	);
 };
 

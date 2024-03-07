@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useUser } from "./../../context/userContext.jsx";
+// import { useUser } from "./../../context/userContext.jsx";
 import { useNavigate } from 'react-router-dom';
-import htmlQuestionList from "../../../htmlQuestionsList.json";
+import htmlQuestionList from "./htmlQuestionsList.json";
 import { Button, Container } from 'react-bootstrap';
 import HtmlLives from './HtlmLives';
 import HtmlAnswerCharacter from './HtmlAnswerCharacter';
@@ -102,11 +102,11 @@ const HtmlGame = () => {
         <>
         <div className="game-wrapper vw-80 d-flex justify-content-center align-items-center flex-column" >
         <h2 className="welcome-text bangers-text h1 text-uppercase">Welcome to HTML Forge 💥</h2>
-            <Container className="col-xxl-10 m-5 px-4 py-5 d-flex justify-content-center align-items-center">
-                <div className='d-flex justify-content-center flex-lg-row flex-md-column '>
+            <Container className="col-xxl-10 m-1 d-flex justify-content-center align-items-center">
+                <div className='d-flex justify-content-center flex-lg-row flex-md-column flex-sm-column'>
                     <div className="m-2">
-                        <div className="d-block mx-lg-auto img-fluid">
-                            <img className="quest-img object-fit-contain d-block justify-content-center col-6 col-sm-10" src="/assets/HtmlGame/htmlstart.jpeg" alt="coding man"></img>
+                        <div className="d-block mx-lg-auto img-fluid px-2">
+                            <img className="quest-img object-fit-contain d-block justify-content-center " src="/assets/HtmlGame/htmlstart.jpeg" alt="coding man" style={{maxWidth: '30em', height: '100%'}}></img>
                         </div>
                         <div className="d-flex justify-content-center align-items-center  mt-5">
                             <div className='answer-character mt-5'> 
@@ -117,12 +117,12 @@ const HtmlGame = () => {
                                 gameOver={gameOver}
                                 allQuestionsAnswered={allQuestionAnswered}/>
                             </div>
-                            <div className="ms-5 mt-5 h2 bangers-text">
+                            <div className="ms-5 mt-3 h2 bangers-text">
                                 {alertMessage}
                             </div>
                         </div>
                     </div>
-                    <div className="m-1">
+                    <div className="m-1 px-2">
                         <div className="result-panel col border border-5 rounded" style={{width: '30em', height: '20em'}} >
                             <h3 className="h2"><mark className="fw-bold bangers-text ">Your scores:</mark></h3>
                             <div className="results" style={{maxWidth: "15em"}}>
@@ -130,10 +130,10 @@ const HtmlGame = () => {
                                 <div className="d-flex justify-content-between text-danger fs-4 fw-bold bangers-text" ><p className="me-1 pe-2"> Scores:  </p> <p className="text-end"> {result.score}</p></div>
                             </div>
                         </div>
-                        <h2 className="h3 mt-5 text-warning bangers-text tracking-wide">💥 {currentQuestion+1}.  {question} </h2>
-                        <div className="m-2 d-flex flex-column mt-5">
+                        <h2 className="h3 mt-4 text-warning bangers-text tracking-wide">💥 {currentQuestion+1}.  {question} </h2>
+                        <div className="d-flex flex-column mt-4">
                             {options.map((answer, index) => (
-                                <Button style={{height: '4em'}} onClick={() => onAnswerSelected(answer, index)} key={answer} id={selectedAnswerIndex === index ? 'selected-answer' : null } className="m-3 answer-button border border-5"><p className="fw-bold pt-1 h4 button-text">{answer}</p></Button>
+                                <Button style={{height: '4em'}} onClick={() => onAnswerSelected(answer, index)} key={answer} id={selectedAnswerIndex === index ? 'selected-answer' : null } className="m-2 answer-button border border-5"><p className="fw-bold pt-1 h4 button-text">{answer}</p></Button>
                             ))}
                         </div>            
                     </div>
