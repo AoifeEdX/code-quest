@@ -17,11 +17,6 @@ export default function Game() {
   const [points, setPoints] = useState(0);
   const [count, setCount] = useState(0);
   const [isFormDisabled, setFormDisabled] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('');
-
-  const handleRadioChange = (event) => {
-    setSelectedOption(event.target.value);
-  }
 
  const pauseGame = () => {
   setFormDisabled(true);
@@ -48,6 +43,7 @@ export default function Game() {
           setLives(prevLives => prevLives - 1);
           setTimeout(() => {
             failNotification();
+            savePointsToStorage(0);
             setFormDisabled(true)
           }, 2000)
         }
@@ -72,7 +68,6 @@ export default function Game() {
     } 
     
   const handleNetxQuestionButton = () => {
-    console.log(count);
   if ((count < questions.length - 1) && (lives > 0)) {
     setCount(prevCount => prevCount + 1);
   }

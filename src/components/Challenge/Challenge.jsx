@@ -3,7 +3,7 @@ import questions from './../../assets/questions.json'
 import './Challenge.css'
 
 
-export default function Challenge({ count, handleAnswerButton, isFormDisabled, handleRadioChange, selectedOption }) {
+export default function Challenge({ count, handleAnswerButton, isFormDisabled}) {
   const question = questions[count].question || {};
   const answerOptions = questions[count].options || [];
   
@@ -21,9 +21,7 @@ export default function Challenge({ count, handleAnswerButton, isFormDisabled, h
             className="form-check-input"
             name="answer"
             id={`option${index}`}
-            
             value={option}
-           
           />
           <label className="form-check-label" htmlFor={`option${index}`}>
             {option}

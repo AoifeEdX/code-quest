@@ -1,7 +1,11 @@
+// function that save current player in localStorage
+
 export const saveCurrentUser = (name, points) => {
   const currentUser = { name , points }
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
 }
+
+// function that save points to localStorage
 
 export const savePointsToStorage = (newPoints) => {
   const storedUserData = localStorage.getItem('currentUser');
@@ -9,6 +13,8 @@ export const savePointsToStorage = (newPoints) => {
   currentUser.points = newPoints;
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
 };
+
+// function that update leaderboard date in localStorage
 
 export const updateLeaderBordStorage = () => {
   const storedUserData = localStorage.getItem('currentUser');

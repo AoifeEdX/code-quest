@@ -58,7 +58,7 @@ export const failNotification = () => {
 
 export const correctAnswerNotification = () => {
   toast((t) => (
-     <div className="card mb-3 notification" style={{ maxWidth: '540px' }}>
+     <div className="card mb-3 notification correct" style={{ maxWidth: '540px' }}>
        <div className="row g-0">
         <div className="col-md-4">
           <img src="./images/smile.jpg" className="img-fluid rounded-start" alt="win image"/>
