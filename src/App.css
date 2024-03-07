@@ -83,14 +83,15 @@ button:focus-visible {
   font-weight: bold;
 }
 
-.gradient-bg-blue {
-  background: linear-gradient(to right,  rgb(51, 97, 138), rgb(1, 128, 128));
+.gradient-bg-blue,
+.gradient-bg-blue-no-shadow {
+  background-image: linear-gradient(to right, rgb(51, 97, 138), rgb(1, 128, 128));
   color: white;
-  transition:  background 1s ease-in-out;
 }
 
-.gradient-bg-blue:hover {
-  background: linear-gradient(to right, rgb(231, 85, 7), rgb(235, 133, 17));
+.gradient-bg-blue:hover,
+.gradient-bg-blue-no-shadow:hover {
+  background-image: linear-gradient(to right, rgb(231, 85, 7), rgb(235, 133, 17));
 }
 
 .btn.gradient-bg-blue:hover {
@@ -110,3 +111,12 @@ button:focus-visible {
   box-shadow: 3px 4px rgba(255, 255, 255, 0.6);
 }
 
+.header-container {
+	transition: box-shadow 0.3s ease;
+}
+
+.header-container.scrolled {	
+	background-color: rgba(2, 32, 71, 0.6);
+	backdrop-filter: blur(10px);
+	box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.2);
+}

@@ -28,8 +28,8 @@ const HtmlGame = () => {
     useEffect(() => {
         const storedUserData = localStorage.getItem('currentUser');
         const parsedData = storedUserData ? JSON.parse(storedUserData) : { name: '', points: 0 };
-        setResult((prevResult) => ({...prevResult, score: parsedData.points
-        }));
+        setResult((prevResult) => ({...prevResult, score: parsedData.points}));
+
     }, []);
 
 
@@ -64,7 +64,6 @@ const HtmlGame = () => {
         if (currentQuestion !== htmlQuestionList.length - 1 && result.lives > 0) {
             setCurrentQuestion((prev) => prev + 1)
         } else {
-            console.log('quest ended')
             setAlertMessage('Well done! Hurray!')
             setAllQuestionAnswered(true)
             handleShow()
@@ -85,7 +84,9 @@ const HtmlGame = () => {
             setResult((prev) => ({...prev, lives: prev.lives - 1}));
             } else {
                 setResult((prev) => ({...prev, lives: prev.lives - 1}));
-                setAlertMessage("Game Over!")
+                setAlertMessage("Game Over!");
+                setResult({lives: 3, score: 0})
+                // setResult(prevResult => ({ ...prevResult, score: 0 }));
                 setGameOver(true)
                 setAllQuestionAnswered(true)
                 setShowRestart(true)               
