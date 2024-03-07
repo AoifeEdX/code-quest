@@ -13,21 +13,24 @@
 - [Credits](#credits)
 
 ## Overview
+The game is an interactive learning platform providing a gamified approach to programming education. 
 
 User Story: CodeQuest is designed to help players learn to code through fun and engaging games. Our mission is to make coding education accessible and enjoyable for everyone, regardless of their experience level. Whether you're a beginner just starting your coding journey or an experienced developer looking to enhance your skills, CodeQuest offers a wide range of interactive challenges and tutorials to suit your needs. Join us on this exciting quest to master the art of coding!
 
 ### Screenshots
 
 ![Screenshot](public/images/screenshot.gif)
+[mobileview](public/images/mobile-view.png)
 
 ### Links
 
-- ![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=GitHub&logoColor=white)
-
 - [GitHub Repo](https://github.com/AoifeEdX/code-quest)
-- [Live Link]()
+- [Live Link](https://codequest-game.netlify.app/)
 
 ## Our Process
+
+In this project work, we created 3 different levels with different design and approach, using react libraries and react bootstrap for design. 
+Meeting the bootcamp requirements we used more libraries (see listed below) and supabase to store data that are displayed in leaderboard. 
 
 ### Built With
 
@@ -54,10 +57,6 @@ User Story: CodeQuest is designed to help players learn to code through fun and 
 - UUID [npm package](https://www.npmjs.com/package/uuid)
 
 ## Authors
-
-- John Alzate
-  - [GitHub](https://github.com/JohnAlzate)
-  - [LinkedIn](https://www.linkedin.com/in/johnalzate/)
 
 - Joe Collar
   - [GitHub](https://github.com/faithhopeandvanity)
