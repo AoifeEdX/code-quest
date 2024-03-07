@@ -15,7 +15,7 @@
     "@fontsource/open-sans": "^5.0.25",
     "@fontsource/source-code-pro": "^5.0.17",
     "@mui/icons-material": "^5.15.11",
-    "@mui/material": "^5.15.11",
+    "@mui/material": "^5.15.12",
     "@popperjs/core": "^2.11.8",
     "@supabase/supabase-js": "^2.39.7",
     "bootstrap": "^5.3.3",

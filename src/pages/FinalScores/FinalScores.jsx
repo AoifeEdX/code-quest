@@ -25,7 +25,7 @@ const FinalScores = () => {
 
 	return (
 		<Container>
-			<Row className="">
+			<Row>
 				<Col md="6">
 					<Image className="pe-md-5 my-5" src={cheerGif} alt="CodeQuest background" fluid rounded />
 				</Col>
