@@ -4,6 +4,7 @@ const HtmlLives = ({ displayedLives }) => {
 	const fires = new Array(displayedLives).fill(null).map((_, index) => (
 		<span key={index}>🔥</span>
 	));
+	console.log(fires)
 
 	return (
 		<div className="d-flex justify-content-between text-danger fs-4 fw-bold bangers-text">
