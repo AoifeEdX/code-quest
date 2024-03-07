@@ -19,6 +19,7 @@
     "@popperjs/core": "^2.11.8",
     "@supabase/supabase-js": "^2.39.7",
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
     "font-squirrel": "^0.0.1",
     "i": "^0.3.7",
     "npm": "^10.5.0",
@@ -28,7 +29,6 @@
     "react-flex-center": "^1.0.6",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.22.2",
-    "react-toastify": "^10.0.4",
     "state-pool": "^0.10.1",
     "typewriter-effect": "^2.21.0",
     "uuid": "^9.0.1"

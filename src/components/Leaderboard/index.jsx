@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { getAllDataFromSupabase } from '../../utils/supabase/Supabase';
+import { getAllDataFromSupabase } from '../../utils/Supabase';
 import toast from 'react-hot-toast';
 
 const LeaderBoard = ({ onClose }) => {
@@ -9,12 +9,13 @@ const LeaderBoard = ({ onClose }) => {
    async function getPlayersData() {
      try {
        const data = await getAllDataFromSupabase();
-       setPlayersData(data);
+       const sortedData = [...data].sort((a, b) => b.score - a.score).slice(0, 10);
+       setPlayersData(sortedData);
      } catch (error) {
        toast.error(error.message);
     }
-   }
-
+    }
+    
     useEffect(() => {
         getPlayersData();
     }, []);
@@ -38,15 +39,15 @@ const LeaderBoard = ({ onClose }) => {
                     <table className="table mt-2 border-0  table-dark bg-secondary">
                         <thead className='p-2'>
                             <tr className="table-dark border-danger">
-                                {/* <th className="text-info" scope="col">#</th> */}
+                                <th className="text-info" scope="col">#</th>
                                 <th className="text-danger p-3" scope="col">Player</th>
                                 <th className="text-success p-3" scope="col">Score</th>
                             </tr>
                         </thead>
                             <tbody>
-                                {playersData.map(({ name, score, id }) => (
+                                {playersData.map(({ name, score, id }, index) => (
                                   <tr key={id} scope="row">
-                                   {/*<td>{id}</td>*/}
+                                   <td>{index + 1}</td>
                                    <td>{name}</td>
                                    <td>{score}</td>
                                   </tr>)
