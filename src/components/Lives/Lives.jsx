@@ -21,7 +21,7 @@ export default function Lives({ lives }) {
   return (
     <StyledRating name="read-only"
       value={lives}
-      max={5}
+      max={3}
       readOnly
       icon={<FavoriteIcon fontSize="35" />}
       emptyIcon={<FavoriteBorderIcon sx={{

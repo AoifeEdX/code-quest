@@ -1,38 +1,42 @@
 import { useNavigate } from 'react-router-dom';
+import { Container, Row, Button } from 'react-bootstrap';
 import LevelWelcomeContent from "../LevelWelcomeContent/LevelWelcomeContent";
 import questList from '../../../questList.json';
-import '../HtmlChallenge/HtmlGame.css'
+import '../HtmlChallenge/HtmlGame.css';
 
 const BootstrapGameWelcome = () => {
     const navigate = useNavigate();
+
     const navigateToLevel3 = () => {
-        navigate('/level3')
-    }
+        navigate('/level3');
+    };
+
+    const level3Game = questList.find((game) => game.id === 3);
+
     return (
-        <>
-        <section className="animated-container d-flex flex-column justify-content-center align-items-center ms-5 me-5" >
-        <div className="row d-flex justify-content-center align-items-center">
-            {questList.map((game) => {
-                if (game.id === 3) {
-                    return (                      
-                        <LevelWelcomeContent
-                            id={game.id}
-                            key={game.id}
-                            name={game.name}
-                            image={game.image}
-                            description={game.description}
-                            instruction={game.instruction}       
-                        />                       
-                    )
-                }
-            })}           
-        </div>
-        <div className="row" style={{width: '20em'}}>
-            <button className="btn btn-info btn-lg" style={{fontWeight: 'bold', color: 'grey'}}onClick={navigateToLevel3}>⚔️  Start  ⚔️</button>
-        </div>
-        </section>
-        </>
-    )
-}
+        <Container className="animated-container d-flex flex-column justify-content-center align-items-center">
+            <Row className="d-flex justify-content-center align-items-center">
+                {level3Game && (
+                    <LevelWelcomeContent
+                        id={level3Game.id}
+                        key={level3Game.id}
+                        name={level3Game.name}
+                        image={level3Game.image}
+                        description={level3Game.description}
+                        instruction={level3Game.instruction}
+                    />
+                )}
+            </Row>
+            <Row style={{ width: '20em' }}>
+                <Button
+                    className="btn gradient-bg-orange rounded-pill btn-lg bold-text text-white mt-5"
+                    onClick={navigateToLevel3}
+                >
+                    ⚔️ Start ⚔️
+                </Button>
+            </Row>
+        </Container>
+    );
+};
 
 export default BootstrapGameWelcome;

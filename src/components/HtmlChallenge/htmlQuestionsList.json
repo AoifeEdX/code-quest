@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "question": "What is the tag for an undordered list?",
+        "options": ["<ol>", "<li>", "<lo>", "<ul>"],
+        "correctAnswer": "<ul>"
+    },
+    {
+        "id": 2,
+        "question": "What is the HTML tag for hyperlink?",
+        "options": ["<href></href>", "<a></a>", "<i></i>", "<link></link>"],
+        "correctAnswer": "<a></a>"
+    },
+    {
+        "id": 3,
+        "question": "What is the first line of an HTML file?",
+        "options": ["<!Doctype html>", "<Doctype html>", "<Doctype! html>", "<Doctype html!>"],
+        "correctAnswer": "<!Doctype html>"
+    },
+    {
+        "id": 4,
+        "question": "What does HTML stand for?",
+        "options": ["Hyper Text Made Language", "Hyper Text Mixed Language", "Higher Text Markup Language", "Hyper Text Markup Language"],
+        "correctAnswer": "Hyper Text Markup Language"
+    }
+
+
+]

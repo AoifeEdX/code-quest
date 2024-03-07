@@ -1,28 +1,23 @@
 import React from 'react';
-import { Container} from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 
 const LevelWelcomeContent = (props) => {
-    return (
-        <>
-        <Container className="col-xxl-8 px-4 py-5 d-flex justify-content-center align-items-center">
-            <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-                <div className="col-10 col-sm-8 col-lg-6">
-                    <img className="d-block mx-lg-auto img-fluid border border-2 rounded p-5" style={{width: '700', height: '500'}} src={props.image}></img>
-                </div>
-                <div className="col-lg-6">
-                    <h2 className="fw-bold mb-3">{props.name}</h2>
-                    <p className="mt-5">{props.description}</p>
-                    <p>{props.instruction}</p>
-                </div>
-                </div>
+	return (
+		<>
+			<Container>
+				<Row className="justify-content-center align-items-center">
+					<Col md="6" className="order-md-2 py-3">
+						<Image src={props.image} alt={props.name} fluid className="d-block mx-lg-auto img-fluid p-5" />
+					</Col>
+					<Col md="6" className="order-md-1">
+						<h2 className="fw-bold mb-3">{props.name}</h2>
+						<p className="mt-5">{props.description}</p>
+						<p>{props.instruction}</p>
+					</Col>
+				</Row>
+			</Container>
+		</>
+	);
+};
 
-  
-
-        </Container>
-        
-        </>
-    )
-    
-
-}
 export default LevelWelcomeContent;
