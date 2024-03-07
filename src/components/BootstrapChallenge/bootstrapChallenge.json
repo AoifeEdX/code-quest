@@ -1,26 +1,26 @@
 [	
   {
-    "question": "Bootstrap is the world's most popular HTML, CSS and JS framework. What does CSS stand for?",
+    "question": "Bootstrap is a popular HTML, CSS and JS framework. What does CSS stand for?",
 		"image": "/assets/BootstrapGame/css.png",
-    "options": ["Cascading Style Sheets", "Computer Style Sheets", "Creative Style Sheets", "Coded Style Sheets"],		
+    "options": ["Cascading Style Sheets", "Computer Style Sheets", "Coded Style Sheets"],		
     "correct_answer": "Cascading Style Sheets"
   },
 	{
-    "question": "Which Bootstrap class should you add to a <nav> element to make it collapsible on smaller screens?",
+    "question": "Which class makes a collapsible <nav> on smaller screens?",
 		"image": "/assets/BootstrapGame/devices.png",
-    "options": ["expand-navbar", "nav-toggle", "navbar-toggler", "responsive-navbar"],
+    "options": ["expand-navbar", "navbar-toggler", "responsive-navbar"],
     "correct_answer": "navbar-toggler"
   },
   {
-    "question": "Which Bootstrap class should you apply to make a button large?",		
+    "question": "Which class should you apply to make a button large?",		
 		"image": "/assets/BootstrapGame/buttons.png",
-    "options": ["btn-big", "btn-lg", "btn-x-l", "large-btn" ],
+    "options": ["btn-big", "btn-lg", "large-btn" ],
     "correct_answer": "btn-lg"
 	}, 
 	{
-		"question": "Which Bootstrap class should you use to visually hide an element while keeping it accessible to screen readers?",
+		"question": "Which class hides an element while keeping it accessible to screen readers?",
 		"image": "/assets/BootstrapGame/hidden.png",
-		"options": ["sr-only", "hidden-accessible", "screen-reader", "visually-hidden"],
+		"options": ["sr-only", "hidden-accessible", "visually-hidden"],
 		"correct_answer": "visually-hidden"
 	}
 ]
