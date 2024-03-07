@@ -39,11 +39,8 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
           <h5 className="mb-3">Newsletter</h5>
           <p className="fw-light">Get weekly updates on our game releases</p>
           <div className="d-flex">
-            <form onSubmit= {handleSubmit}>
-            <input id="email" name="Email" value={email.Email} onChange= {handleChange} type="email" className="form-control me-2 rounded-pill" placeholder="Your email address"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required/>
-            <Button type="submit" className="btn rounded-pill gradient-bg-blue text-white ms-1"> Subscribe </Button>
-            </form>
-            <span > {feedback? "Thank you for subscribing":""}</span>
+            <input type="email" className="form-control me-2 rounded-pill" placeholder="Your email address" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required />
+            <Button className="btn rounded-pill gradient-bg-blue text-white ms-1">Subscribe</Button>
           </div>
         </Col>
 				<Col xs={12} md={3} className="text-center mb-5">
