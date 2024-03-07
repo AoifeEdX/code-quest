@@ -3,7 +3,6 @@ import htmlAnswerChar from "./htmlAnswerChar.json";
 
 const HtmlAnswerCharacter = ({ alertMessage }) => {
     const getImageId = () => {
-        console.log(alertMessage)
         switch (alertMessage) {
             case 'Correct!': return "sessionWinCharacter";
             case 'Wrong!': return "sessionLoseCharacter";
@@ -12,10 +11,8 @@ const HtmlAnswerCharacter = ({ alertMessage }) => {
             case 'Well done! Hurray!': return "gameWonCharacter";
             default: return null;
         }
-    }
-    
+    }  
         const character = htmlAnswerChar.find(char => char.id === getImageId());
-        console.log(character)
     return (
         <div>
 
