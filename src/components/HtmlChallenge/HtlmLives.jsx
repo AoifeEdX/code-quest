@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HtmlLives = ({ displayedLives }) => {
-	const fires = new Array(displayedLives).fill(null).map(_, index) => (
+	const fires = new Array(displayedLives).fill(null).map((_, index) => (
 		<span key={index}>🔥</span>
 	));
 
