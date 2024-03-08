@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { getAllDataFromSupabase } from '../../utils/supabase/Supabase';
+import { getAllDataFromSupabase } from '../../utils/Supabase';
 import toast from 'react-hot-toast';
 
 const LeaderBoard = ({ onClose }) => {

@@ -16,8 +16,6 @@ export default function GitHubExplorer() {
     async function fetchLanguages() {
       try {
         const response = await axios.get('https://api.github.com/languages');
-				console.log('Languages response:', response.data); // Add this line to log the response data
-
         //! Uncomment to limit to specific languages
 				// setLanguages(response.data.filter(lang => allowedLanguages.includes(lang.name)));
         setLanguages(response.data); // Remove filtering
@@ -36,7 +34,6 @@ export default function GitHubExplorer() {
 		try {
 			const apiUrl = `https://api.github.com/search/repositories?q=language:${selectedLanguage}+${keyword}&sort=stars&order=desc`;
 			const response = await axios.get(apiUrl);
-			console.log('Repository data:', response.data.items[0]); // Logging data for the first repository to check available data
 			setRepositories(response.data.items.slice(0, 20));
 		} catch (error) {
 			setError('Error fetching repositories: ' + error.message);

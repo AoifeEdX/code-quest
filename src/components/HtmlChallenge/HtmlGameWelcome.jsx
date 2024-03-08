@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import {  Container, Row, Button  } from 'react-bootstrap';
 import LevelWelcomeContent from "../LevelWelcomeContent/LevelWelcomeContent";
-import questList from '../../../questList.json';
+import questList from '../../databases/questList.json';
 import './HtmlGame.css';
 
 const HtmlGameWelcome = () => {
