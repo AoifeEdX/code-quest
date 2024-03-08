@@ -30,7 +30,6 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
           .catch(error => console.error('Error!', error.message))
 
   }
- 
 
 	return (
 		<Container className="py-5">
@@ -43,7 +42,7 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 						<div className="d-flex">
 							<input
 								type="email"
-								className={`form-control me-2 rounded-pill ${validEmail ? '' : 'is-invalid'}`}
+								// className={`form-control me-2 rounded-pill ${validEmail ? '' : 'is-invalid'}`}
 								value={email}
 								onChange={handleChange}
 								placeholder="Your email address"
@@ -51,8 +50,10 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 							/>
 							<Button type="submit" className="btn rounded-pill gradient-bg-blue text-white ms-1">Subscribe</Button>
 						</div>
-						{!validEmail && <div className="invalid-feedback">{errorMessage}</div>}
+            
+						{/* {!validEmail && <div className="invalid-feedback">{errorMessage}</div>} */}
 					</form>
+          <span > {feedback? "Thank you for subscribing":""}</span>
 				</Col>
 				<Col xs={12} md={3} className="text-center mb-5">
 					<h5 className="mb-3">Information</h5>
