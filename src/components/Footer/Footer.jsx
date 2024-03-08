@@ -8,7 +8,8 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
   function Footer() {
   const [feedback,setFeedback] = useState(false)
   const [email,setEmail] = useState({Email:""})
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBpRhdUIk8hhbE6PK9idYs9c6vU8KEF-awsYR-7yFCcOzim4MSA9cuB9WJBjPKHTJ/exec'
+  // const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBpRhdUIk8hhbE6PK9idYs9c6vU8KEF-awsYR-7yFCcOzim4MSA9cuB9WJBjPKHTJ/exec'
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwi7qnmDNYqRdNNV-mPQe_HWbu7DNxlbJJqtVE9jKGbHwTkXXnyQGgVe_bcn8CwjoWn/exec"
   
    const handleChange = (e) => {
     const {name, value} = e.target
