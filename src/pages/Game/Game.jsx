@@ -72,7 +72,6 @@ export default function Game() {
     } 
     
   const handleNetxQuestionButton = () => {
-    console.log(count);
   if ((count < questions.length - 1) && (lives > 0)) {
     setCount(prevCount => prevCount + 1);
   }
