@@ -1,35 +1,48 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import IconButton from '@mui/material/IconButton';
-import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
+import { GitHub, Instagram, LinkedIn } from '@mui/icons-material';
+import logo from '/images/logo.png';
 
+function Footer() {
+	const [feedback, setFeedback] = useState(false);
+	const [email, setEmail] = useState("");
+	const [validEmail, setValidEmail] = useState(true);
+	const [errorMessage, setErrorMessage] = useState("");
 
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBpRhdUIk8hhbE6PK9idYs9c6vU8KEF-awsYR-7yFCcOzim4MSA9cuB9WJBjPKHTJ/exec';
 
-  function Footer() {
-  const [feedback,setFeedback] = useState(false)
-  const [email,setEmail] = useState({Email:""})
-  // const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBpRhdUIk8hhbE6PK9idYs9c6vU8KEF-awsYR-7yFCcOzim4MSA9cuB9WJBjPKHTJ/exec'
-  const scriptURL = "https://script.google.com/macros/s/AKfycbwi7qnmDNYqRdNNV-mPQe_HWbu7DNxlbJJqtVE9jKGbHwTkXXnyQGgVe_bcn8CwjoWn/exec"
-  
-   const handleChange = (e) => {
-    const {name, value} = e.target
-    setEmail ({[name]:value})
-   }
-  const handleSubmit = (e) =>{
-    e.preventDefault ();
-    console.log(e)
-    fetch(scriptURL, {method:'POST',contentType: 'application/json', body: JSON.stringify(email) })
+	const handleChange = (e) => {
+		const value = e.target.value;
+		setEmail(value);
+		setValidEmail(validateEmail(value));
+	};
 
-          .then(response=> {return response.json()}
-            
-          ).then(data=>{console.log(data)
-            setFeedback(true)
-            setTimeout(function(){setFeedback(false)},10000)
-            setEmail({Email:""})
-          })
-          .catch(error => console.error('Error!', error.message))
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (validEmail) {
+			fetch(scriptURL, { method: 'POST', contentType: 'application/json', body: JSON.stringify({ Email: email }) })
+				.then(response => response.json())
+				.then(data => {
+					console.log(data);
+					setFeedback(true);
+					setTimeout(() => setFeedback(false), 10000);
+					setEmail("");
+				})
+				.catch(error => {
+					setErrorMessage("Failed to submit. Please try again later.");
+					console.error('Error!', error.message);
+				});
+		} else {
+			setErrorMessage("Please enter a valid email address.");
+		}
+	};
 
-  }
+	const validateEmail = (email) => {
+		// Added this regex for basic email validation
+		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		return regex.test(email);
+	};
 
 	return (
 		<Container className="py-5">
@@ -38,22 +51,19 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 				<Col xs={12} md={4} className="mb-5 text-md-start text-center">
 					<h5 className="mb-3">Newsletter</h5>
 					<p className="fw-light">Get weekly updates on our game releases</p>
-					<form onSubmit={(e) => handleSubmit(e)} method="post" name="google-sheet">
+					<form onSubmit={handleSubmit}>
 						<div className="d-flex">
 							<input
-              id="email"
-								type="text"
-                name="email"
-								// className={`form-control me-2 rounded-pill ${validEmail ? '' : 'is-invalid'}`}
-								value={email.Email}
+								type="email"
+								className={`form-control me-2 rounded-pill ${validEmail ? '' : 'is-invalid'}`}
+								value={email}
 								onChange={handleChange}
 								placeholder="Your email address"
 								required
 							/>
 							<Button type="submit" className="btn rounded-pill gradient-bg-blue text-white ms-1">Subscribe</Button>
 						</div>
-            
-						{/* {!validEmail && <div className="invalid-feedback">{errorMessage}</div>} */}
+						{!validEmail && <div className="invalid-feedback">{errorMessage}</div>}
 					</form>
           <span > {feedback? "Thank you for subscribing":""}</span>
 				</Col>
@@ -83,7 +93,7 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 					</div>
 				</Col>
 				<Col xs={12} md={2} className="mb-4 text-center">
-					{/* <img src={logo} alt="Logo" className="footer-logo" style={{ maxWidth: '100px', maxHeight: '100px' }} /> */}
+					<img src={logo} alt="Logo" className="footer-logo" style={{ maxWidth: '100px', maxHeight: '100px' }} />
 					<p className="fw-light">© {new Date().getFullYear()}</p>
 				</Col>
 			</Row>
