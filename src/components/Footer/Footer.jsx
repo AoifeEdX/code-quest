@@ -38,12 +38,14 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 				<Col xs={12} md={4} className="mb-5 text-md-start text-center">
 					<h5 className="mb-3">Newsletter</h5>
 					<p className="fw-light">Get weekly updates on our game releases</p>
-					<form onSubmit={handleSubmit}>
+					<form onSubmit={(e) => handleSubmit(e)} method="post" name="google-sheet">
 						<div className="d-flex">
 							<input
-								type="email"
+              id="email"
+								type="text"
+                name="email"
 								// className={`form-control me-2 rounded-pill ${validEmail ? '' : 'is-invalid'}`}
-								value={email}
+								value={email.Email}
 								onChange={handleChange}
 								placeholder="Your email address"
 								required
@@ -81,7 +83,7 @@ import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 					</div>
 				</Col>
 				<Col xs={12} md={2} className="mb-4 text-center">
-					<img src={logo} alt="Logo" className="footer-logo" style={{ maxWidth: '100px', maxHeight: '100px' }} />
+					{/* <img src={logo} alt="Logo" className="footer-logo" style={{ maxWidth: '100px', maxHeight: '100px' }} /> */}
 					<p className="fw-light">© {new Date().getFullYear()}</p>
 				</Col>
 			</Row>
