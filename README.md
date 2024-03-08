@@ -30,7 +30,7 @@ User Story: CodeQuest is designed to help players learn to code through fun and 
 - [Live Link](https://codequest-game.netlify.app/)
 - Presentation Slides:
 	- [PPTX](https://github.com/AoifeEdX/code-quest/blob/main/public/assets/Presentation_CodeQuest.pptx)
-	- [PDF](https://github.com/AoifeEdX/code-quest/blob/main/public/assets/Presentation_CodeQuest.pdf)
+	- [PDF](https://drive.google.com/drive/folders/1FrdpjjQbhZp4Ytr-1pLShFzUMCLSLHi_?usp=drive_link)
 
 ## Our Process
 
