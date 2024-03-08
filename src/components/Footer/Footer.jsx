@@ -1,48 +1,36 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import IconButton from '@mui/material/IconButton';
-import { GitHub, Instagram, LinkedIn } from '@mui/icons-material';
-import logo from '/images/logo.png';
+import {  GitHub, Instagram, LinkedIn } from '@mui/icons-material';
 
-function Footer() {
-	const [feedback, setFeedback] = useState(false);
-	const [email, setEmail] = useState("");
-	const [validEmail, setValidEmail] = useState(true);
-	const [errorMessage, setErrorMessage] = useState("");
 
-	const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBpRhdUIk8hhbE6PK9idYs9c6vU8KEF-awsYR-7yFCcOzim4MSA9cuB9WJBjPKHTJ/exec';
 
-	const handleChange = (e) => {
-		const value = e.target.value;
-		setEmail(value);
-		setValidEmail(validateEmail(value));
-	};
+  function Footer() {
+  const [feedback,setFeedback] = useState(false)
+  const [email,setEmail] = useState({Email:""})
+  // const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBpRhdUIk8hhbE6PK9idYs9c6vU8KEF-awsYR-7yFCcOzim4MSA9cuB9WJBjPKHTJ/exec'
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwi7qnmDNYqRdNNV-mPQe_HWbu7DNxlbJJqtVE9jKGbHwTkXXnyQGgVe_bcn8CwjoWn/exec"
+  
+   const handleChange = (e) => {
+    const {name, value} = e.target
+    setEmail ({[name]:value})
+   }
+  const handleSubmit = (e) =>{
+    e.preventDefault ();
+    console.log(e)
+    fetch(scriptURL, {method:'POST',contentType: 'application/json', body: JSON.stringify(email) })
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (validEmail) {
-			fetch(scriptURL, { method: 'POST', contentType: 'application/json', body: JSON.stringify({ Email: email }) })
-				.then(response => response.json())
-				.then(data => {
-					console.log(data);
-					setFeedback(true);
-					setTimeout(() => setFeedback(false), 10000);
-					setEmail("");
-				})
-				.catch(error => {
-					setErrorMessage("Failed to submit. Please try again later.");
-					console.error('Error!', error.message);
-				});
-		} else {
-			setErrorMessage("Please enter a valid email address.");
-		}
-	};
+          .then(response=> {return response.json()}
+            
+          ).then(data=>{console.log(data)
+            setFeedback(true)
+            setTimeout(function(){setFeedback(false)},10000)
+            setEmail({Email:""})
+          })
+          .catch(error => console.error('Error!', error.message))
 
-	const validateEmail = (email) => {
-		// Added this regex for basic email validation
-		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return regex.test(email);
-	};
+  }
+ 
 
 	return (
 		<Container className="py-5">
