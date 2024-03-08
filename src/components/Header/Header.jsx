@@ -39,17 +39,20 @@ const Header = () => {
 					<Navbar.Brand href="/" className="fs-2 my-3">CodeQuest</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbar-nav" />
 					<Navbar.Collapse id="navbar-nav" className="justify-content-end text-end my-3">
-						<NavDropdown title="Levels" id="basic-nav-dropdown" className="mx-3">
+						{/* <NavDropdown title="Levels" id="basic-nav-dropdown" className="mx-3">
 							<NavDropdown.Item href="/level1welcome">Level 1</NavDropdown.Item>
 							<NavDropdown.Item href="/level2welcome">Level 2</NavDropdown.Item>
 							<NavDropdown.Item href="/level3welcome">Level 3</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item href="/final-scores">Final Scores</NavDropdown.Item>
+						</NavDropdown> */}
+						<NavDropdown title="Learning Resources" id="basic-nav-dropdown" className="mx-3">
+							<NavDropdown.Item href="/ghexplorer">GitHub Explorer</NavDropdown.Item>
+							<NavDropdown.Item href="/videocourses">Video Courses</NavDropdown.Item>
 						</NavDropdown>
 						<Nav>
 							<Nav.Link href="/about" className="mx-2">About</Nav.Link>
-							<Nav.Link href="/contact" className="mx-2">Contact</Nav.Link>							
-							<Nav.Link href="/ghexplorer" className="mx-2">GitHub Explorer</Nav.Link>
+							<Nav.Link href="/contact" className="mx-2">Contact</Nav.Link>
 						</Nav>
 						<Nav>
 							{/* <Button

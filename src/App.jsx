@@ -17,6 +17,7 @@ import HtmlGameWelcome from './components/HtmlChallenge/HtmlGameWelcome';
 import BootstrapGameWelcome from './components/BootstrapChallenge/BootstrapGameWelcome';
 import JavaScriptGameWelcome from './pages/Game/JavaScriptGameWelcome'
 import GitHubExplorer from './pages/Resources/GitHubExplorer';
+import VideoCourses from './pages/Resources/VideoCourses/VideoCourses';
 
 function App() {
 
@@ -36,7 +37,8 @@ function App() {
 			<Route path="/final-scores" element={<FinalScores />} /> 
 			<Route path="/about" element={<About />} /> 						
 			<Route path="/contact" element={<Contact />} /> 							
-			<Route path="/ghexplorer" element={<GitHubExplorer />} /> 
+			<Route path="/ghexplorer" element={<GitHubExplorer />} />			 							
+			<Route path="/videocourses" element={<VideoCourses />} /> 
 			<Route path="*" element={<Navigate to="/" />} />
     </Routes>
 		<Footer />
