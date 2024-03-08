@@ -36,7 +36,7 @@ export default function GitHubExplorer() {
 		try {
 			const apiUrl = `https://api.github.com/search/repositories?q=language:${selectedLanguage}+${keyword}&sort=stars&order=desc`;
 			const response = await axios.get(apiUrl);
-			console.log('Repository data:', response.data.items[0]); // Logging data for the first repository
+			console.log('Repository data:', response.data.items[0]); // Logging data for the first repository to check available data
 			setRepositories(response.data.items.slice(0, 20));
 		} catch (error) {
 			setError('Error fetching repositories: ' + error.message);
