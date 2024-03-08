@@ -26,6 +26,7 @@
     "@supabase/supabase-js": "^2.39.7",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
     "font-squirrel": "^0.0.1",
     "i": "^0.3.7",
     "npm": "^10.5.0",
