@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Navbar, Nav, Button, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, Button, NavDropdown } from 'react-bootstrap';
 import { RestartAlt, EmojiEvents } from '@mui/icons-material';
 import LeaderBoard from '../Leaderboard/index';
 
@@ -38,7 +38,7 @@ const Header = () => {
 				<div className="container">
 					<Navbar.Brand href="/" className="fs-2 my-3">CodeQuest</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbar-nav" />
-					<Navbar.Collapse id="navbar-nav" className="justify-content-end text-end my-3 fs-5">
+					<Navbar.Collapse id="navbar-nav" className="justify-content-end text-end my-3">
 						<NavDropdown title="Levels" id="basic-nav-dropdown" className="mx-3">
 							<NavDropdown.Item href="/level1welcome">Level 1</NavDropdown.Item>
 							<NavDropdown.Item href="/level2welcome">Level 2</NavDropdown.Item>
@@ -47,16 +47,17 @@ const Header = () => {
 							<NavDropdown.Item href="/final-scores">Final Scores</NavDropdown.Item>
 						</NavDropdown>
 						<Nav>
-							<Nav.Link href="/about" className="mx-3">About</Nav.Link>
-							<Nav.Link href="/contact" className="mx-3">Contact</Nav.Link>
+							<Nav.Link href="/about" className="mx-2">About</Nav.Link>
+							<Nav.Link href="/contact" className="mx-2">Contact</Nav.Link>							
+							<Nav.Link href="/ghexplorer" className="mx-2">GitHub Explorer</Nav.Link>
 						</Nav>
 						<Nav>
-							<Button
+							{/* <Button
 								className="m-2 rounded-pill gradient-bg-blue"
 								href="/"
 							>
 								<RestartAlt /> Restart
-							</Button>
+	</Button> */}
 							<Button
 								className="btn m-2 rounded-pill gradient-bg-blue"
 								onClick={() => setOpenModal(true)}
