@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Button, Row, Col, Image } from 'react-bootstrap';
-import Points from '../../components/BootstrapChallenge/Points';
-import Leaderboard from '../../components/Leaderboard';
+import Points from '../components/BootstrapChallenge/Points';
+import Leaderboard from '../components/Leaderboard';
 import cheerGif from '/images/cheerGif.gif';
 
 const FinalScores = () => {

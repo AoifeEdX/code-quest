@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, InputGroup } from 'react-bootstrap';
-import questions from './bootstrapChallenge.json';
+import questions from '../../databases/bootstrapChallenge.json';
 
 export default function Challenge({ count, handleAnswerButton, gameOver, questionAnswered }) {
 	const questionData = questions[count] || {};

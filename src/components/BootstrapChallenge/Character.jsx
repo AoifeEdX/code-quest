@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
-import characterData from "./bootstrapCharacter.json";
+import characterData from "../../databases/bootstrapCharacter.json";
 
 const ProgressModule = ({ message, gameOver, allQuestionsAnswered }) => {
     const getCharacterImage = () => {

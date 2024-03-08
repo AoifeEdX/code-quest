@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { insertDataIntoTable } from '../../utils/supabase/Supabase';
+import { insertDataIntoTable } from '../../utils/Supabase';
 
 const LevelComplete = () => {
     const navigate = useNavigate();

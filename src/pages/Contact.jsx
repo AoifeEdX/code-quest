@@ -60,7 +60,6 @@ const isValidEmail = (email) => {
   return emailRegex.test(email);
 }
 
-
   return (
     <div>
       <Container>
@@ -91,7 +90,7 @@ const isValidEmail = (email) => {
                 </a>
               </p>
               <p className="mt-4">
-                <a href="https://github.com/CodeQuest" target="_blank" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <a href="https://github.com/AoifeEdX/code-quest" target="_blank" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   <IconButton className="text-warning me-4">
                     <GitHub />
                   </IconButton>
@@ -99,7 +98,7 @@ const isValidEmail = (email) => {
                 </a>
               </p>
               <p className="mt-4">
-                <a href="https://www.linkedin.com/company/codequest" target="_blank" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <a href="https://www.linkedin.com" target="_blank" className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   <IconButton className="text-warning me-4">
                     <LinkedIn />
                   </IconButton>

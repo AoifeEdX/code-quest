@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import questions from './bootstrapChallenge.json';
+import questions from '../../databases/bootstrapChallenge';
 import Challenge from "./BootstrapChallenge";
 import Lives from "./Lives";
 import Points from "./Points";
